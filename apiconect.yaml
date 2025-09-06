@@ -1,0 +1,38 @@
+openapi: 3.0.0
+info:
+  title: UANL Excel API
+  version: 1.0.0
+  description: API to expose call records from an Excel file
+servers:
+  - url: https://openapismain.onrender.com
+    description: Public deployment on Render
+paths:
+  /llamadas:
+    get:
+      summary: Get call records from Excel
+      operationId: getLlamadas
+      responses:
+        '200':
+          description: List of call records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    Call:
+                      type: string
+                      description: Value from column 'Call'
+                    Operator:
+                      type: string
+                      description: Value from column 'Operator'
+                    Client:
+                      type: string
+                      description: Value from column 'Client'
+                    Date:
+                      type: string
+                      description: Value from column 'Date'
+                    Conversation:
+                      type: string
+                      description: Value from column 'Conversation'
