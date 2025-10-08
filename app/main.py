@@ -4,11 +4,11 @@ import os
 
 app = FastAPI()
 
-CSV_PATH = "data/CONSUMO.csv"
+CSV_PATH = "data/users_data_2_test.csv"
 
-# 📄 Endpoint para visualizar todos los datos
-@app.get("/consumo", summary="Get all data from CONSUMO.csv")
-def get_consumo():
+# 📄 Endpoint para visualizar todos los datos del archivo users_data_2_test.csv
+@app.get("/users", summary="Get all user data from users_data_2_test.csv")
+def get_users():
     if not os.path.exists(CSV_PATH):
         raise HTTPException(status_code=404, detail="CSV file not found")
     try:
@@ -17,9 +17,3 @@ def get_consumo():
         raise HTTPException(status_code=500, detail=f"Error reading CSV: {str(e)}")
     
     return df.to_dict(orient="records")
-
-
-    df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
-    df.to_excel(EXCEL_PATH, index=False)
-    return {"message": "User added successfully", "data": new_row}
-
