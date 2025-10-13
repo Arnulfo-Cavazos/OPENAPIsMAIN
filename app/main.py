@@ -13,6 +13,23 @@ from google.oauth2.service_account import Credentials
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
+# ... dentro de def conectar_sheets():
+
+creds_json_str = os.environ.get('GCP_SERVICE_ACCOUNT_JSON')
+
+if not creds_json_str:
+    print("DIAGNÓSTICO: Variable no encontrada.")
+    return None
+
+# *** NUEVA LÍNEA DE DIAGNÓSTICO ***
+# Imprime los primeros 50 caracteres (debería mostrar el inicio del JSON)
+print(f"DIAGNÓSTICO: JSON encontrado. Inicio: {creds_json_str[:50]}...")
+
+try:
+    # Intentar parsear el JSON
+    creds_info = json.loads(creds_json_str) 
+        # ... el resto del código ...
+
 # --- CONFIGURACIÓN GLOBAL ---
 NOMBRE_DEL_SHEET = 'Datos_Usuarios_IA'
 # La conexión se intentará una vez al iniciar el servidor
