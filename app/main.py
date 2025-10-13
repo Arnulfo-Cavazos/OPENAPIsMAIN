@@ -1,10 +1,9 @@
-# Archivo: app/main.py
+# Archivo: app/main.py - Versión Corregida y Optimizada
 
 import os
-import json
-from typing import Optional, Tuple, Any, List
+from typing import Optional, Tuple, Any, List, Dict
 
-# Dependencias de GSpread y Pandas
+# Dependencias
 import gspread
 import pandas as pd
 from google.oauth2.service_account import Credentials
@@ -13,32 +12,13 @@ from google.oauth2.service_account import Credentials
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-# ... dentro de def conectar_sheets():
-
-creds_json_str = os.environ.get('GCP_SERVICE_ACCOUNT_JSON')
-
-if not creds_json_str:
-    print("DIAGNÓSTICO: Variable no encontrada.")
-    return None
-
-# *** NUEVA LÍNEA DE DIAGNÓSTICO ***
-# Imprime los primeros 50 caracteres (debería mostrar el inicio del JSON)
-print(f"DIAGNÓSTICO: JSON encontrado. Inicio: {creds_json_str[:50]}...")
-
-try:
-    # Intentar parsear el JSON
-    creds_info = json.loads(creds_json_str) 
-        # ... el resto del código ...
-
 # --- CONFIGURACIÓN GLOBAL ---
 NOMBRE_DEL_SHEET = 'Datos_Usuarios_IA'
 # La conexión se intentará una vez al iniciar el servidor
-gspread_client: Optional[gspread.Client] = None
+gspread_client: Optional[gspread.Client] = None 
 
-# --- DEFINICIÓN DE MODELOS (Basado en la especificación OpenAPI) ---
-
+# --- DEFINICIÓN DE MODELOS ---
 class User(BaseModel):
-    """Esquema de un registro de usuario."""
     num: int = Field(..., description="ID único del registro.")
     Name: str = Field(..., description="Nombre completo del empleado.")
     Job: str = Field(..., description="Puesto de trabajo.")
@@ -46,46 +26,75 @@ class User(BaseModel):
     RequestedTimeOff: int = Field(..., description="Cantidad de días libres solicitados.")
     
 class UserUpdate(BaseModel):
-    """Esquema para la actualización de un solo campo."""
     column_name: str = Field(..., description="Nombre de la columna a modificar (ej. 'RequestedTimeOff').")
-    new_value: str = Field(..., description="El nuevo valor a asignar. Se usa string por la flexibilidad de gspread.")
+    new_value: str = Field(..., description="El nuevo valor a asignar.")
 
 
 # --- INICIALIZACIÓN DE LA APLICACIÓN ASGI ---
-# ESTA LÍNEA ES LA CLAVE PARA RESOLVER SU ERROR
 app = FastAPI(
     title="Google Sheets Data API para Agente IA",
     description="API para leer y actualizar los datos de recursos humanos.",
     version="1.0.0"
 )
 
-# --- FUNCIONES DE ACCESO A GOOGLE SHEETS (Migradas de su código original) ---
+# --- LÓGICA DE AUTENTICACIÓN MEJORADA (USA VARIABLES ENV INDIVIDUALES) ---
+
+def build_credentials_dict() -> Optional[Dict[str, str]]:
+    """
+    Construye el diccionario de credenciales a partir de variables de entorno individuales 
+    (GCP_SA_TYPE, GCP_SA_PRIVATE_KEY, etc.) configuradas en Render.
+    """
+    required_keys_map = {
+        "GCP_SA_TYPE": "type", "GCP_SA_PROJECT_ID": "project_id", 
+        "GCP_SA_PRIVATE_KEY": "private_key", "GCP_SA_CLIENT_EMAIL": "client_email", 
+        "GCP_SA_CLIENT_ID": "client_id", "GCP_SA_TOKEN_URI": "token_uri"
+    }
+    creds_dict: Dict[str, str] = {}
+    
+    # 1. Mapear y verificar las variables
+    for env_key, json_key in required_keys_map.items():
+        value = os.environ.get(env_key)
+        if value is None:
+            # Aquí es donde fallaba antes, ahora con un mensaje claro.
+            print(f"ERROR: Falta la variable de entorno requerida: {env_key}")
+            return None
+        creds_dict[json_key] = value
+
+    # 2. Reemplazar los '\n' literales con saltos de línea reales (CRÍTICO para la Private Key).
+    private_key = creds_dict['private_key']
+    if '\\n' in private_key:
+         creds_dict['private_key'] = private_key.replace('\\n', '\n')
+         
+    return creds_dict
 
 def conectar_sheets() -> Optional[gspread.Client]:
-    """Establece la conexión con Google Sheets usando GitHub Secrets."""
+    """Establece la conexión con Google Sheets."""
     global gspread_client
-    creds_json_str = os.environ.get('GCP_SERVICE_ACCOUNT_JSON')
     
-    if not creds_json_str:
-        print("ERROR: La variable de entorno 'GCP_SERVICE_ACCOUNT_JSON' no está configurada.")
-        return None
+    creds_info = build_credentials_dict()
+    
+    if not creds_info:
+        return None # Falló la lectura de las variables de entorno
         
     try:
-        creds_info = json.loads(creds_json_str)
         SCOPE = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+        
+        # Autorizar usando el diccionario construido (creds_info)
         creds = Credentials.from_service_account_info(creds_info, scopes=SCOPE)
         gspread_client = gspread.authorize(creds)
-        print("Conexión a Google Sheets exitosa.")
+        print("Conexión a Google Sheets exitosa usando variables ENV.")
         return gspread_client
     except Exception as e:
         print(f"Error al conectar con Google Sheets: {e}")
         return None
 
+# --- FUNCIONES DE ACCESO A GOOGLE SHEETS ---
+
 def obtener_datos(client: gspread.Client, nombre_hoja: str) -> Tuple[Optional[gspread.Worksheet], Optional[pd.DataFrame]]:
     """Abre la hoja de cálculo y retorna el objeto Worksheet y un DataFrame."""
     try:
         spreadsheet = client.open(nombre_hoja)
-        worksheet = spreadsheet.sheet1 
+        worksheet = spreadsheet.sheet1  
         data = worksheet.get_all_records()
         df = pd.DataFrame(data)
         return worksheet, df
@@ -134,7 +143,7 @@ async def startup_event():
             # Si falla la conexión, la API no podrá operar con los datos
             print("ADVERTENCIA: La aplicación está iniciada, pero no pudo conectar con Google Sheets.")
 
-# --- ENDPOINTS DE LA API (Implementación de la especificación OpenAPI) ---
+# --- ENDPOINTS DE LA API ---
 
 @app.get("/users", response_model=List[User], summary="Obtener todos los registros de usuarios.")
 async def read_users():
@@ -147,7 +156,6 @@ async def read_users():
     if datos_df is None:
         raise HTTPException(status_code=500, detail="Error al leer los datos de la hoja.")
 
-    # Convertir el DataFrame a una lista de diccionarios, luego a los modelos Pydantic
     return datos_df.to_dict('records')
 
 
@@ -157,13 +165,11 @@ async def update_user_field(user_id: int, update_data: UserUpdate):
     if gspread_client is None:
         raise HTTPException(status_code=500, detail="Error de conexión con Google Sheets.")
     
-    # Necesitamos el Worksheet para la actualización
     worksheet, _ = obtener_datos(gspread_client, NOMBRE_DEL_SHEET)
     
     if worksheet is None:
         raise HTTPException(status_code=500, detail="No se pudo obtener la hoja de trabajo.")
         
-    # Llamar a la función de actualización
     success = actualizar_dato(
         worksheet=worksheet,
         num_registro=user_id,
@@ -174,5 +180,4 @@ async def update_user_field(user_id: int, update_data: UserUpdate):
     if success:
         return {"message": f"Actualización exitosa: ID={user_id}, Columna='{update_data.column_name}' actualizada a: {update_data.new_value}"}
     else:
-        # La función actualizar_dato ya imprime el error específico
         raise HTTPException(status_code=404, detail=f"No se pudo actualizar el registro {user_id}. Verifique si el ID o el nombre de la columna son correctos.")
