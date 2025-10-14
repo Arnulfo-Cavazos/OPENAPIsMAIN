@@ -1,183 +1,107 @@
-# Archivo: app/main.py - Versión Corregida y Optimizada
+# main.py
 
-import os
-from typing import Optional, Tuple, Any, List, Dict
-
-# Dependencias
-import gspread
-import pandas as pd
-from google.oauth2.service_account import Credentials
-
-# Dependencias de FastAPI
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, Field
+from typing import List, Optional, Dict, Any
+import pandas as pd
+import os
 
-# --- CONFIGURACIÓN GLOBAL ---
-NOMBRE_DEL_SHEET = 'Datos_Usuarios_IA'
-# La conexión se intentará una vez al iniciar el servidor
-gspread_client: Optional[gspread.Client] = None 
+# ----------------------------------------------------
+# 1. Configuración y Carga de Datos
+# ----------------------------------------------------
 
-# --- DEFINICIÓN DE MODELOS ---
-class User(BaseModel):
-    num: int = Field(..., description="ID único del registro.")
-    Name: str = Field(..., description="Nombre completo del empleado.")
-    Job: str = Field(..., description="Puesto de trabajo.")
-    Address: str = Field(..., description="Dirección física.")
-    RequestedTimeOff: int = Field(..., description="Cantidad de días libres solicitados.")
+# Nombre del archivo de datos (basado en la imagen)
+DATA_FILE = "users_data_2_test.csv"
+
+# Inicializar el DataFrame
+df: Optional[pd.DataFrame] = None
+
+# Función para cargar los datos de forma segura
+def load_data():
+    global df
+    data_path = os.path.join("data", DATA_FILE)
+    if not os.path.exists(data_path):
+        # Asumiendo que el archivo está en la carpeta 'data'
+        raise FileNotFoundError(f"El archivo de datos no se encontró en: {data_path}")
     
-class UserUpdate(BaseModel):
-    column_name: str = Field(..., description="Nombre de la columna a modificar (ej. 'RequestedTimeOff').")
-    new_value: str = Field(..., description="El nuevo valor a asignar.")
+    try:
+        df = pd.read_csv(data_path)
+        # Convertir el DataFrame a formato Python estándar para evitar errores de tipo
+        df = df.astype(str)
+        print(f"Datos cargados exitosamente desde {DATA_FILE}. Total de filas: {len(df)}")
+    except Exception as e:
+        print(f"Error al cargar el archivo CSV: {e}")
+        df = None
 
+# Cargar los datos al inicio de la aplicación
+load_data()
 
-# --- INICIALIZACIÓN DE LA APLICACIÓN ASGI ---
+# ----------------------------------------------------
+# 2. Inicialización de FastAPI
+# ----------------------------------------------------
+
 app = FastAPI(
-    title="Google Sheets Data API para Agente IA",
-    description="API para leer y actualizar los datos de recursos humanos.",
-    version="1.0.0"
+    title="Agente de Consulta de Datos de Usuarios",
+    description="API que permite consultar información de usuarios del archivo users_data_2_test.csv."
 )
 
-# --- LÓGICA DE AUTENTICACIÓN MEJORADA (USA VARIABLES ENV INDIVIDUALES) ---
+# ----------------------------------------------------
+# 3. Endpoints (Rutas de la API)
+# ----------------------------------------------------
 
-def build_credentials_dict() -> Optional[Dict[str, str]]:
+@app.get("/")
+def read_root():
+    """Endpoint de bienvenida."""
+    return {"message": "Agente de Datos Operativo", "status": "Ready"}
+
+# Endpoint para obtener todos los datos
+@app.get("/users", response_model=List[Dict[str, Any]])
+def get_all_users():
+    """Retorna la lista completa de todos los usuarios."""
+    if df is None:
+        raise HTTPException(status_code=503, detail="Datos no disponibles. El archivo CSV no se pudo cargar.")
+    
+    # Retornar la lista de diccionarios (registros)
+    return df.to_dict('records')
+
+
+# Endpoint para buscar por nombre
+@app.get("/users/search", response_model=List[Dict[str, Any]])
+def search_users_by_name(name: str):
     """
-    Construye el diccionario de credenciales a partir de variables de entorno individuales 
-    (GCP_SA_TYPE, GCP_SA_PRIVATE_KEY, etc.) configuradas en Render.
+    Busca usuarios cuyo nombre contenga el texto proporcionado (búsqueda parcial e insensible a mayúsculas/minúsculas).
     """
-    required_keys_map = {
-        "GCP_SA_TYPE": "type", "GCP_SA_PROJECT_ID": "project_id", 
-        "GCP_SA_PRIVATE_KEY": "private_key", "GCP_SA_CLIENT_EMAIL": "client_email", 
-        "GCP_SA_CLIENT_ID": "client_id", "GCP_SA_TOKEN_URI": "token_uri"
-    }
-    creds_dict: Dict[str, str] = {}
-    
-    # 1. Mapear y verificar las variables
-    for env_key, json_key in required_keys_map.items():
-        value = os.environ.get(env_key)
-        if value is None:
-            # Aquí es donde fallaba antes, ahora con un mensaje claro.
-            print(f"ERROR: Falta la variable de entorno requerida: {env_key}")
-            return None
-        creds_dict[json_key] = value
+    if df is None:
+        raise HTTPException(status_code=503, detail="Datos no disponibles. El archivo CSV no se pudo cargar.")
 
-    # 2. Reemplazar los '\n' literales con saltos de línea reales (CRÍTICO para la Private Key).
-    private_key = creds_dict['private_key']
-    if '\\n' in private_key:
-         creds_dict['private_key'] = private_key.replace('\\n', '\n')
-         
-    return creds_dict
-
-def conectar_sheets() -> Optional[gspread.Client]:
-    """Establece la conexión con Google Sheets."""
-    global gspread_client
+    # Asegurarse de que la columna 'Name' es una cadena y realizar la búsqueda
+    # Usando .str.contains para búsqueda parcial, y case=False para ser insensible a mayúsculas/minúsculas
+    results = df[df['Name'].astype(str).str.contains(name, case=False, na=False)]
     
-    creds_info = build_credentials_dict()
-    
-    if not creds_info:
-        return None # Falló la lectura de las variables de entorno
+    if results.empty:
+        raise HTTPException(status_code=404, detail=f"No se encontraron usuarios con el nombre que contenga: '{name}'")
         
+    return results.to_dict('records')
+
+
+# Endpoint para obtener un registro específico por número 'num'
+@app.get("/users/{num}", response_model=Dict[str, Any])
+def get_user_by_num(num: int):
+    """
+    Retorna la información de un usuario específico usando su número de índice ('num').
+    """
+    if df is None:
+        raise HTTPException(status_code=503, detail="Datos no disponibles. El archivo CSV no se pudo cargar.")
+
+    # Buscar el registro donde la columna 'num' coincida con el valor.
+    # Es necesario convertir la columna 'num' a entero o string para la comparación.
     try:
-        SCOPE = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+        user_record = df[df['num'].astype(int) == num].to_dict('records')
+    except ValueError:
+        # En caso de que la conversión falle, tratar la columna como string
+        user_record = df[df['num'].astype(str) == str(num)].to_dict('records')
+
+    if not user_record:
+        raise HTTPException(status_code=404, detail=f"Usuario con número '{num}' no encontrado.")
         
-        # Autorizar usando el diccionario construido (creds_info)
-        creds = Credentials.from_service_account_info(creds_info, scopes=SCOPE)
-        gspread_client = gspread.authorize(creds)
-        print("Conexión a Google Sheets exitosa usando variables ENV.")
-        return gspread_client
-    except Exception as e:
-        print(f"Error al conectar con Google Sheets: {e}")
-        return None
-
-# --- FUNCIONES DE ACCESO A GOOGLE SHEETS ---
-
-def obtener_datos(client: gspread.Client, nombre_hoja: str) -> Tuple[Optional[gspread.Worksheet], Optional[pd.DataFrame]]:
-    """Abre la hoja de cálculo y retorna el objeto Worksheet y un DataFrame."""
-    try:
-        spreadsheet = client.open(nombre_hoja)
-        worksheet = spreadsheet.sheet1  
-        data = worksheet.get_all_records()
-        df = pd.DataFrame(data)
-        return worksheet, df
-    except Exception as e:
-        print(f"Error al obtener datos: {e}")
-        return None, None
-
-def actualizar_dato(worksheet: gspread.Worksheet, num_registro: int, nombre_columna: str, nuevo_valor: Any) -> bool:
-    """Actualiza una celda específica en la hoja de cálculo."""
-    try:
-        headers = worksheet.row_values(1)
-        
-        # 1. Encontrar la columna
-        if nombre_columna not in headers:
-            print(f"ERROR: Columna '{nombre_columna}' no encontrada.")
-            return False
-        col_index = headers.index(nombre_columna) + 1
-        
-        # 2. Encontrar la fila (buscando por 'num')
-        col_num_values = worksheet.col_values(1)
-        try:
-            target_row_index = col_num_values.index(str(num_registro))
-            sheet_row_number = target_row_index + 1
-        except ValueError:
-            print(f"ERROR: Registro con 'num'={num_registro} no encontrado.")
-            return False
-
-        # 3. Actualizar la celda
-        worksheet.update_cell(sheet_row_number, col_index, nuevo_valor)
-        print(f"Actualización exitosa: ID={num_registro}, Columna='{nombre_columna}' actualizada a: {nuevo_valor}")
-        return True
-        
-    except Exception as e:
-        print(f"Error al actualizar la celda: {e}")
-        return False
-
-# --- EVENTO DE INICIO DEL SERVIDOR ---
-
-@app.on_event("startup")
-async def startup_event():
-    """Intenta conectar con Google Sheets al iniciar la aplicación."""
-    global gspread_client
-    if gspread_client is None:
-        conectar_sheets()
-        if gspread_client is None:
-            # Si falla la conexión, la API no podrá operar con los datos
-            print("ADVERTENCIA: La aplicación está iniciada, pero no pudo conectar con Google Sheets.")
-
-# --- ENDPOINTS DE LA API ---
-
-@app.get("/users", response_model=List[User], summary="Obtener todos los registros de usuarios.")
-async def read_users():
-    """Implementa el GET /users para que la IA visualice los datos."""
-    if gspread_client is None:
-        raise HTTPException(status_code=500, detail="Error de conexión con Google Sheets. Revise credenciales.")
-    
-    worksheet, datos_df = obtener_datos(gspread_client, NOMBRE_DEL_SHEET)
-    
-    if datos_df is None:
-        raise HTTPException(status_code=500, detail="Error al leer los datos de la hoja.")
-
-    return datos_df.to_dict('records')
-
-
-@app.patch("/users/{user_id}", summary="Actualizar un campo específico de un usuario.")
-async def update_user_field(user_id: int, update_data: UserUpdate):
-    """Implementa el PATCH /users/{user_id} para que la IA modifique un campo."""
-    if gspread_client is None:
-        raise HTTPException(status_code=500, detail="Error de conexión con Google Sheets.")
-    
-    worksheet, _ = obtener_datos(gspread_client, NOMBRE_DEL_SHEET)
-    
-    if worksheet is None:
-        raise HTTPException(status_code=500, detail="No se pudo obtener la hoja de trabajo.")
-        
-    success = actualizar_dato(
-        worksheet=worksheet,
-        num_registro=user_id,
-        nombre_columna=update_data.column_name,
-        nuevo_valor=update_data.new_value
-    )
-    
-    if success:
-        return {"message": f"Actualización exitosa: ID={user_id}, Columna='{update_data.column_name}' actualizada a: {update_data.new_value}"}
-    else:
-        raise HTTPException(status_code=404, detail=f"No se pudo actualizar el registro {user_id}. Verifique si el ID o el nombre de la columna son correctos.")
+    # Retornar el primer (y único) resultado
+    return user_record[0]
