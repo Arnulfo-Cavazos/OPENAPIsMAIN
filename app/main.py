@@ -1,107 +1,94 @@
-# main.py
-
 from fastapi import FastAPI, HTTPException
-from typing import List, Optional, Dict, Any
 import pandas as pd
+from pydantic import BaseModel
+from github import Github
 import os
+from dotenv import load_dotenv
 
-# ----------------------------------------------------
-# 1. Configuración y Carga de Datos
-# ----------------------------------------------------
+# Cargar variables de entorno (.env)
+load_dotenv()
 
-# Nombre del archivo de datos (basado en la imagen)
-DATA_FILE = "users_data_2_test.csv"
+app = FastAPI(title="Employee CSV API")
 
-# Inicializar el DataFrame
-df: Optional[pd.DataFrame] = None
+# Variables de entorno
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+GITHUB_REPO = os.getenv("GITHUB_REPO")
+GITHUB_FILE_PATH = os.getenv("GITHUB_FILE_PATH")
 
-# Función para cargar los datos de forma segura
-def load_data():
-    global df
-    data_path = os.path.join("data", DATA_FILE)
-    if not os.path.exists(data_path):
-        # Asumiendo que el archivo está en la carpeta 'data'
-        raise FileNotFoundError(f"El archivo de datos no se encontró en: {data_path}")
-    
-    try:
-        df = pd.read_csv(data_path)
-        # Convertir el DataFrame a formato Python estándar para evitar errores de tipo
-        df = df.astype(str)
-        print(f"Datos cargados exitosamente desde {DATA_FILE}. Total de filas: {len(df)}")
-    except Exception as e:
-        print(f"Error al cargar el archivo CSV: {e}")
-        df = None
+# Inicializar GitHub
+g = Github(GITHUB_TOKEN)
+repo = g.get_repo(GITHUB_REPO)
 
-# Cargar los datos al inicio de la aplicación
-load_data()
+# Función para cargar el CSV desde GitHub
+def load_csv():
+    contents = repo.get_contents(GITHUB_FILE_PATH)
+    csv_data = contents.decoded_content.decode("utf-8")
+    df = pd.read_csv(pd.compat.StringIO(csv_data))
+    return df
 
-# ----------------------------------------------------
-# 2. Inicialización de FastAPI
-# ----------------------------------------------------
+# Función para guardar cambios al CSV y hacer commit
+def save_csv(df, message="Update data.csv"):
+    csv_buffer = df.to_csv(index=False)
+    contents = repo.get_contents(GITHUB_FILE_PATH)
+    repo.update_file(
+        GITHUB_FILE_PATH,
+        message,
+        csv_buffer,
+        contents.sha
+    )
 
-app = FastAPI(
-    title="Agente de Consulta de Datos de Usuarios",
-    description="API que permite consultar información de usuarios del archivo users_data_2_test.csv."
-)
+# Modelo para recibir datos
+class Employee(BaseModel):
+    num: int
+    Name: str
+    TimeOffBalance: float
+    Job: str
+    Address: str
+    RequestedTimeOff: int
 
-# ----------------------------------------------------
-# 3. Endpoints (Rutas de la API)
-# ----------------------------------------------------
+# ---- ENDPOINTS ---- #
 
 @app.get("/")
-def read_root():
-    """Endpoint de bienvenida."""
-    return {"message": "Agente de Datos Operativo", "status": "Ready"}
+def root():
+    return {"message": "Welcome to the Employee CSV API!"}
 
-# Endpoint para obtener todos los datos
-@app.get("/users", response_model=List[Dict[str, Any]])
-def get_all_users():
-    """Retorna la lista completa de todos los usuarios."""
-    if df is None:
-        raise HTTPException(status_code=503, detail="Datos no disponibles. El archivo CSV no se pudo cargar.")
-    
-    # Retornar la lista de diccionarios (registros)
-    return df.to_dict('records')
+@app.get("/employees")
+def get_all_employees():
+    df = load_csv()
+    return df.to_dict(orient="records")
 
+@app.get("/employees/{employee_id}")
+def get_employee(employee_id: int):
+    df = load_csv()
+    emp = df[df['num'] == employee_id]
+    if emp.empty:
+        raise HTTPException(status_code=404, detail="Employee not found")
+    return emp.to_dict(orient="records")[0]
 
-# Endpoint para buscar por nombre
-@app.get("/users/search", response_model=List[Dict[str, Any]])
-def search_users_by_name(name: str):
-    """
-    Busca usuarios cuyo nombre contenga el texto proporcionado (búsqueda parcial e insensible a mayúsculas/minúsculas).
-    """
-    if df is None:
-        raise HTTPException(status_code=503, detail="Datos no disponibles. El archivo CSV no se pudo cargar.")
+@app.get("/search/")
+def search_employee(name: str):
+    df = load_csv()
+    result = df[df['Name'].str.contains(name, case=False, na=False)]
+    if result.empty:
+        raise HTTPException(status_code=404, detail="Employee not found")
+    return result.to_dict(orient="records")
 
-    # Asegurarse de que la columna 'Name' es una cadena y realizar la búsqueda
-    # Usando .str.contains para búsqueda parcial, y case=False para ser insensible a mayúsculas/minúsculas
-    results = df[df['Name'].astype(str).str.contains(name, case=False, na=False)]
-    
-    if results.empty:
-        raise HTTPException(status_code=404, detail=f"No se encontraron usuarios con el nombre que contenga: '{name}'")
-        
-    return results.to_dict('records')
+@app.post("/employees")
+def add_employee(emp: Employee):
+    df = load_csv()
+    if emp.num in df['num'].values:
+        raise HTTPException(status_code=400, detail="Employee ID already exists")
+    new_row = pd.DataFrame([emp.dict()])
+    df = pd.concat([df, new_row], ignore_index=True)
+    save_csv(df, message=f"Add employee {emp.Name}")
+    return {"message": f"Employee {emp.Name} added successfully"}
 
-
-# Endpoint para obtener un registro específico por número 'num'
-@app.get("/users/{num}", response_model=Dict[str, Any])
-def get_user_by_num(num: int):
-    """
-    Retorna la información de un usuario específico usando su número de índice ('num').
-    """
-    if df is None:
-        raise HTTPException(status_code=503, detail="Datos no disponibles. El archivo CSV no se pudo cargar.")
-
-    # Buscar el registro donde la columna 'num' coincida con el valor.
-    # Es necesario convertir la columna 'num' a entero o string para la comparación.
-    try:
-        user_record = df[df['num'].astype(int) == num].to_dict('records')
-    except ValueError:
-        # En caso de que la conversión falle, tratar la columna como string
-        user_record = df[df['num'].astype(str) == str(num)].to_dict('records')
-
-    if not user_record:
-        raise HTTPException(status_code=404, detail=f"Usuario con número '{num}' no encontrado.")
-        
-    # Retornar el primer (y único) resultado
-    return user_record[0]
+@app.put("/employees/{employee_id}")
+def update_employee(employee_id: int, emp: Employee):
+    df = load_csv()
+    index = df.index[df['num'] == employee_id].tolist()
+    if not index:
+        raise HTTPException(status_code=404, detail="Employee not found")
+    df.loc[index[0]] = emp.dict()
+    save_csv(df, message=f"Update employee {emp.Name}")
+    return {"message": f"Employee {emp.Name} updated successfully"}
