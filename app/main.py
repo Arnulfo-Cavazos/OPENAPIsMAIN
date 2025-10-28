@@ -18,13 +18,20 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GITHUB_REPO = os.getenv("GITHUB_REPO")
 GITHUB_FILE_PATH = os.getenv("GITHUB_FILE_PATH")
 
+if not GITHUB_TOKEN or not GITHUB_REPO or not GITHUB_FILE_PATH:
+    raise RuntimeError("Missing required environment variables: GITHUB_TOKEN, GITHUB_REPO, GITHUB_FILE_PATH")
+
 app = FastAPI(title="Employee CSV API", version="1.0.0")
 
 # ---------------------
 # INIT GITHUB
 # ---------------------
-g = Github(GITHUB_TOKEN)
-repo = g.get_repo(GITHUB_REPO)
+try:
+    g = Github(GITHUB_TOKEN)
+    repo = g.get_repo(GITHUB_REPO)
+except Exception as e:
+    logging.error(f"Failed to initialize GitHub client: {e}")
+    raise RuntimeError("GitHub initialization failed")
 
 # ---------------------
 # CACHE
@@ -50,28 +57,28 @@ def load_csv():
     if cached_df is not None:
         return cached_df.copy()
     try:
-        logging.info("Loading CSV from GitHub...")
-        contents = repo.get_contents(GITHUB_FILE_PATH)
+        logging.info(f"Loading CSV from GitHub: {GITHUB_REPO}/{GITHUB_FILE_PATH}")
+        contents = repo.get_contents(GITHUB_FILE_PATH, ref="main")  # rama explícita
         csv_data = contents.decoded_content.decode("utf-8")
         df = pd.read_csv(StringIO(csv_data))
         cached_df = df.copy()
-        logging.info(f"CSV loaded with {len(df)} rows")
+        logging.info(f"CSV loaded successfully with {len(df)} rows")
         return df
     except Exception as e:
         logging.error(f"Failed to load CSV: {e}")
-        raise HTTPException(status_code=500, detail="Failed to load CSV from GitHub")
+        raise HTTPException(status_code=500, detail=f"Failed to load CSV from GitHub: {str(e)}")
 
 def save_csv(df, message="Update data.csv"):
     try:
         csv_buffer = df.to_csv(index=False)
-        contents = repo.get_contents(GITHUB_FILE_PATH)
-        repo.update_file(GITHUB_FILE_PATH, message, csv_buffer, contents.sha)
+        contents = repo.get_contents(GITHUB_FILE_PATH, ref="main")
+        repo.update_file(GITHUB_FILE_PATH, message, csv_buffer, contents.sha, branch="main")
         logging.info("CSV updated and committed to GitHub")
         global cached_df
         cached_df = df.copy()
     except Exception as e:
         logging.error(f"Failed to save CSV: {e}")
-        raise HTTPException(status_code=500, detail="Failed to save CSV to GitHub")
+        raise HTTPException(status_code=500, detail=f"Failed to save CSV to GitHub: {str(e)}")
 
 # ---------------------
 # ENDPOINTS
@@ -123,12 +130,20 @@ def update_employee(employee_id: int, emp: Employee):
 
 @app.get("/openapi.yaml", include_in_schema=False)
 def get_openapi_yaml():
-    """
-    Serve the OpenAPI YAML directly for HR tools.
-    """
     from fastapi.openapi.utils import get_openapi
     import yaml
     openapi_schema = get_openapi(title=app.title, version=app.version, routes=app.routes)
     with open("openapi.yaml", "w") as f:
         yaml.dump(openapi_schema, f)
     return FileResponse("openapi.yaml", media_type="application/yaml")
+
+# ---------------------
+# TEST ENDPOINT
+# ---------------------
+@app.get("/test-github")
+def test_github():
+    try:
+        contents = repo.get_contents(GITHUB_FILE_PATH, ref="main")
+        return {"status": "ok", "file_size": len(contents.decoded_content)}
+    except Exception as e:
+        return {"status": "error", "detail": str(e)}
