@@ -1,0 +1,28 @@
+﻿Número de Parte,Descripción,Cantidad en Inventario,Ubicación,Proveedor,Fecha Última Entrada,Almacen,Costo Unitario (MXN)
+N345889,modulo de luz,10,A1-01,Industrias Metalmex,2025-11-01,WHS,400
+N345889,modulo de luz,15,A1-02,Industrias Metalmex,2025-11-05,WHS,400
+N345889,modulo de luz,8,D2-03,Industrias Metalmex,2025-10-28,WHS,400
+N345889,módulo de luz,27,B1-04,Industrias Metalmex,2025-11-09,WHS,400
+N345889,módulo de luz,32,H3-01,Industrias Metalmex,2025-11-09,WHS,400
+N346001,sensor de presión,9,D1-02,Sensores ProTech,2025-11-07,WHS,300
+N346001,sensor de presión,24,H3-01,Sensores ProTech,2025-11-06,WHS,250
+N346001,sensor de presión,38,C3-09,Sensores ProTech,2025-11-07,WHS,150
+N346105,válvula hidráulica,47,A2-07,Neumática Avanzada,2025-11-04,WHS,850
+N346105,válvula hidráulica,26,B1-04,Neumática Avanzada,2025-11-03,WHS,600
+N346105,válvula hidráulica,14,C3-09,Neumática Avanzada,2025-11-08,WHS,300
+N346250,motor DC 12V,47,D1-02,Motores y Más SA,2025-11-10,WHS,600
+N346250,motor DC 12V,32,F4-06,Motores y Más SA,2025-11-10,WHS,850
+N346250,motor DC 12V,23,B1-04,Motores y Más SA,2025-11-02,WHS,850
+N346312,cable de conexión,30,C3-09,Cables del Norte,2025-11-09,WHS,250
+N346312,cable de conexión,16,D1-02,Cables del Norte,2025-11-09,WHS,300
+N346312,cable de conexión,40,C3-09,Cables del Norte,2025-11-10,ALM2,250
+N346312,cable de conexión,37,H3-01,Cables del Norte,2025-11-08,ALM2,850
+N346400,rodamiento 6204,29,F4-06,SKF México,2025-11-07,WHS,1200
+N346400,rodamiento 6204,26,G5-08,SKF México,2025-11-03,WHS,850
+N346501,controlador electrónico,22,G5-08,ControlTech,2025-11-07,ALM2,150
+N346501,controlador electrónico,38,D1-02,ControlTech,2025-11-12,WHS,300
+N346501,controlador electrónico,18,E4-08,ControlTech,2025-11-11,WHS,600
+N346602,pantalla LED,22,C3-09,Luminarias MX,2025-11-04,WHS,600
+N346602,pantalla LED,12,F4-06,Luminarias MX,2025-11-07,ALM1,300
+N346602,pantalla LED,48,A2-07,Luminarias MX,2025-11-04,WHS,1200
+N346602,pantalla LED,13,A2-07,Luminarias MX,2025-11-11,WHS,150
