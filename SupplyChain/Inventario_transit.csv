@@ -1,0 +1,37 @@
+﻿Número de Parte,Descripción,Cantidad Enviada,Fecha de Envío,Estatus,Destino,Transportista,Guía de Embarque,Estatus del Envío,Proveedor
+N345889,módulo de luz,22,05/11/2025,En Transito,Planta 1,Transportes Fletes MX,MX583492,En tránsito,Industrias Metalmex
+N345889,módulo de luz,17,08/11/2025,En Transito,Planta 1,Logística Norte,MX498721,En aduana,Industrias Metalmex
+N346001,sensor de presión,33,09/11/2025,En Transito,Planta 1,Logística Norte,MX928100,Retrasado,Sensores ProTech
+N346001,sensor de presión,19,03/11/2025,En Transito,Planta 1,Transportes Fletes MX,MX433201,En aduana,Sensores ProTech
+N346001,sensor de presión,41,07/11/2025,En Transito,Planta 1,Rápidos del Centro,MX912700,En tránsito,Sensores ProTech
+N346001,sensor de presión,28,11/11/2025,En Transito,Planta 1,Logística Norte,MX734522,Entregado parcialmente,Sensores ProTech
+N346105,válvula hidráulica,15,03/11/2025,En Transito,Planta 1,Transportes Fletes MX,MX457733,En tránsito,Neumática Avanzada
+N346105,válvula hidráulica,42,07/11/2025,En Transito,Planta 1,Rápidos del Centro,MX611482,En aduana,Neumática Avanzada
+N346105,válvula hidráulica,37,10/11/2025,En Transito,Planta 1,Camiones del Bajío,MX700155,En tránsito,Neumática Avanzada
+N346105,válvula hidráulica,22,09/11/2025,En Transito,Planta 1,Logística Norte,MX441912,Entregado parcialmente,Neumática Avanzada
+N346105,válvula hidráulica,44,02/11/2025,En Transito,Planta 1,Rápidos del Centro,MX599621,Retrasado,Neumática Avanzada
+N346250,motor DC 12V,18,02/11/2025,En Transito,Planta 1,Transportes Fletes MX,MX882216,En tránsito,Motores y Más SA
+N346250,motor DC 12V,29,09/11/2025,En Transito,Planta 1,Logística Norte,MX544391,Entregado parcialmente,Motores y Más SA
+N346250,motor DC 12V,35,07/11/2025,En Transito,Planta 1,Camiones del Bajío,MX663451,En tránsito,Motores y Más SA
+N346250,motor DC 12V,23,04/11/2025,En Transito,Planta 1,Logística Norte,MX872002,Retrasado,Motores y Más SA
+N346250,motor DC 12V,27,10/11/2025,En Transito,Planta 1,Transportes Fletes MX,MX552198,En aduana,Motores y Más SA
+N346312,cable de conexión,40,04/11/2025,En Transito,Planta 1,Camiones del Bajío,MX697845,En tránsito,Cables del Norte
+N346312,cable de conexión,23,08/11/2025,En Transito,Planta 1,Logística Norte,MX912533,Retrasado,Cables del Norte
+N346312,cable de conexión,31,10/11/2025,En Transito,Planta 1,Transportes Fletes MX,MX621003,En tránsito,Cables del Norte
+N346312,cable de conexión,14,05/11/2025,En Transito,Planta 1,Rápidos del Centro,MX744992,En aduana,Cables del Norte
+N346312,cable de conexión,37,06/11/2025,En Transito,Planta 1,Logística Norte,MX841229,Entregado parcialmente,Cables del Norte
+N346400,rodamiento 6204,19,05/11/2025,En Transito,Planta 1,Transportes Fletes MX,MX341200,En aduana,SKF México
+N346400,rodamiento 6204,35,10/11/2025,En Transito,Planta 1,Camiones del Bajío,MX905678,En tránsito,SKF México
+N346400,rodamiento 6204,28,09/11/2025,En Transito,Planta 1,Logística Norte,MX781340,Entregado parcialmente,SKF México
+N346400,rodamiento 6204,16,02/11/2025,En Transito,Planta 1,Rápidos del Centro,MX642521,En tránsito,SKF México
+N346400,rodamiento 6204,44,06/11/2025,En Transito,Planta 1,Camiones del Bajío,MX733900,Retrasado,SKF México
+N346501,controlador electrónico,21,06/11/2025,En Transito,Planta 1,Logística Norte,MX457222,En tránsito,ControlTech
+N346501,controlador electrónico,14,10/11/2025,En Transito,Planta 1,Rápidos del Centro,MX689410,En aduana,ControlTech
+N346501,controlador electrónico,33,07/11/2025,En Transito,Planta 1,Transportes Fletes MX,MX505219,Retrasado,ControlTech
+N346501,controlador electrónico,26,08/11/2025,En Transito,Planta 1,Camiones del Bajío,MX552701,En tránsito,ControlTech
+N346501,controlador electrónico,39,09/11/2025,En Transito,Planta 1,Logística Norte,MX780155,Entregado parcialmente,ControlTech
+N346602,pantalla LED,32,04/11/2025,En Transito,Planta 1,Transportes Fletes MX,MX824711,En tránsito,Luminarias MX
+N346602,pantalla LED,18,09/11/2025,En Transito,Planta 1,Camiones del Bajío,MX501334,Retrasado,Luminarias MX
+N346602,pantalla LED,44,10/11/2025,En Transito,Planta 1,Logística Norte,MX710008,En aduana,Luminarias MX
+N346602,pantalla LED,29,11/11/2025,En Transito,Planta 1,Rápidos del Centro,MX901201,En tránsito,Luminarias MX
+N346602,pantalla LED,38,08/11/2025,En Transito,Planta 1,Transportes Fletes MX,MX922514,Entregado parcialmente,Luminarias MX
