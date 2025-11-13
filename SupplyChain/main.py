@@ -14,10 +14,11 @@ logging.basicConfig(level=logging.INFO)
 load_dotenv()
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-GITHUB_REPO = os.getenv("GITHUB_REPO")
-PATH_INVENTARIO = os.getenv("PATH_INVENTARIO", "INVENTARIODB.csv")
-PATH_TRANSITO = os.getenv("PATH_TRANSITO", "Inventario_transit.csv")
-PATH_ORDENES = os.getenv("PATH_ORDENES", "OrdenDeSurtido.csv")
+GITHUB_REPO = "Arnulfo-Cavazos/OPENAPIsMAIN"
+PATH_INVENTARIO = "SupplyChain/INVENTARIODB.csv"
+PATH_TRANSITO = "SupplyChain/Inventario_transit.csv"
+PATH_ORDENES = "SupplyChain/OrdenDeSurtido.csv"
+
 
 if not GITHUB_TOKEN or not GITHUB_REPO:
     raise RuntimeError("Faltan variables de entorno requeridas: GITHUB_TOKEN o GITHUB_REPO")
