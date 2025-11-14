@@ -1,0 +1,160 @@
+openapi: 3.0.3
+info:
+  title: API de Inventario y Órdenes
+  version: "1.0.0"
+  description: >
+    API para consultar inventarios, tránsito y gestionar órdenes de surtido.
+    Conecta a CSV almacenados en GitHub y permite crear órdenes nuevas.
+
+servers:
+  - url: https://openapismain-supplychain.onrender.com
+
+paths:
+
+  /:
+    get:
+      summary: Estado de la API
+      responses:
+        '200':
+          description: API operativa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+
+  /inventario/{numero_parte}:
+    get:
+      summary: Obtener información de inventario por número de parte
+      parameters:
+        - name: numero_parte
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Resultado encontrado
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '404':
+          description: Número de parte no encontrado
+
+  /transito/{numero_parte}:
+    get:
+      summary: Obtener información del tránsito de un número de parte
+      parameters:
+        - name: numero_parte
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Resultado encontrado
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '404':
+          description: Número de parte no encontrado
+
+  /ordenes/:
+    get:
+      summary: Listar todas las órdenes de surtido
+      responses:
+        '200':
+          description: Lista completa de órdenes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+
+  /ordenes/agregar:
+    post:
+      summary: Agregar una nueva orden manual
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrdenEntrada'
+            example:
+              Numero_de_Parte: "12345"
+              Descripcion: "Tornillo M12"
+              Cantidad: 50
+              Tipo_Envio: "Urgente"
+      responses:
+        '200':
+          description: Orden agregada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mensaje:
+                    type: string
+                  orden:
+                    $ref: '#/components/schemas/OrdenEntrada'
+
+  /crear_orden_automatica/{numero_parte}:
+    post:
+      summary: Crear una orden automáticamente usando la información en tránsito
+      parameters:
+        - name: numero_parte
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Orden automática creada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mensaje:
+                    type: string
+                  orden:
+                    type: object
+                    properties:
+                      Numero_de_Parte:
+                        type: string
+                      Descripcion:
+                        type: string
+                      Cantidad:
+                        type: integer
+                      Tipo_Envio:
+                        type: string
+        '404':
+          description: Número de parte no encontrado en inventario o tránsito
+
+components:
+  schemas:
+    OrdenEntrada:
+      type: object
+      required:
+        - Numero_de_Parte
+        - Descripcion
+        - Cantidad
+        - Tipo_Envio
+      properties:
+        Numero_de_Parte:
+          type: string
+        Descripcion:
+          type: string
+        Cantidad:
+          type: integer
+        Tipo_Envio:
+          type: string
