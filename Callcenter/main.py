@@ -1,29 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import pandas as pd
-import ibm_boto3
-from ibm_botocore.client import Config
 import os
 
 app = FastAPI(title="Customer Support Data API")
 
-# ---- CONFIG IBM COS ----
-COS_API_KEY = os.getenv("COS_API_KEY")
-COS_SERVICE_CRN = os.getenv("COS_SERVICE_CRN")
-COS_ENDPOINT = "https://s3.us-south.cloud-object-storage.appdomain.cloud"     # ejemplo: "https://s3.us-south.cloud-object-storage.appdomain.cloud"
-COS_BUCKET = os.getenv("COS_BUCKET")
-COS_CSV_KEY = "RegistrosEni.csv"    # archivo: "dataset/support_calls.csv"
-
-
-
-# ---- cliente ----
-cos = ibm_boto3.client(
-    "s3",
-    ibm_api_key_id=COS_API_KEY,
-    ibm_service_instance_id=COS_SERVICE_CRN,
-    config=Config(signature_version="oauth"),
-    endpoint_url=COS_ENDPOINT
-)
+CSV_FILE = "RegistrosEni.csv"
 
 # ---- cargamos el CSV una vez ----
 dataframe = None
@@ -31,20 +13,15 @@ dataframe = None
 def load_csv():
     global dataframe
     try:
-        obj = cos.get_object(Bucket=COS_BUCKET, Key=COS_CSV_KEY)
-
-        # ⚠ FIX: manejar CSV complejo
         df = pd.read_csv(
-            obj["Body"],
+            CSV_FILE,
             sep=",",
             engine="python",
             encoding="utf-8",
             on_bad_lines="skip"
         )
 
-        # ⚠ FIX: convertir NaN → None
-        df = df.where(pd.notnull(df), None)
-
+        df = df.where(pd.notnull(df), None)  # quitar NaN
         dataframe = df
         print("CSV loaded successfully.")
 
