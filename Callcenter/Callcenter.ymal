@@ -1,0 +1,119 @@
+openapi: 3.0.1
+info:
+  title: Customer Support Data API
+  description: >
+    API que permite a los agentes de IA consultar una base de datos CSV almacenada en IBM Cloud Object Storage.
+    Proporciona endpoints para obtener todos los registros, buscar por cualquier campo y consultar datos por usuario.
+  version: "1.0.0"
+
+servers:
+  - url: https://callcenter-qq1h.onrender.com
+
+paths:
+  /:
+    get:
+      summary: Estado del servicio
+      operationId: getStatus
+      responses:
+        "200":
+          description: Mensaje de estado del API
+          content:
+            application/json:
+              example:
+                message: "Customer Support API running."
+
+  /all:
+    get:
+      summary: Obtener todos los registros
+      operationId: getAllRecords
+      responses:
+        "200":
+          description: Lista completa de registros del CSV
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        "500":
+          description: Error si el CSV no fue cargado correctamente
+
+  /search:
+    post:
+      summary: Buscar registros por campo y valor
+      operationId: searchRecords
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - field
+                - value
+              properties:
+                field:
+                  type: string
+                  description: Nombre de la columna a buscar
+                  example: "Palabra clave"
+                value:
+                  type: string
+                  description: Valor a buscar dentro del campo
+                  example: "Antena"
+      responses:
+        "200":
+          description: Resultados de la búsqueda
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  results:
+                    type: array
+                    items:
+                      type: object
+        "400":
+          description: Error si el campo no existe
+        "500":
+          description: Error si el CSV no está cargado
+
+  /usuario/{usuario_id}:
+    get:
+      summary: Obtener registros por identificador de usuario
+      operationId: getUserRecords
+      parameters:
+        - name: usuario_id
+          in: path
+          required: true
+          description: ID del usuario a consultar
+          schema:
+            type: string
+            example: "U07599"
+      responses:
+        "200":
+          description: Registros del usuario solicitado
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        "404":
+          description: No se encontró el usuario
+        "500":
+          description: Error si el CSV no cargó
+
+components:
+  schemas:
+    Query:
+      type: object
+      required:
+        - field
+        - value
+      properties:
+        field:
+          type: string
+        value:
+          type: string
