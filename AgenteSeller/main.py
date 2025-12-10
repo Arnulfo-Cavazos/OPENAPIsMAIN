@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO)
 load_dotenv()
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-GITHUB_REPO = "Arnulfo-Cavazos/OPENAPIsMAIN/AgenteSeller"  # Ajusta en Render
+GITHUB_REPO = "Arnulfo-Cavazos/OPENAPIsMAIN" # Ajusta en Render
 PRODUCTS_PATH = "att_wifi_products.csv"  # Archivo local
 VENTAS_PATH = "Ventas.csv"               # Archivo en GitHub
 
