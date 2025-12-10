@@ -1,0 +1,335 @@
+
+openapi: 3.0.3
+info:
+  title: API de Productos AT&T y Ventas
+  version: "1.0.0"
+  description: >
+    API para listar productos (desde CSV local en Render) y gestionar ventas (CSV en GitHub)
+    usada por el AgenteSeller. Los datos de productos se leen del archivo local
+    `att_wifi_products.csv` y las ventas se leen/escriben en `main/AgenteSeller/Ventas.csv`
+    dentro del repositorio `Arnulfo-Cavazos/OPENAPIsMAIN`.
+
+    **Importante**: La API no requiere credenciales del cliente; el push a GitHub
+    usa `GITHUB_TOKEN` como variable de entorno del servicio.
+
+  contact:
+    name: AgenteSeller
+    url: https://agenteseller.onrender.com/docs
+    email: soporte@example.com
+
+externalDocs:
+  description: Documentación interactiva (Swagger UI)
+  url: https://agenteseller.onrender.com/docs
+
+servers:
+  - url: https://agenteseller.onrender.com
+    description: Producción (Render)
+  - url: http://localhost:8000
+    description: Desarrollo local
+
+tags:
+  - name: Sistema
+    description: Endpoints generales de estado
+  - name: Productos
+    description: Consulta de catálogo de productos
+  - name: Ventas
+    description: Lectura y creación de ventas
+
+paths:
+  /:
+    get:
+      tags: [Sistema]
+      summary: Estado básico del servicio
+      operationId: getHome
+      responses:
+        "200":
+          description: Servicio operativo
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HomeResponse"
+              examples:
+                ok:
+                  value:
+                    status: "API de Productos y Ventas operativa 🚀"
+
+  /productos/:
+    get:
+      tags: [Productos]
+      summary: Listar todos los productos
+      operationId: listarProductos
+      responses:
+        "200":
+          description: Lista de productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+              examples:
+                sample:
+                  value:
+                    - Product_ID: "P001"
+                      Product_Name: "AT&T WiFi Basic"
+                      Speed_Mbps: 50
+                      Price_USD: 29.99
+                      Contract_Term: "12 months"
+                      Features: "Unlimited data, Free modem"
+                    - Product_ID: "P002"
+                      Product_Name: "AT&T WiFi Plus"
+                      Speed_Mbps: 100
+                      Price_USD: 49.99
+                      Contract_Term: "12 months"
+                      Features: "Unlimited data, Free installation"
+        "500":
+          description: Error al leer el CSV local de productos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /productos/{query}:
+    get:
+      tags: [Productos]
+      summary: Buscar producto por ID o nombre (parcial)
+      operationId: buscarProducto
+      parameters:
+        - in: path
+          name: query
+          required: true
+          schema:
+            type: string
+          description: >
+            Puede ser `Product_ID` exacto (ej. `P002`) o parte del nombre
+            (ej. `plus`, `basic`), sin distinción de mayúsculas/minúsculas.
+      responses:
+        "200":
+          description: Productos que coinciden con la búsqueda
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+              examples:
+                porID:
+                  value:
+                    - Product_ID: "P002"
+                      Product_Name: "AT&T WiFi Plus"
+                      Speed_Mbps: 100
+                      Price_USD: 49.99
+                      Contract_Term: "12 months"
+                      Features: "Unlimited data, Free installation"
+        "404":
+          description: Producto no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                notFound:
+                  value:
+                    detail: "Producto no encontrado."
+        "500":
+          description: Error al leer el CSV local de productos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /ventas/:
+    get:
+      tags: [Ventas]
+      summary: Listar todas las ventas (CSV en GitHub)
+      operationId: listarVentas
+      responses:
+        "200":
+          description: Lista de ventas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/VentaRecord"
+              examples:
+                sample:
+                  value:
+                    - Nombre completo: "Juan Pérez"
+                      Teléfono: "5551234567"
+                      Correo electrónico: "juan.perez@example.com"
+                      Dirección: "Av. Reforma 123, CDMX"
+                      Producto: "P002 - AT&T WiFi Plus"
+        "404":
+          description: Archivo de ventas no encontrado en GitHub
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Error al cargar el CSV de GitHub
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /ventas/agregar:
+    post:
+      tags: [Ventas]
+      summary: Agregar una nueva venta y commitear a GitHub
+      operationId: agregarVenta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/VentaEntrada"
+            examples:
+              nuevaVenta:
+                value:
+                  nombre_completo: "Juan Pérez"
+                  telefono: "5551234567"
+                  correo_electronico: "juan.perez@example.com"
+                  direccion: "Av. Reforma 123, CDMX"
+                  producto: "P002"
+      responses:
+        "200":
+          description: Venta agregada y commit realizado con éxito
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AddVentaResponse"
+              examples:
+                ok:
+                  value:
+                    mensaje: "Venta agregada y commit realizado con éxito ✅"
+                    venta:
+                      nombre_completo: "Juan Pérez"
+                      telefono: "5551234567"
+                      correo_electronico: "juan.perez@example.com"
+                      direccion: "Av. Reforma 123, CDMX"
+                      producto: "P002"
+        "400":
+          description: Producto no encontrado en el catálogo local
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                invalidProduct:
+                  value:
+                    detail: "Producto no encontrado en catálogo."
+        "500":
+          description: Error al leer/escribir CSV (local o GitHub)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+components:
+  schemas:
+    HomeResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "API de Productos y Ventas operativa 🚀"
+
+    Product:
+      type: object
+      description: Registro del catálogo leído desde att_wifi_products.csv
+      properties:
+        Product_ID:
+          type: string
+          example: "P002"
+        Product_Name:
+          type: string
+          example: "AT&T WiFi Plus"
+        Speed_Mbps:
+          type: integer
+          example: 100
+        Price_USD:
+          type: number
+          format: float
+          example: 49.99
+        Contract_Term:
+          type: string
+          example: "12 months"
+        Features:
+          type: string
+          example: "Unlimited data, Free installation"
+      required:
+        - Product_ID
+        - Product_Name
+
+    VentaEntrada:
+      type: object
+      description: Datos enviados por el cliente para crear una venta
+      properties:
+        nombre_completo:
+          type: string
+          example: "Juan Pérez"
+        telefono:
+          type: string
+          example: "5551234567"
+        correo_electronico:
+          type: string
+          format: email
+          example: "juan.perez@example.com"
+        direccion:
+          type: string
+          example: "Av. Reforma 123, CDMX"
+        producto:
+          type: string
+          description: "Product_ID exacto o nombre parcial del producto"
+          example: "P002"
+      required:
+        - nombre_completo
+        - telefono
+        - correo_electronico
+        - direccion
+        - producto
+
+    VentaRecord:
+      type: object
+      description: Registro almacenado en Ventas.csv (GitHub)
+      properties:
+        Nombre completo:
+          type: string
+          example: "Juan Pérez"
+        Teléfono:
+          type: string
+          example: "5551234567"
+        Correo electrónico:
+          type: string
+          format: email
+          example: "juan.perez@example.com"
+        Dirección:
+          type: string
+          example: "Av. Reforma 123, CDMX"
+        Producto:
+          type: string
+          example: "P002 - AT&T WiFi Plus"
+      required:
+        - Nombre completo
+        - Teléfono
+        - Correo electrónico
+        - Dirección
+        - Producto
+
+    AddVentaResponse:
+      type: object
+      properties:
+        mensaje:
+          type: string
+          example: "Venta agregada y commit realizado con éxito ✅"
+        venta:
+          $ref: "#/components/schemas/VentaEntrada"
+
+    ErrorResponse:
+      type: object
+      properties:
+        detail:
+          type: string
+      example:
+        detail: "Producto no encontrado."
