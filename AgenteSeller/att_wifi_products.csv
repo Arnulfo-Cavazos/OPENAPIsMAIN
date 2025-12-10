@@ -1,0 +1,16 @@
+Product_ID,Product_Name,Speed_Mbps,Price_USD,Contract_Term,Features
+P001,AT&T WiFi Basic,50,29.99,12 months,"Unlimited data, Free modem"
+P002,AT&T WiFi Plus,100,49.99,12 months,"Unlimited data, Free installation"
+P003,AT&T WiFi Premium,300,69.99,24 months,"Unlimited data, Free router"
+P004,AT&T WiFi Ultra,500,89.99,24 months,"Unlimited data, Free router + modem"
+P005,AT&T WiFi Fiber Basic,1000,99.99,24 months,"Fiber connection, Free installation"
+P006,AT&T WiFi Fiber Plus,2000,129.99,24 months,"Fiber connection, Free router"
+P007,AT&T WiFi Fiber Premium,5000,199.99,24 months,"Fiber connection, Priority support"
+P008,AT&T WiFi Starter,25,19.99,6 months,"Basic plan, Free modem"
+P009,AT&T WiFi Family,150,59.99,12 months,"Unlimited data, Parental controls"
+P010,AT&T WiFi Gamer,300,79.99,12 months,"Low latency, Free gaming router"
+P011,AT&T WiFi Business Basic,500,149.99,12 months,"Business support, Static IP"
+P012,AT&T WiFi Business Plus,1000,199.99,24 months,"Business support, Free router"
+P013,AT&T WiFi Business Premium,2000,299.99,24 months,Priority business support
+P014,AT&T WiFi Student,75,34.99,6 months,Affordable plan for students
+P015,AT&T WiFi Travel,50,39.99,3 months,"Portable WiFi, Free hotspot device"
