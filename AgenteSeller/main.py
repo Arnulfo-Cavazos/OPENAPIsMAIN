@@ -17,7 +17,7 @@ load_dotenv()
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GITHUB_REPO = "Arnulfo-Cavazos/OPENAPIsMAIN" # Ajusta en Render
 PRODUCTS_PATH = "att_wifi_products.csv"  # Archivo local             # Archivo en GitHub
-VENTAS_PATH = "main/AgenteSeller/Ventas.csv"
+VENTAS_PATH = "AgenteSeller/Ventas.csv"
 
 
 if not GITHUB_TOKEN or not GITHUB_REPO:
