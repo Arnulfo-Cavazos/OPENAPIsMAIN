@@ -1,0 +1,151 @@
+openapi: 3.0.3
+info:
+  title: FastAPI Service
+  version: "1.0.0"
+  description: |
+    API para enviar correos a una lista de personas usando SMTP (Twilio SendGrid).
+servers:
+  - url: http://localhost:8000
+paths:
+  /enviar-correos:
+    post:
+      summary: Enviar correos a una lista de personas
+      description: |
+        Recibe un payload con una lista de personas y envía un correo a cada una.
+      operationId: enviar_correos_enviar_correos_post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonasPayload'
+            examples:
+              ejemplo:
+                summary: Ejemplo de payload
+                value:
+                  personas:
+                    - nombre: "Juan Perez"
+                      apariciones: 3
+                      tiempo_hablando_minutos: 15
+                      salario_usd: "1200"
+                      correo: "juan@example.com"
+                      tiene_sindicato: "no"
+                    - nombre: "Maria Lopez"
+                      apariciones: 5
+                      tiempo_hablando_minutos: 22
+                      salario_usd: "1500"
+                      correo: "maria@example.com"
+                      tiene_sindicato: "si"
+      responses:
+        "200":
+          description: Correos enviados correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnviarCorreosResponse'
+              examples:
+                ok:
+                  value:
+                    status: "ok"
+                    correos_enviados: 2
+        "422":
+          description: Error de validación del payload (FastAPI/Pydantic)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+        "500":
+          description: Error interno (por ejemplo fallo en SMTP)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    Persona:
+      title: Persona
+      type: object
+      required:
+        - nombre
+        - apariciones
+        - tiempo_hablando_minutos
+        - salario_usd
+        - correo
+        - tiene_sindicato
+      properties:
+        nombre:
+          type: string
+          example: "Juan Perez"
+        apariciones:
+          type: integer
+          example: 3
+        tiempo_hablando_minutos:
+          type: integer
+          example: 15
+        salario_usd:
+          type: string
+          example: "1200"
+        correo:
+          type: string
+          format: email
+          example: "juan@example.com"
+        tiene_sindicato:
+          type: string
+          example: "no"
+    PersonasPayload:
+      title: PersonasPayload
+      type: object
+      required:
+        - personas
+      properties:
+        personas:
+          type: array
+          items:
+            $ref: '#/components/schemas/Persona'
+    EnviarCorreosResponse:
+      title: EnviarCorreosResponse
+      type: object
+      required:
+        - status
+        - correos_enviados
+      properties:
+        status:
+          type: string
+          example: "ok"
+        correos_enviados:
+          type: integer
+          example: 2
+    ErrorResponse:
+      title: ErrorResponse
+      type: object
+      properties:
+        status:
+          type: string
+          example: "error"
+        message:
+          type: string
+          example: "SMTP authentication failed"
+    ValidationError:
+      title: ValidationError
+      type: object
+      required:
+        - loc
+        - msg
+        - type
+      properties:
+        loc:
+          type: array
+          items: {}
+        msg:
+          type: string
+        type:
+          type: string
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+``
