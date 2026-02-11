@@ -1,0 +1,273 @@
+openapi: 3.1.0
+info:
+  title: Manufacturing AI Data API
+  version: "1.0.0"
+  description: |
+    API diseñada para consumo por agentes de Inteligencia Artificial en contexto industrial.
+    
+    Permite:
+      - Consultar datasets de manufactura (BOM, producción, downtime, 5Whys)
+      - Filtrar dinámicamente por columnas
+      - Buscar número de parte específico
+      - Crear análisis 5Whys y hacer commit automático a GitHub
+    
+    IMPORTANTE PARA AGENTES:
+      - Usar primero `/datasets/guide` para entender semántica y columnas.
+      - Verificar que la columna existe antes de consultar.
+      - Usar `exact=true` cuando se trate de IDs o números de parte.
+      - Las búsquedas por defecto son parciales (contains, case-insensitive).
+
+servers:
+  - url: https://your-production-domain.com
+    description: Production server
+
+paths:
+
+  /:
+    get:
+      summary: Healthcheck del servicio
+      description: Verifica que la API esté activa.
+      responses:
+        "200":
+          description: API activa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: Manufacturing AI API running
+
+  /datasets/guide:
+    get:
+      summary: Obtener guía semántica de datasets
+      description: |
+        Devuelve metadatos estructurados de cada dataset disponible.
+        
+        USO RECOMENDADO PARA AGENTES:
+          - Consultar este endpoint antes de hacer búsquedas.
+          - Identificar columnas clave.
+          - Entender significado de cada campo.
+      responses:
+        "200":
+          description: Guía completa de datasets
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+                  properties:
+                    description:
+                      type: string
+                    key_columns:
+                      type: array
+                      items:
+                        type: string
+                    columns:
+                      type: object
+                      additionalProperties:
+                        type: string
+
+  /data/{dataset}:
+    get:
+      summary: Consulta dinámica de dataset
+      description: |
+        Permite consultar cualquier dataset disponible.
+
+        DATASETS VÁLIDOS:
+          - bom
+          - downtime
+          - production
+          - 5whys
+
+        LÓGICA DE FILTRADO:
+          - Si no se envía column/value → devuelve todo el dataset.
+          - Si exact=false (default) → búsqueda parcial (contains, case-insensitive).
+          - Si exact=true → coincidencia exacta.
+
+        RECOMENDACIÓN PARA AGENTES:
+          - Para IDs usar exact=true.
+          - Para búsquedas exploratorias usar exact=false.
+      parameters:
+        - name: dataset
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [bom, downtime, production, 5whys]
+
+        - name: column
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Nombre exacto de la columna a filtrar.
+
+        - name: value
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Valor a buscar en la columna indicada.
+
+        - name: exact
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: |
+            true  → comparación exacta
+            false → búsqueda parcial (contains)
+
+      responses:
+        "200":
+          description: Resultado de consulta
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DatasetResponse"
+
+        "400":
+          description: Dataset o columna inválida
+        "404":
+          description: Dataset no encontrado
+
+  /bom/part/{part_number}:
+    get:
+      summary: Buscar número de parte en BOM
+      description: |
+        Endpoint especializado para búsqueda exacta de número de parte.
+        
+        Lógica:
+          - Comparación exacta
+          - Case-insensitive
+          - Filtra exclusivamente en columna "Part Number"
+
+        USAR ESTE ENDPOINT cuando:
+          - Se tenga número de parte exacto
+          - Se requiera detalle completo del componente
+      parameters:
+        - name: part_number
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Número de parte exacto
+
+      responses:
+        "200":
+          description: Datos del número de parte
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  part_number:
+                    type: string
+                  rows:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+
+        "404":
+          description: Número de parte no encontrado
+
+  /5whys/add:
+    post:
+      summary: Crear nuevo análisis 5Whys
+      description: |
+        Agrega un análisis 5Whys al CSV local y realiza commit automático en GitHub.
+
+        REQUISITOS:
+          - Variables de entorno configuradas:
+              GITHUB_TOKEN
+              GITHUB_REPO
+          - analysis_id debe ser único.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FiveWhysModel"
+
+      responses:
+        "200":
+          description: Registro agregado y commit realizado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  commit_sha:
+                    type: string
+                    example: 9f3c82ab4d1f...
+
+        "500":
+          description: Error en GitHub o configuración
+
+components:
+
+  schemas:
+
+    DatasetResponse:
+      type: object
+      properties:
+        rows:
+          type: integer
+          description: Número de filas retornadas
+        columns:
+          type: array
+          items:
+            type: string
+          description: Lista de columnas disponibles en el dataset
+        data:
+          type: array
+          description: Registros filtrados
+          items:
+            type: object
+
+    FiveWhysModel:
+      type: object
+      required:
+        - analysis_id
+        - related_event_id
+        - problem_statement
+        - why_1
+        - why_2
+        - why_3
+        - why_4
+        - why_5
+        - corrective_action
+        - status
+      properties:
+        analysis_id:
+          type: string
+          description: Identificador único del análisis
+        related_event_id:
+          type: string
+          description: ID del evento relacionado (ej. downtime_id)
+        problem_statement:
+          type: string
+        why_1:
+          type: string
+        why_2:
+          type: string
+        why_3:
+          type: string
+        why_4:
+          type: string
+        why_5:
+          type: string
+        corrective_action:
+          type: string
+        status:
+          type: string
+          description: Estado del análisis (open, closed, in_progress)
