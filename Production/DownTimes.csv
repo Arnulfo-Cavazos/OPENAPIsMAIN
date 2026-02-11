@@ -1,0 +1,8 @@
+﻿downtime_id,order_id,production_line,machine_id,station_id,start_time,end_time,duration_minutes,downtime_category,downtime_reason_code,downtime_description,shift,operator_id,estimated_cost_per_min,total_downtime_cost,related_scrap_id,status
+DT-007,PO-810,L4,MC-L4-03,ST-TR-02,01/02/2026 15:40,01/02/2026 16:30,50,Máquina,MACH-008,Sensor velocidad fallando,B,OP-178,110,5500,NULL,Closed
+DT-003,PO-811,L4,MC-L4-01,ST-AS-03,02/02/2026 11:00,02/02/2026 11:35,35,Operador,OPR-001,Error setup estación,A,OP-145,150,5250,NULL,Closed
+DT-006,PO-812,L2,MC-L2-02,ST-HR-01,02/02/2026 13:00,02/02/2026 13:25,25,Material,MAT-009,Falta conector proveedor,A,OP-301,75,1875,NULL,Closed
+DT-005,PO-813,L2,MC-L2-04,ST-EN-02,04/02/2026 16:20,04/02/2026 17:05,45,Calidad,QLT-007,Torque fuera de especificación,A,OP-287,100,4500,SCR-003,Under Investigation
+DT-001,PO-814,L4,MC-L4-02,ST-TR-01,05/02/2026 09:15,05/02/2026 10:05,50,Máquina,MACH-004,Falla bomba hidráulica,C,OP-221,120,6000,SCR-001,Closed
+DT-002,PO-815,L3,MC-L3-05,ST-LD-02,05/02/2026 14:30,05/02/2026 15:10,40,Material,MAT-002,Lote LED defectuoso,C,OP-198,85,3400,SCR-002,Closed
+DT-004,PO-816,L3,MC-L3-01,ST-EN-01,12/02/2026 08:10,12/02/2026 09:45,95,Mantenimiento,MNT-010,Cambio herramienta programado,A,OP-310,130,12350,NULL,Closed
