@@ -1,0 +1,36 @@
+order_id,parent_product,Part Number,component_description,quantity_required,quantity_issued,quantity_consumed,unit,status
+PO-1001,ASSY-SEDAN,S4411K3,Chasis sedán,1,1,1,pcs,Issued
+PO-1001,ASSY-SEDAN,T8841A2,Sistema luces LED,4,4,4,pcs,Issued
+PO-1001,ASSY-SEDAN,H7712P9,Arnés principal,4,4,4,pcs,Issued
+PO-1001,ASSY-SEDAN,N3428C5,Motor V6,1,1,1,pcs,Issued
+PO-1001,ASSY-SEDAN,X5530Z8,Transmisión automática,1,1,1,pcs,Issued
+PO-1002,ENG-V8,B1100V8,Engine Block V8,1,1,1,pcs,Pending
+PO-1002,ENG-V8,C3308V8,Cigüeñal V8,8,8,8,pcs,Pending
+PO-1002,ENG-V8,G4408V8,Kit empaques V8,8,8,8,pcs,Pending
+PO-1002,ENG-V8,I9908V8,Sistema inyección V8,8,8,8,pcs,Pending
+PO-1002,ENG-V8,P2208V8,Pistón V8,3,3,3,pcs,Pending
+PO-1003,LIGHT-LED,L5501K9,Módulo LED,4,4,4,pcs,Shortage
+PO-1003,LIGHT-LED,H6602M3,Carcasa plástica,1,1,1,pcs,Shortage
+PO-1003,LIGHT-LED,B8821D4,Driver electrónico,1,1,1,pcs,Shortage
+PO-1003,LIGHT-LED,C9930T1,Cubierta transparente,1,1,1,pcs,Shortage
+PO-1003,LIGHT-LED,W7703N6,Arnés eléctrico,4,4,4,pcs,Shortage
+PO-1004,TRANS-AUTO,G8804Q2,Set engranes,5,5,5,pcs,Closed
+PO-1004,TRANS-AUTO,H9905R4,Bomba hidráulica,1,1,1,pcs,Closed
+PO-1004,TRANS-AUTO,C1010T8,Módulo control TCM,1,1,1,pcs,Closed
+PO-1004,TRANS-AUTO,F4422J7,Filtro transmisión,1,1,1,pcs,Closed
+PO-1004,TRANS-AUTO,S3312L0,Sensor velocidad,4,4,4,pcs,Closed
+PO-1005,HARNESS-X,T2200Y5,Terminal eléctrico,5,5,5,pcs,Closed
+PO-1005,HARNESS-X,C1100W2,Cable principal,1,1,1,pcs,Closed
+PO-1005,HARNESS-X,P3300Z9,Conector plástico,1,1,1,pcs,Closed
+PO-1005,HARNESS-X,S4400K8,Sleeve protector,1,1,1,pcs,Closed
+PO-1005,HARNESS-X,L5500M4,Label identificador,1,1,1,pcs,Closed
+PO-1006,TRANS-AUTO,G8804Q2,Set engranes,10,10,10,pcs,Running
+PO-1006,TRANS-AUTO,H9905R4,Bomba hidráulica,1,1,1,pcs,Running
+PO-1006,TRANS-AUTO,C1010T8,Módulo control TCM,1,1,1,pcs,Running
+PO-1006,TRANS-AUTO,F4422J7,Filtro transmisión,1,1,1,pcs,Running
+PO-1006,TRANS-AUTO,S3312L0,Sensor velocidad,3,3,3,pcs,Running
+PO-1007,ENG-V6,M1100B1,Engine Block V6,1,1,1,pcs,Closed
+PO-1007,ENG-V6,C3302F7,Cigüeñal V6,6,6,6,pcs,Closed
+PO-1007,ENG-V6,G4403H2,Kit empaques V6,6,6,6,pcs,Closed
+PO-1007,ENG-V6,I7701X3,Sistema inyección V6,6,6,6,pcs,Closed
+PO-1007,ENG-V6,P2201D4,Pistón V6,2,2,2,pcs,Closed
