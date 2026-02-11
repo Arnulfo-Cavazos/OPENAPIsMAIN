@@ -27,9 +27,9 @@ HEADERS = {
 # =====================================================
 
 CSV_FILES = {
-    "bom": "bill_of_materials.csv",
-    "downtime": "downtimes.csv",
-    "production": "production_orders.csv",
+    "bom": "BillOfMaterials.csv",
+    "downtime": "DownTimes.csv",
+    "production": "OrdenesDeProduccion.csv",
     "5whys": "5whys.csv"
 }
 
