@@ -6,10 +6,27 @@ from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 from typing import Optional
 
-app = FastAPI(title="Manufacturing AI Data API")
+app = FastAPI(
+    title="Manufacturing Intelligence API",
+    description="""
+    API diseñada para agentes de IA industriales.
+
+    Permite:
+    - Consultar órdenes de producción
+    - Consultar Bill of Materials (BOM)
+    - Consultar eventos de downtime
+    - Consultar y agregar análisis 5 Whys
+    - Filtrar dinámicamente por cualquier columna
+    - Buscar por número de parte
+    - Persistir análisis 5Whys en GitHub
+
+    Ideal para integrarse con agentes tipo WatsonX Orchestrate,
+    copilotos industriales o sistemas ERP.
+    """
+)
 
 # =====================================================
-# 🔐 CONFIGURACIÓN GITHUB (SOLO PARA 5WHYS)
+# 🔐 CONFIGURACIÓN GITHUB
 # =====================================================
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
@@ -36,51 +53,102 @@ CSV_FILES = {
 }
 
 # =====================================================
-# 📘 GUÍA SEMÁNTICA PARA AGENTE IA
+# 📘 GUÍA SEMÁNTICA COMPLETA PARA AGENTE IA
 # =====================================================
 
 DATASET_GUIDE = {
-    "bom": {
-        "description": "Bill of Materials por orden de producción",
-        "key_columns": ["order_id", "Part Number", "parent_product"]
-    },
     "downtime": {
-        "description": "Eventos de paro en producción",
-        "key_columns": ["downtime_id", "order_id", "machine_id"]
+        "description": "Eventos de paro en líneas de producción.",
+        "columns_meaning": {
+            "downtime_id": "Identificador único del evento de paro.",
+            "order_id": "Orden de producción afectada.",
+            "production_line": "Línea donde ocurrió el evento.",
+            "machine_id": "Máquina específica afectada.",
+            "station_id": "Estación dentro de la línea.",
+            "start_time": "Inicio del paro.",
+            "end_time": "Fin del paro.",
+            "duration_minutes": "Duración total en minutos.",
+            "downtime_category": "Categoría general del paro (Máquina, Material, Calidad, etc).",
+            "downtime_reason_code": "Código específico del motivo.",
+            "downtime_description": "Descripción textual del evento.",
+            "shift": "Turno (A, B, C).",
+            "operator_id": "Operador responsable.",
+            "estimated_cost_per_min": "Costo estimado por minuto.",
+            "total_downtime_cost": "Costo total del evento.",
+            "related_scrap_id": "ID de scrap relacionado.",
+            "status": "Estado del evento (Open, Closed)."
+        }
+    },
+    "bom": {
+        "description": "Bill of Materials asociado a órdenes.",
+        "columns_meaning": {
+            "order_id": "Orden de producción.",
+            "parent_product": "Producto ensamblado.",
+            "Part Number": "Número de parte del componente.",
+            "component_description": "Descripción del componente.",
+            "quantity_required": "Cantidad requerida.",
+            "quantity_issued": "Cantidad liberada.",
+            "quantity_consumed": "Cantidad consumida.",
+            "unit": "Unidad de medida.",
+            "status": "Estado del componente."
+        }
     },
     "production": {
-        "description": "Órdenes de producción",
-        "key_columns": ["order_id", "product_id", "status"]
+        "description": "Órdenes de producción planeadas y ejecutadas.",
+        "columns_meaning": {
+            "order_id": "Identificador de la orden.",
+            "product_id": "Producto fabricado.",
+            "quantity_planned": "Cantidad planeada.",
+            "quantity_completed": "Cantidad terminada.",
+            "start_date_planned": "Inicio planeado.",
+            "end_date_planned": "Fin planeado.",
+            "start_date_actual": "Inicio real.",
+            "end_date_actual": "Fin real.",
+            "status": "Estado actual.",
+            "priority": "Prioridad numérica.",
+            "production_line": "Línea asignada.",
+            "shift": "Turno asignado."
+        }
     },
     "5whys": {
-        "description": "Análisis causa raíz",
-        "key_columns": ["analysis_id", "related_event_id"]
+        "description": "Análisis causa raíz estructurado bajo metodología 5 Whys.",
+        "columns_meaning": {
+            "analysis_id": "ID único del análisis.",
+            "related_event_id": "Evento asociado (ej. downtime_id).",
+            "problem_statement": "Definición del problema.",
+            "why_1": "Primera causa.",
+            "why_2": "Segunda causa.",
+            "why_3": "Tercera causa.",
+            "why_4": "Cuarta causa.",
+            "why_5": "Quinta causa raíz.",
+            "corrective_action": "Acción correctiva definida.",
+            "status": "Estado del análisis."
+        }
     }
 }
 
 # =====================================================
-# 📥 CARGAR CSV LOCAL (ROBUSTO)
+# 📥 CARGA SEGURA CSV
 # =====================================================
 
 def load_csv(dataset: str) -> pd.DataFrame:
-    file_path = CSV_FILES.get(dataset)
 
-    if not file_path:
+    dataset = dataset.lower()
+
+    if dataset not in CSV_FILES:
         raise HTTPException(status_code=400, detail="Dataset inválido")
 
-    if not os.path.exists(file_path):
-        raise HTTPException(
-            status_code=404,
-            detail=f"Archivo no encontrado en producción: {file_path}"
-        )
+    path = CSV_FILES[dataset]
+
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail=f"Archivo no encontrado: {path}")
 
     try:
-        df = pd.read_csv(file_path, encoding="utf-8")
-        df.columns = df.columns.str.strip()  # eliminar espacios invisibles
+        df = pd.read_csv(path, encoding="utf-8")
+        df.columns = df.columns.str.strip()
         return df
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error leyendo CSV: {str(e)}")
-
 
 # =====================================================
 # 📘 ENDPOINT GUÍA
@@ -90,9 +158,8 @@ def load_csv(dataset: str) -> pd.DataFrame:
 def get_guide():
     return DATASET_GUIDE
 
-
 # =====================================================
-# 🔎 CONSULTA DINÁMICA SEGURA
+# 🔎 CONSULTA DINÁMICA UNIVERSAL
 # =====================================================
 
 @app.get("/data/{dataset}")
@@ -100,44 +167,36 @@ def query_data(
     dataset: str,
     column: Optional[str] = Query(None),
     value: Optional[str] = Query(None),
-    exact: Optional[bool] = Query(False)
+    exact: bool = False
 ):
 
     df = load_csv(dataset)
 
     if column and value:
+        real_column = next(
+            (c for c in df.columns if c.lower() == column.lower()),
+            None
+        )
 
-        # Buscar columna ignorando mayúsculas
-        matched_column = None
-        for col in df.columns:
-            if col.lower() == column.lower():
-                matched_column = col
-                break
-
-        if not matched_column:
+        if not real_column:
             raise HTTPException(
                 status_code=400,
                 detail=f"Columna inválida. Disponibles: {list(df.columns)}"
             )
 
-        try:
-            if exact:
-                df = df[df[matched_column].astype(str) == value]
-            else:
-                df = df[df[matched_column].astype(str).str.contains(value, case=False, na=False)]
-        except Exception as e:
-            raise HTTPException(status_code=500, detail=f"Error filtrando datos: {str(e)}")
+        if exact:
+            df = df[df[real_column].astype(str) == value]
+        else:
+            df = df[df[real_column].astype(str).str.contains(value, case=False, na=False)]
 
     return {
         "dataset": dataset,
         "rows": len(df),
-        "columns": list(df.columns),
         "data": df.to_dict(orient="records")
     }
 
-
 # =====================================================
-# 🔎 BÚSQUEDA ROBUSTA POR NÚMERO DE PARTE
+# 🔎 BÚSQUEDA POR NÚMERO DE PARTE
 # =====================================================
 
 @app.get("/bom/part/{part_number}")
@@ -145,36 +204,20 @@ def get_part_details(part_number: str):
 
     df = load_csv("bom")
 
-    # Buscar columna que contenga "part"
-    target_column = None
-    for col in df.columns:
-        if "part" in col.lower():
-            target_column = col
-            break
+    part_column = next(
+        (c for c in df.columns if "part" in c.lower()),
+        None
+    )
 
-    if not target_column:
-        raise HTTPException(
-            status_code=500,
-            detail=f"No se encontró columna relacionada a 'Part Number'. Columnas disponibles: {list(df.columns)}"
-        )
+    if not part_column:
+        raise HTTPException(status_code=500, detail="Columna Part Number no encontrada")
 
-    df_filtered = df[
-        df[target_column].astype(str).str.upper() == part_number.upper()
-    ]
+    result = df[df[part_column].astype(str).str.upper() == part_number.upper()]
 
-    if df_filtered.empty:
-        raise HTTPException(
-            status_code=404,
-            detail=f"Número de parte {part_number} no encontrado"
-        )
+    if result.empty:
+        raise HTTPException(status_code=404, detail="Parte no encontrada")
 
-    return {
-        "part_number": part_number,
-        "column_used": target_column,
-        "rows": len(df_filtered),
-        "data": df_filtered.to_dict(orient="records")
-    }
-
+    return result.to_dict(orient="records")
 
 # =====================================================
 # ✏️ MODELO 5WHYS
@@ -192,72 +235,63 @@ class FiveWhysModel(BaseModel):
     corrective_action: str
     status: str
 
-
 # =====================================================
-# 📤 COMMIT A GITHUB ROBUSTO
+# 📤 COMMIT A GITHUB (OPCIONAL)
 # =====================================================
 
-def commit_5whys_to_github(df: pd.DataFrame, message: str):
+def commit_5whys(df: pd.DataFrame, message: str):
 
     if not GITHUB_TOKEN or not GITHUB_REPO:
-        raise HTTPException(status_code=500, detail="GitHub no configurado")
+        return "GitHub not configured — local save only"
 
     url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{CSV_5WHYS_PATH}"
 
-    try:
-        get_resp = requests.get(url, headers=HEADERS)
-        if get_resp.status_code != 200:
-            raise HTTPException(status_code=500, detail="No se pudo obtener SHA del archivo")
+    get_resp = requests.get(url, headers=HEADERS)
 
-        sha = get_resp.json()["sha"]
+    if get_resp.status_code != 200:
+        return "Could not retrieve file SHA"
 
-        csv_content = df.to_csv(index=False)
-        encoded_content = base64.b64encode(csv_content.encode()).decode()
+    sha = get_resp.json()["sha"]
 
-        payload = {
-            "message": message,
-            "content": encoded_content,
-            "sha": sha,
-            "branch": GITHUB_BRANCH
-        }
+    encoded = base64.b64encode(df.to_csv(index=False).encode()).decode()
 
-        put_resp = requests.put(url, headers=HEADERS, json=payload)
+    payload = {
+        "message": message,
+        "content": encoded,
+        "sha": sha,
+        "branch": GITHUB_BRANCH
+    }
 
-        if put_resp.status_code not in [200, 201]:
-            raise HTTPException(
-                status_code=500,
-                detail=f"Error haciendo commit: {put_resp.text}"
-            )
+    put_resp = requests.put(url, headers=HEADERS, json=payload)
 
-        return put_resp.json()["commit"]["sha"]
+    if put_resp.status_code not in [200, 201]:
+        return f"GitHub error: {put_resp.text}"
 
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error GitHub: {str(e)}")
-
+    return put_resp.json()["commit"]["sha"]
 
 # =====================================================
-# ✏️ AGREGAR 5WHYS + COMMIT
+# ➕ AGREGAR 5WHYS
 # =====================================================
 
 @app.post("/5whys/add")
 def add_5whys(record: FiveWhysModel):
 
     df = load_csv("5whys")
+
     new_row = pd.DataFrame([record.dict()])
     df = pd.concat([df, new_row], ignore_index=True)
 
     df.to_csv(CSV_FILES["5whys"], index=False)
 
-    commit_sha = commit_5whys_to_github(
+    commit_result = commit_5whys(
         df,
         f"Add 5Whys analysis {record.analysis_id}"
     )
 
     return {
-        "status": "success",
-        "commit_sha": commit_sha
+        "status": "5Whys added successfully",
+        "commit_result": commit_result
     }
-
 
 # =====================================================
 # ❤️ HEALTHCHECK
