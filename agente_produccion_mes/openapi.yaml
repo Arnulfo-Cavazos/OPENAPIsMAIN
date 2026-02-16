@@ -7,7 +7,7 @@ info:
     cálculo de OEE y recomendaciones operativas para agentes de IA industriales.
 
 servers:
-  - url: hhttps://production-bob.onrender.com
+  - url: https://production-bob.onrender.com
 
 tags:
   - name: Produccion
