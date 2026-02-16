@@ -1,312 +1,154 @@
-openapi: 3.0.0
+openapi: 3.0.3
 info:
   title: Agente de Producción MES API
-  description: |
-    API para monitoreo de producción en tiempo real, análisis de desviaciones y recomendaciones operativas.
-    
-    Este agente proporciona:
-    - Monitoreo de órdenes de producción en tiempo real
-    - Análisis de desviaciones y causas raíz
-    - Cálculo de OEE (Overall Equipment Effectiveness)
-    - Seguimiento de consumo de materiales vs BOM
-    - Gestión de downtime y scrap
-    - Identificación de materiales faltantes
   version: 1.0.0
-  contact:
-    name: Manufacturing Operations
-    email: manufacturing@empresa.com
+  description: |
+    API para monitoreo de producción en tiempo real, análisis de desviaciones,
+    cálculo de OEE y recomendaciones operativas para agentes de IA industriales.
 
 servers:
-  - url: https://api-produccion-mes.render.com
-    description: Servidor de producción en Render
-  - url: http://localhost:8000
-    description: Servidor de desarrollo local
+  - url: hhttps://production-bob.onrender.com
 
 tags:
-  - name: Órdenes de Producción
-    description: Gestión de órdenes de producción
-  - name: Estado de Líneas
-    description: Monitoreo en tiempo real de líneas
-  - name: Análisis
-    description: Análisis de desviaciones y causas raíz
+  - name: Produccion
+  - name: Analisis
   - name: Materiales
-    description: Consumo y disponibilidad de materiales
   - name: Calidad
-    description: Downtime y scrap
-  - name: OEE
-    description: Cálculo de eficiencia
   - name: Personal
-    description: Gestión de personal
 
 paths:
+
   /:
     get:
-      summary: Información de la API
+      tags: [Produccion]
+      summary: Estado general de la API
+      operationId: getApiStatus
       responses:
-        '200':
-          description: Información básica de la API
+        "200":
+          description: Información general
 
   /ordenes-produccion/list:
     get:
-      tags:
-        - Órdenes de Producción
-      summary: Listar todas las órdenes
-      description: Obtiene la lista completa de órdenes de producción
+      tags: [Produccion]
+      summary: Lista todas las órdenes de producción
+      operationId: listOrdenesProduccion
       responses:
-        '200':
+        "200":
           description: Lista de órdenes
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/OrdenProduccion'
 
   /ordenes-produccion/activas:
     get:
-      tags:
-        - Órdenes de Producción
-      summary: Órdenes activas
-      description: Obtiene solo las órdenes en proceso o iniciadas
+      tags: [Produccion]
+      summary: Obtiene órdenes activas
+      operationId: getOrdenesActivas
       responses:
-        '200':
+        "200":
           description: Órdenes activas
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/OrdenProduccion'
 
   /produccion-actual:
     get:
-      tags:
-        - Estado de Líneas
-      summary: Estado actual de producción
-      description: Obtiene el estado actual de todas las líneas de producción
+      tags: [Produccion]
+      summary: Estado actual de líneas de producción
+      operationId: getProduccionActual
       responses:
-        '200':
-          description: Estado de líneas
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/EstadoLinea'
+        "200":
+          description: Estado por línea
 
   /analisis-turno:
     post:
-      tags:
-        - Análisis
-      summary: Analizar turno
-      description: Analiza desviaciones y causas raíz de un turno específico
+      tags: [Analisis]
+      summary: Analiza desviaciones y causas raíz por turno
+      operationId: analizarTurno
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AnalisisTurnoQuery'
+              $ref: "#/components/schemas/AnalisisTurnoQuery"
       responses:
-        '200':
-          description: Análisis del turno
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AnalisisTurno'
-        '404':
+        "200":
+          description: Resultado del análisis del turno
+        "404":
           description: Línea no encontrada
 
   /consumo-materiales/{orden_id}:
     get:
-      tags:
-        - Materiales
-      summary: Consumo de materiales
-      description: Obtiene el consumo de materiales vs BOM para una orden
+      tags: [Materiales]
+      summary: Consumo de materiales vs BOM
+      operationId: getConsumoMateriales
       parameters:
         - name: orden_id
           in: path
           required: true
           schema:
             type: string
-          example: "OP-2024-5678"
       responses:
-        '200':
+        "200":
           description: Consumo de materiales
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/ConsumoMaterial'
-        '404':
+        "404":
           description: Orden no encontrada
 
   /material-faltante:
     post:
-      tags:
-        - Materiales
-      summary: Identificar materiales faltantes
-      description: Identifica materiales faltantes para completar una orden
+      tags: [Materiales]
+      summary: Identifica materiales faltantes para una orden
+      operationId: getMaterialFaltante
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MaterialFaltanteQuery'
+              $ref: "#/components/schemas/MaterialFaltanteQuery"
       responses:
-        '200':
+        "200":
           description: Materiales faltantes
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MaterialFaltante'
-        '404':
-          description: Orden no encontrada
 
   /downtime/list:
     get:
-      tags:
-        - Calidad
-      summary: Listar downtime
-      description: Lista todos los eventos de downtime registrados
+      tags: [Analisis]
+      summary: Lista eventos de downtime
+      operationId: listDowntime
       responses:
-        '200':
-          description: Lista de downtime
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Downtime'
+        "200":
+          description: Lista downtime
 
   /scrap/list:
     get:
-      tags:
-        - Calidad
-      summary: Listar scrap
-      description: Lista todos los eventos de scrap registrados
+      tags: [Calidad]
+      summary: Lista eventos de scrap
+      operationId: listScrap
       responses:
-        '200':
-          description: Lista de scrap
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Scrap'
+        "200":
+          description: Lista scrap
 
   /oee/calcular/{linea}:
     get:
-      tags:
-        - OEE
-      summary: Calcular OEE
-      description: Calcula OEE (Overall Equipment Effectiveness) para una línea
+      tags: [Analisis]
+      summary: Calcula OEE por línea
+      operationId: calcularOEE
       parameters:
         - name: linea
           in: path
           required: true
           schema:
             type: string
-          example: "Línea 1"
       responses:
-        '200':
-          description: OEE calculado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/OEE'
-        '404':
+        "200":
+          description: Resultado OEE
+        "404":
           description: Línea no encontrada
 
   /personal/asignado:
     get:
-      tags:
-        - Personal
-      summary: Personal asignado
-      description: Obtiene el personal asignado por línea y turno
+      tags: [Personal]
+      summary: Personal asignado por línea
+      operationId: getPersonalAsignado
       responses:
-        '200':
-          description: Lista de personal
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Personal'
+        "200":
+          description: Personal asignado
 
 components:
   schemas:
-    OrdenProduccion:
-      type: object
-      properties:
-        Orden_ID:
-          type: string
-          example: "OP-2024-5678"
-        Linea:
-          type: string
-          example: "Línea 1"
-        Producto:
-          type: string
-          example: "Producto A"
-        Cantidad_Objetivo:
-          type: integer
-          example: 1000
-        Cantidad_Producida:
-          type: integer
-          example: 847
-        Estado:
-          type: string
-          enum: [En Proceso, Completada, Iniciada, Pendiente]
-          example: "En Proceso"
-        Fecha_Inicio:
-          type: string
-          format: date-time
-        Fecha_Fin_Estimada:
-          type: string
-          format: date-time
-        Turno:
-          type: integer
-          example: 2
-        Prioridad:
-          type: string
-          enum: [Alta, Media, Baja]
-
-    EstadoLinea:
-      type: object
-      properties:
-        linea:
-          type: string
-          example: "Línea 1"
-        estado:
-          type: string
-          example: "Produciendo"
-        orden_id:
-          type: string
-          example: "OP-2024-5678"
-        producto:
-          type: string
-          example: "Producto A"
-        cantidad_objetivo:
-          type: integer
-          example: 1000
-        cantidad_producida:
-          type: integer
-          example: 847
-        porcentaje_completado:
-          type: number
-          example: 84.7
-        turno_actual:
-          type: integer
-          example: 2
-        operadores:
-          type: integer
-          example: 4
-        tiempo_ciclo_actual:
-          type: number
-          example: 32.5
-        oee_actual:
-          type: number
-          example: 0.78
 
     AnalisisTurnoQuery:
       type: object
@@ -316,73 +158,15 @@ components:
       properties:
         linea:
           type: string
-          example: "Línea 1"
+          example: LINEA_1
         turno:
           type: integer
-          example: 2
+          example: 1
         fecha:
           type: string
           format: date
-
-    AnalisisTurno:
-      type: object
-      properties:
-        linea:
-          type: string
-        turno:
-          type: integer
-        orden_id:
-          type: string
-        producto:
-          type: string
-        desviacion_output:
-          type: object
-          properties:
-            real:
-              type: integer
-            objetivo:
-              type: integer
-            desviacion:
-              type: integer
-            porcentaje:
-              type: number
-        oee_turno:
-          type: number
-        causas_raiz:
-          type: array
-          items:
-            type: object
-            properties:
-              categoria:
-                type: string
-              descripcion:
-                type: string
-              impacto_porcentaje:
-                type: number
-        recomendaciones:
-          type: array
-          items:
-            type: string
-        downtime_total_minutos:
-          type: number
-        scrap_total_unidades:
-          type: integer
-
-    ConsumoMaterial:
-      type: object
-      properties:
-        Orden_ID:
-          type: string
-        Material:
-          type: string
-        Cantidad_BOM:
-          type: number
-        Cantidad_Consumida:
-          type: number
-        Inventario_Disponible:
-          type: number
-        Unidad:
-          type: string
+          nullable: true
+          example: "2026-02-16"
 
     MaterialFaltanteQuery:
       type: object
@@ -391,127 +175,15 @@ components:
       properties:
         orden_id:
           type: string
-          example: "OP-2024-5678"
+          example: OP-10234
 
-    MaterialFaltante:
-      type: object
-      properties:
-        orden_id:
-          type: string
-        producto:
-          type: string
-        cantidad_pendiente:
-          type: integer
-        materiales_faltantes:
-          type: array
-          items:
+  responses:
+    ErrorResponse:
+      description: Error general
+      content:
+        application/json:
+          schema:
             type: object
             properties:
-              material:
+              detail:
                 type: string
-              necesario:
-                type: number
-              disponible:
-                type: number
-              faltante:
-                type: number
-              unidad:
-                type: string
-              horas_disponibles:
-                type: number
-              criticidad:
-                type: string
-                enum: [CRÍTICO, ALTO, MEDIO]
-        total_faltantes:
-          type: integer
-
-    Downtime:
-      type: object
-      properties:
-        Downtime_ID:
-          type: string
-        Linea:
-          type: string
-        Fecha_Hora:
-          type: string
-          format: date-time
-        Causa:
-          type: string
-        Duracion_Minutos:
-          type: integer
-        Turno:
-          type: integer
-        Unidades_Perdidas:
-          type: integer
-        Categoria:
-          type: string
-          enum: [Material, Equipo, Método, Personal]
-
-    Scrap:
-      type: object
-      properties:
-        Scrap_ID:
-          type: string
-        Linea:
-          type: string
-        Orden_ID:
-          type: string
-        Fecha_Hora:
-          type: string
-          format: date-time
-        Cantidad:
-          type: integer
-        Defecto:
-          type: string
-        Estacion:
-          type: string
-        Turno:
-          type: integer
-        Operador:
-          type: string
-
-    OEE:
-      type: object
-      properties:
-        linea:
-          type: string
-        oee:
-          type: number
-          example: 0.78
-        disponibilidad:
-          type: number
-          example: 0.85
-        performance:
-          type: number
-          example: 0.92
-        calidad:
-          type: number
-          example: 0.99
-        downtime_minutos:
-          type: number
-        tiempo_ciclo_real:
-          type: number
-        tiempo_ciclo_estandar:
-          type: number
-
-    Personal:
-      type: object
-      properties:
-        Empleado_ID:
-          type: string
-        Nombre:
-          type: string
-        Linea_Asignada:
-          type: string
-        Turno:
-          type: integer
-        Puesto:
-          type: string
-        Experiencia_Meses:
-          type: integer
-        Certificaciones:
-          type: string
-        Productividad_Promedio:
-          type: number
-
-# Made with Bob
