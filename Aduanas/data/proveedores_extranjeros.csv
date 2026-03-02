@@ -1,0 +1,301 @@
+id_proveedor,nombre_empresa,pais,ciudad,fecha_registro_local,anios_operacion,historial_exportaciones_mx,nivel_confianza,motivo_observacion,asociado_a_alerta_id,relacionado_con_empresa_sancionada
+PROV-001,Electronics Solutions Inc,Estados Unidos,Los Angeles,1995-08-03,30,191,VERIFICADO,,,False
+PROV-002,Components Solutions Pte Ltd,Corea del Sur,Daejeon,2018-06-23,7,341,VERIFICADO,,,False
+PROV-003,Chemicals Manufacturing SA,China,Beijing,2002-12-13,23,459,VERIFICADO,,,False
+PROV-004,Technology Solutions Co Ltd,Estados Unidos,Chicago,1998-01-09,28,365,VERIFICADO,,,False
+PROV-005,Chemicals Automotive Corp,China,Shenzhen,2019-07-06,6,145,VERIFICADO,,,False
+PROV-006,Machinery Technology Pte Ltd,Alemania,Munich,1995-03-10,30,303,VERIFICADO,,,False
+PROV-007,Electronics Trading Pte Ltd,Japón,Yokohama,1997-09-27,28,488,VERIFICADO,,,False
+PROV-008,Technology Solutions Co Ltd,Estados Unidos,Chicago,2019-12-03,6,364,VERIFICADO,,,False
+PROV-009,Textiles Foods Inc,Taiwán,Taipei,2006-10-14,19,469,VERIFICADO,,,False
+PROV-010,Textiles Textiles GmbH,España,Seville,2009-11-24,16,24,VERIFICADO,,,False
+PROV-011,Group Technology Corp,Italia,Turin,2005-11-27,20,322,VERIFICADO,,,False
+PROV-012,Chemicals Global Pte Ltd,China,Beijing,2013-06-01,12,32,VERIFICADO,,,False
+PROV-013,Export Industries GmbH,China,Beijing,1997-10-03,28,454,VERIFICADO,,,False
+PROV-014,Electronics Trading Co Ltd,Taiwán,Tainan,2016-03-05,9,50,VERIFICADO,,,False
+PROV-015,Components Trading Inc,Japón,Kobe,1998-08-31,27,231,VERIFICADO,,,False
+PROV-016,International Machinery Corp,España,Madrid,2009-01-27,17,346,VERIFICADO,,,False
+PROV-017,Foods Foods SpA,Japón,Nagoya,2010-08-17,15,153,VERIFICADO,,,False
+PROV-018,Export Import Inc,Corea del Sur,Busan,2014-12-26,11,58,VERIFICADO,,,False
+PROV-019,Export Group Pte Ltd,Alemania,Frankfurt,2010-08-10,15,258,VERIFICADO,,,False
+PROV-020,Export Trading Corp,Japón,Yokohama,2006-10-23,19,177,VERIFICADO,,,False
+PROV-021,Import Trading GmbH,Corea del Sur,Daejeon,2014-09-19,11,40,VERIFICADO,,,False
+PROV-022,Textiles Electronics Corp,Vietnam,Hai Phong,2019-03-23,6,282,VERIFICADO,,,False
+PROV-023,Group Technology Inc,China,Beijing,2006-05-27,19,457,VERIFICADO,,,False
+PROV-024,Export Global Co Ltd,Italia,Milan,1995-12-29,30,431,VERIFICADO,,,False
+PROV-025,Trading Electronics Inc,Japón,Osaka,2008-08-28,17,121,VERIFICADO,,,False
+PROV-026,Import Trading Pte Ltd,China,Shenzhen,2000-07-24,25,121,VERIFICADO,,,False
+PROV-027,Machinery Automotive SpA,Estados Unidos,Los Angeles,2019-12-08,6,256,VERIFICADO,,,False
+PROV-028,Chemicals Industries Corp,China,Beijing,2007-12-09,18,369,VERIFICADO,,,False
+PROV-029,Technology Textiles SpA,Corea del Sur,Incheon,2017-02-15,9,248,VERIFICADO,,,False
+PROV-030,Electronics Automotive Corp,Taiwán,Hsinchu,2020-01-19,6,265,VERIFICADO,,,False
+PROV-031,Technology Group Co Ltd,Taiwán,Kaohsiung,1995-06-14,30,349,VERIFICADO,,,False
+PROV-032,Chemicals Solutions Pte Ltd,Taiwán,Taichung,2003-07-03,22,265,VERIFICADO,,,False
+PROV-033,Technology Global SA,Taiwán,Taichung,2020-09-21,5,112,VERIFICADO,,,False
+PROV-034,Technology Manufacturing Inc,China,Beijing,2009-05-11,16,291,VERIFICADO,,,False
+PROV-035,Technology Automotive Pte Ltd,Japón,Osaka,2004-02-08,22,156,VERIFICADO,,,False
+PROV-036,Chemicals Global Pte Ltd,Alemania,Berlin,2002-09-27,23,141,VERIFICADO,,,False
+PROV-037,Systems Group SA,Brasil,Fortaleza,2002-12-02,23,92,VERIFICADO,,,False
+PROV-038,Technology Technology Co Ltd,Alemania,Frankfurt,2019-02-04,7,39,VERIFICADO,,,False
+PROV-039,Industries Import Pte Ltd,España,Seville,2010-04-26,15,20,VERIFICADO,,,False
+PROV-040,Import Export Pte Ltd,Alemania,Hamburg,2020-12-18,5,50,VERIFICADO,,,False
+PROV-041,Export Foods SA,Estados Unidos,Houston,1999-08-19,26,380,VERIFICADO,,,False
+PROV-042,Systems Foods Corp,Vietnam,Hanoi,1997-07-29,28,100,VERIFICADO,,,False
+PROV-043,Manufacturing Automotive SA,España,Bilbao,2009-11-12,16,422,VERIFICADO,,,False
+PROV-044,Automotive International Corp,Corea del Sur,Busan,1998-03-09,28,110,VERIFICADO,,,False
+PROV-045,Technology Export SpA,Brasil,Brasilia,1995-05-01,30,491,VERIFICADO,,,False
+PROV-046,Chemicals Foods Corp,Alemania,Hamburg,2018-11-03,7,401,VERIFICADO,,,False
+PROV-047,Industries Technology Inc,Estados Unidos,Houston,2020-10-19,5,248,VERIFICADO,,,False
+PROV-048,International Automotive SpA,Vietnam,Da Nang,2018-03-04,8,422,VERIFICADO,,,False
+PROV-049,Automotive Chemicals BV,Taiwán,Kaohsiung,2007-06-28,18,472,VERIFICADO,,,False
+PROV-050,Technology Manufacturing SpA,Estados Unidos,Miami,2002-04-09,23,423,VERIFICADO,,,False
+PROV-051,Electronics Export Inc,Estados Unidos,Los Angeles,2020-09-21,5,170,VERIFICADO,,,False
+PROV-052,Trading Group Inc,Vietnam,Hanoi,2008-12-14,17,474,VERIFICADO,,,False
+PROV-053,Global Machinery Corp,Vietnam,Can Tho,2005-03-12,20,334,VERIFICADO,,,False
+PROV-054,Foods Industries GmbH,Brasil,Salvador,2020-01-12,6,100,VERIFICADO,,,False
+PROV-055,Electronics Textiles SA,Taiwán,Hsinchu,1997-06-06,28,389,VERIFICADO,,,False
+PROV-056,Group Systems Corp,Japón,Tokyo,2008-05-18,17,45,VERIFICADO,,,False
+PROV-057,Textiles Systems GmbH,China,Guangzhou,2008-01-22,18,21,VERIFICADO,,,False
+PROV-058,Textiles Trading SpA,Estados Unidos,Los Angeles,2015-04-13,10,125,VERIFICADO,,,False
+PROV-059,Systems Electronics Inc,Estados Unidos,Houston,2008-07-08,17,421,VERIFICADO,,,False
+PROV-060,Chemicals Manufacturing SpA,España,Seville,2009-08-23,16,114,VERIFICADO,,,False
+PROV-061,Technology Electronics Co Ltd,China,Guangzhou,2006-10-24,19,245,VERIFICADO,,,False
+PROV-062,Group Machinery GmbH,Alemania,Munich,1999-09-14,26,63,VERIFICADO,,,False
+PROV-063,Machinery Group SpA,España,Barcelona,2008-06-12,17,450,VERIFICADO,,,False
+PROV-064,Automotive International Corp,Brasil,Rio de Janeiro,2012-01-25,14,263,VERIFICADO,,,False
+PROV-065,Industries Import Co Ltd,Estados Unidos,Miami,2015-11-17,10,108,VERIFICADO,,,False
+PROV-066,Import Electronics Pte Ltd,Taiwán,Taipei,2007-11-24,18,369,VERIFICADO,,,False
+PROV-067,Group Foods SA,Estados Unidos,Los Angeles,2003-08-17,22,218,VERIFICADO,,,False
+PROV-068,Solutions Machinery Inc,España,Seville,2020-03-10,5,489,VERIFICADO,,,False
+PROV-069,Export Export Inc,Taiwán,Kaohsiung,2002-05-11,23,95,VERIFICADO,,,False
+PROV-070,Electronics Automotive SpA,Corea del Sur,Daejeon,2009-08-08,16,470,VERIFICADO,,,False
+PROV-071,Electronics Automotive Corp,Brasil,Fortaleza,2019-12-06,6,262,VERIFICADO,,,False
+PROV-072,International Automotive Pte Ltd,Brasil,Fortaleza,1998-08-16,27,368,VERIFICADO,,,False
+PROV-073,Chemicals Global Pte Ltd,Japón,Tokyo,2005-10-21,20,401,VERIFICADO,,,False
+PROV-074,Export Technology Corp,Corea del Sur,Incheon,2005-03-16,20,163,VERIFICADO,,,False
+PROV-075,Machinery Trading GmbH,Corea del Sur,Daegu,2010-10-20,15,416,VERIFICADO,,,False
+PROV-076,Solutions Chemicals Co Ltd,Italia,Rome,2007-07-02,18,487,VERIFICADO,,,False
+PROV-077,Solutions Automotive Corp,España,Madrid,2011-03-08,14,53,VERIFICADO,,,False
+PROV-078,Industries International GmbH,España,Bilbao,2015-11-27,10,34,VERIFICADO,,,False
+PROV-079,Industries Electronics Pte Ltd,China,Beijing,2009-03-11,16,45,VERIFICADO,,,False
+PROV-080,Global Technology Pte Ltd,Italia,Venice,2001-01-04,25,223,VERIFICADO,,,False
+PROV-081,Group Chemicals Pte Ltd,Italia,Venice,2015-07-06,10,248,VERIFICADO,,,False
+PROV-082,Textiles Global BV,Alemania,Hamburg,1999-01-22,27,403,VERIFICADO,,,False
+PROV-083,Technology Technology GmbH,China,Shanghai,2002-11-19,23,457,VERIFICADO,,,False
+PROV-084,Global Systems Corp,Corea del Sur,Daegu,2020-03-19,5,282,VERIFICADO,,,False
+PROV-085,Electronics Textiles SA,Alemania,Stuttgart,2020-11-09,5,430,VERIFICADO,,,False
+PROV-086,Electronics Industries SpA,Taiwán,Tainan,2009-07-14,16,456,VERIFICADO,,,False
+PROV-087,Export Global Pte Ltd,Corea del Sur,Daejeon,2001-08-17,24,442,VERIFICADO,,,False
+PROV-088,Export Systems Inc,España,Bilbao,2011-10-05,14,331,VERIFICADO,,,False
+PROV-089,Electronics Textiles GmbH,Vietnam,Da Nang,2010-10-16,15,347,VERIFICADO,,,False
+PROV-090,Automotive Foods Corp,Alemania,Stuttgart,2014-02-04,12,411,VERIFICADO,,,False
+PROV-091,Automotive Automotive Co Ltd,China,Beijing,2012-08-03,13,171,VERIFICADO,,,False
+PROV-092,Technology Group SpA,Brasil,Fortaleza,2014-09-11,11,437,VERIFICADO,,,False
+PROV-093,Group Manufacturing SA,Vietnam,Can Tho,2015-04-03,10,173,VERIFICADO,,,False
+PROV-094,Group Manufacturing Pte Ltd,Estados Unidos,Miami,1997-10-28,28,85,VERIFICADO,,,False
+PROV-095,Machinery Foods Pte Ltd,Estados Unidos,New York,2013-09-29,12,201,VERIFICADO,,,False
+PROV-096,Systems International Inc,Corea del Sur,Daejeon,2007-01-06,19,170,VERIFICADO,,,False
+PROV-097,Automotive Solutions SA,Italia,Rome,2017-03-21,8,276,VERIFICADO,,,False
+PROV-098,Industries Foods BV,Taiwán,Taipei,2016-12-24,9,465,VERIFICADO,,,False
+PROV-099,Trading Systems Pte Ltd,Brasil,Salvador,2010-12-04,15,93,VERIFICADO,,,False
+PROV-100,Components Electronics GmbH,Alemania,Hamburg,2020-03-01,6,344,VERIFICADO,,,False
+PROV-101,Trading Import BV,Alemania,Stuttgart,2015-06-28,10,411,VERIFICADO,,,False
+PROV-102,Global International GmbH,Taiwán,Tainan,2005-08-23,20,239,VERIFICADO,,,False
+PROV-103,Industries Global Co Ltd,Vietnam,Ho Chi Minh,2010-06-08,15,476,VERIFICADO,,,False
+PROV-104,Import Export BV,Japón,Osaka,2009-09-28,16,375,VERIFICADO,,,False
+PROV-105,International Textiles SA,España,Bilbao,2016-01-31,10,176,VERIFICADO,,,False
+PROV-106,Machinery Import Pte Ltd,Italia,Venice,2004-09-16,21,325,VERIFICADO,,,False
+PROV-107,Automotive Global GmbH,Italia,Turin,2014-12-11,11,404,VERIFICADO,,,False
+PROV-108,Solutions Manufacturing Inc,Japón,Osaka,1998-02-26,28,128,VERIFICADO,,,False
+PROV-109,Group International Co Ltd,Vietnam,Ho Chi Minh,2000-10-29,25,212,VERIFICADO,,,False
+PROV-110,Machinery Components BV,Estados Unidos,Los Angeles,1999-01-09,27,44,VERIFICADO,,,False
+PROV-111,Import Industries Co Ltd,Estados Unidos,Chicago,2005-03-13,20,149,VERIFICADO,,,False
+PROV-112,Solutions Electronics Corp,Corea del Sur,Daegu,2017-03-30,8,358,VERIFICADO,,,False
+PROV-113,Export Textiles Inc,Taiwán,Taipei,1997-04-27,28,281,VERIFICADO,,,False
+PROV-114,Electronics Solutions GmbH,Estados Unidos,Miami,2001-11-26,24,121,VERIFICADO,,,False
+PROV-115,Group Systems GmbH,Vietnam,Hai Phong,2016-02-13,10,171,VERIFICADO,,,False
+PROV-116,Trading Export SpA,Italia,Turin,2021-02-25,5,140,VERIFICADO,,,False
+PROV-117,Export Electronics GmbH,Alemania,Munich,2005-01-28,21,419,VERIFICADO,,,False
+PROV-118,Export Manufacturing Co Ltd,Italia,Turin,2007-02-10,19,155,VERIFICADO,,,False
+PROV-119,Machinery Export Inc,Corea del Sur,Incheon,1999-09-30,26,430,VERIFICADO,,,False
+PROV-120,Manufacturing Foods Pte Ltd,China,Shenzhen,2016-03-30,9,456,VERIFICADO,,,False
+PROV-121,Chemicals Foods Corp,Italia,Venice,1998-01-21,28,157,VERIFICADO,,,False
+PROV-122,Automotive Systems BV,Estados Unidos,Miami,2006-10-19,19,224,VERIFICADO,,,False
+PROV-123,Manufacturing Export BV,Alemania,Munich,1999-02-07,27,87,VERIFICADO,,,False
+PROV-124,Components Manufacturing BV,Brasil,Salvador,2002-03-26,23,430,VERIFICADO,,,False
+PROV-125,Systems Systems Inc,Vietnam,Can Tho,2000-01-02,26,34,VERIFICADO,,,False
+PROV-126,Foods Global GmbH,Taiwán,Tainan,2018-10-22,7,43,VERIFICADO,,,False
+PROV-127,Export Machinery GmbH,Vietnam,Can Tho,1998-03-16,27,287,VERIFICADO,,,False
+PROV-128,Automotive Import Co Ltd,Italia,Turin,1999-04-15,26,359,VERIFICADO,,,False
+PROV-129,Manufacturing Trading SpA,China,Shanghai,2005-06-27,20,278,VERIFICADO,,,False
+PROV-130,Solutions Technology BV,Vietnam,Hanoi,2013-02-08,13,189,VERIFICADO,,,False
+PROV-131,Components Trading SpA,Taiwán,Kaohsiung,2006-07-23,19,60,VERIFICADO,,,False
+PROV-132,Global Export BV,Italia,Turin,2005-04-07,20,80,VERIFICADO,,,False
+PROV-133,Trading Textiles GmbH,Taiwán,Taipei,2004-03-07,22,305,VERIFICADO,,,False
+PROV-134,Components Foods SpA,Italia,Turin,2019-11-10,6,206,VERIFICADO,,,False
+PROV-135,Technology Global Pte Ltd,Vietnam,Hai Phong,2017-04-01,8,78,VERIFICADO,,,False
+PROV-136,Export International Corp,Vietnam,Da Nang,2004-08-28,21,300,VERIFICADO,,,False
+PROV-137,Export Electronics GmbH,Italia,Rome,1998-08-12,27,440,VERIFICADO,,,False
+PROV-138,Components Industries Pte Ltd,Japón,Tokyo,2008-11-16,17,496,VERIFICADO,,,False
+PROV-139,Export Components SpA,Estados Unidos,Miami,2000-03-29,25,43,VERIFICADO,,,False
+PROV-140,Solutions International BV,Brasil,Fortaleza,2006-03-05,20,88,VERIFICADO,,,False
+PROV-141,Manufacturing Import Inc,Brasil,Salvador,2004-12-07,21,493,VERIFICADO,,,False
+PROV-142,Automotive Machinery GmbH,Taiwán,Hsinchu,2010-06-21,15,330,VERIFICADO,,,False
+PROV-143,Import Import BV,Corea del Sur,Daegu,2011-07-18,14,195,VERIFICADO,,,False
+PROV-144,Foods Group GmbH,Brasil,Fortaleza,1998-06-02,27,173,VERIFICADO,,,False
+PROV-145,Chemicals Import Corp,Japón,Osaka,1998-10-12,27,339,VERIFICADO,,,False
+PROV-146,Export Chemicals SpA,España,Bilbao,2000-09-24,25,375,VERIFICADO,,,False
+PROV-147,Group Textiles BV,Brasil,Fortaleza,1998-08-08,27,361,VERIFICADO,,,False
+PROV-148,Import International Co Ltd,China,Ningbo,2020-08-20,5,74,VERIFICADO,,,False
+PROV-149,Textiles Electronics Corp,Japón,Nagoya,1995-12-18,30,404,VERIFICADO,,,False
+PROV-150,International Chemicals SpA,China,Guangzhou,1996-06-05,29,124,VERIFICADO,,,False
+PROV-151,Technology Group BV,Estados Unidos,Chicago,1999-05-26,26,464,VERIFICADO,,,False
+PROV-152,Textiles International BV,Japón,Kobe,1995-03-19,30,421,VERIFICADO,,,False
+PROV-153,Group International Co Ltd,Taiwán,Tainan,1999-09-30,26,423,VERIFICADO,,,False
+PROV-154,Technology Chemicals GmbH,Corea del Sur,Busan,1996-07-26,29,337,VERIFICADO,,,False
+PROV-155,Trading Manufacturing Corp,Japón,Nagoya,2015-03-21,10,249,VERIFICADO,,,False
+PROV-156,Electronics Group SA,España,Barcelona,2019-07-28,6,213,VERIFICADO,,,False
+PROV-157,Foods Components Corp,Alemania,Berlin,2013-03-03,13,319,VERIFICADO,,,False
+PROV-158,International Textiles SpA,China,Shanghai,2010-05-05,15,495,VERIFICADO,,,False
+PROV-159,Foods Solutions GmbH,Brasil,Fortaleza,2018-03-07,7,203,VERIFICADO,,,False
+PROV-160,Manufacturing Machinery BV,Alemania,Stuttgart,1995-06-25,30,54,VERIFICADO,,,False
+PROV-161,Foods Foods Pte Ltd,Estados Unidos,Houston,2014-03-31,11,133,VERIFICADO,,,False
+PROV-162,Systems Group Co Ltd,Corea del Sur,Busan,2001-06-10,24,405,VERIFICADO,,,False
+PROV-163,Technology International Pte Ltd,Estados Unidos,Houston,2013-04-11,12,248,VERIFICADO,,,False
+PROV-164,Textiles Global Pte Ltd,Taiwán,Taipei,2012-06-02,13,217,VERIFICADO,,,False
+PROV-165,Textiles Industries Pte Ltd,España,Bilbao,2006-02-13,20,248,VERIFICADO,,,False
+PROV-166,Group Global Inc,España,Barcelona,2015-06-03,10,69,VERIFICADO,,,False
+PROV-167,Export Industries BV,Japón,Osaka,1999-08-04,26,462,VERIFICADO,,,False
+PROV-168,International Trading Inc,Estados Unidos,New York,2006-09-19,19,32,VERIFICADO,,,False
+PROV-169,Trading Technology SA,China,Shanghai,2012-05-24,13,426,VERIFICADO,,,False
+PROV-170,Machinery Foods Co Ltd,Taiwán,Tainan,2000-08-13,25,250,VERIFICADO,,,False
+PROV-171,Trading International Inc,Taiwán,Taipei,2020-04-09,5,293,VERIFICADO,,,False
+PROV-172,Textiles Trading SA,Vietnam,Can Tho,2011-03-20,14,74,VERIFICADO,,,False
+PROV-173,Systems Manufacturing GmbH,Italia,Florence,2000-02-22,26,222,VERIFICADO,,,False
+PROV-174,Textiles Import SA,Alemania,Frankfurt,1995-06-04,30,427,VERIFICADO,,,False
+PROV-175,Export International Co Ltd,Vietnam,Ho Chi Minh,2003-12-26,22,303,VERIFICADO,,,False
+PROV-176,Trading Textiles GmbH,Brasil,Fortaleza,2003-06-01,22,221,VERIFICADO,,,False
+PROV-177,Import Manufacturing Corp,Vietnam,Hanoi,2000-06-19,25,231,VERIFICADO,,,False
+PROV-178,Export Manufacturing Co Ltd,Japón,Kobe,2012-11-26,13,447,VERIFICADO,,,False
+PROV-179,Textiles Trading SA,España,Seville,2004-01-30,22,350,VERIFICADO,,,False
+PROV-180,Foods Chemicals Corp,Estados Unidos,New York,2002-07-02,23,391,VERIFICADO,,,False
+PROV-181,Industries Foods SpA,Japón,Tokyo,2002-02-01,24,165,VERIFICADO,,,False
+PROV-182,Import Chemicals Pte Ltd,Italia,Turin,1999-10-04,26,335,VERIFICADO,,,False
+PROV-183,Technology Machinery SA,Taiwán,Kaohsiung,2010-10-31,15,22,VERIFICADO,,,False
+PROV-184,Systems Components SpA,Vietnam,Hanoi,1997-09-21,28,367,VERIFICADO,,,False
+PROV-185,Manufacturing Trading SA,Vietnam,Da Nang,2004-01-12,22,269,VERIFICADO,,,False
+PROV-186,Trading Trading Co Ltd,Alemania,Stuttgart,2012-04-19,13,120,VERIFICADO,,,False
+PROV-187,Automotive Industries Co Ltd,España,Barcelona,2002-05-16,23,436,VERIFICADO,,,False
+PROV-188,Import Chemicals BV,España,Valencia,2003-07-10,22,298,VERIFICADO,,,False
+PROV-189,Components Solutions Inc,Japón,Kobe,2011-12-28,14,395,VERIFICADO,,,False
+PROV-190,Technology Manufacturing Corp,Taiwán,Taichung,2020-03-29,5,277,VERIFICADO,,,False
+PROV-191,Import Systems Pte Ltd,Italia,Rome,2002-05-23,23,111,VERIFICADO,,,False
+PROV-192,Trading Electronics Pte Ltd,China,Shanghai,2005-11-09,20,409,VERIFICADO,,,False
+PROV-193,Chemicals Automotive SpA,Japón,Tokyo,2014-06-13,11,362,VERIFICADO,,,False
+PROV-194,Export Solutions SA,Italia,Milan,2000-09-24,25,40,VERIFICADO,,,False
+PROV-195,Automotive Automotive Pte Ltd,Corea del Sur,Daejeon,2002-12-09,23,298,VERIFICADO,,,False
+PROV-196,Technology Solutions BV,Brasil,Sao Paulo,2012-08-25,13,284,VERIFICADO,,,False
+PROV-197,Global Solutions Corp,Vietnam,Da Nang,1995-07-07,30,269,VERIFICADO,,,False
+PROV-198,Electronics Industries Corp,Italia,Rome,2018-06-14,7,137,VERIFICADO,,,False
+PROV-199,Technology Machinery Pte Ltd,Alemania,Berlin,2002-01-07,24,205,VERIFICADO,,,False
+PROV-200,Industries Manufacturing BV,Estados Unidos,Miami,2005-07-05,20,365,VERIFICADO,,,False
+PROV-201,Solutions International Corp,China,Shanghai,2022-12-25,3,13,EN_OBSERVACION,Precios inconsistentes con mercado,A-2024-0034,False
+PROV-202,Textiles Trading GmbH,Alemania,Stuttgart,2024-03-29,1,43,EN_OBSERVACION,Dirección no verificada,,False
+PROV-203,Import Manufacturing SA,Italia,Florence,2018-05-01,7,19,EN_OBSERVACION,Documentación incompleta en operaciones previas,A-2024-0088,False
+PROV-204,Automotive Automotive Corp,Vietnam,Hai Phong,2023-11-06,2,42,EN_OBSERVACION,Certificados de origen con irregularidades,A-2024-0026,False
+PROV-205,Systems International Inc,España,Bilbao,2023-12-03,2,14,EN_OBSERVACION,Dirección no verificada,A-2024-0085,False
+PROV-206,Machinery Chemicals Co Ltd,Alemania,Stuttgart,2018-06-10,7,5,EN_OBSERVACION,Certificados de origen con irregularidades,,False
+PROV-207,Export Machinery Corp,Taiwán,Kaohsiung,2019-05-07,6,29,EN_OBSERVACION,Dirección no verificada,A-2024-0099,False
+PROV-208,Industries Global Co Ltd,Japón,Tokyo,2018-10-24,7,43,EN_OBSERVACION,Cambio reciente de razón social,,False
+PROV-209,Foods Machinery Pte Ltd,Estados Unidos,Chicago,2021-03-16,4,29,EN_OBSERVACION,Precios inconsistentes con mercado,A-2024-0055,False
+PROV-210,Chemicals Electronics BV,Brasil,Brasilia,2018-05-19,7,39,EN_OBSERVACION,Cambio reciente de razón social,,False
+PROV-211,Group Group SpA,Taiwán,Hsinchu,2022-08-26,3,35,EN_OBSERVACION,Certificados de origen con irregularidades,A-2024-0040,False
+PROV-212,Components Manufacturing Inc,Brasil,Brasilia,2023-11-06,2,13,EN_OBSERVACION,Dirección no verificada,A-2024-0052,False
+PROV-213,Automotive Global Inc,Vietnam,Can Tho,2024-12-10,1,49,EN_OBSERVACION,Certificados de origen con irregularidades,,False
+PROV-214,Technology Chemicals Inc,Italia,Venice,2023-10-20,2,10,EN_OBSERVACION,Dirección no verificada,,False
+PROV-215,International Manufacturing SpA,Taiwán,Tainan,2020-03-04,5,46,EN_OBSERVACION,Certificados de origen con irregularidades,,False
+PROV-216,Solutions Solutions GmbH,Japón,Kobe,2024-04-30,1,17,EN_OBSERVACION,Cambio reciente de razón social,,False
+PROV-217,Trading Electronics BV,China,Guangzhou,2024-12-12,1,46,EN_OBSERVACION,Documentación incompleta en operaciones previas,A-2024-0051,False
+PROV-218,Trading Trading SA,Taiwán,Hsinchu,2024-03-07,1,38,EN_OBSERVACION,Documentación incompleta en operaciones previas,,False
+PROV-219,Industries Components BV,España,Bilbao,2020-11-08,5,27,EN_OBSERVACION,Cambio reciente de razón social,,False
+PROV-220,Trading Solutions SA,Corea del Sur,Busan,2023-05-21,2,37,EN_OBSERVACION,Dirección no verificada,A-2024-0015,False
+PROV-221,Components Automotive SpA,España,Valencia,2020-03-13,5,41,EN_OBSERVACION,Certificados de origen con irregularidades,,False
+PROV-222,Export Electronics Inc,Vietnam,Hai Phong,2024-06-29,1,42,EN_OBSERVACION,Dirección no verificada,A-2024-0101,False
+PROV-223,Group Global SA,Japón,Osaka,2019-06-13,6,31,EN_OBSERVACION,Cambio reciente de razón social,A-2024-0012,False
+PROV-224,Foods Chemicals GmbH,Taiwán,Taichung,2022-07-03,3,40,EN_OBSERVACION,Precios inconsistentes con mercado,,False
+PROV-225,Technology Electronics GmbH,Corea del Sur,Busan,2021-11-03,4,36,EN_OBSERVACION,Documentación incompleta en operaciones previas,A-2024-0107,False
+PROV-226,Trading Systems Co Ltd,Japón,Kobe,2024-01-01,2,14,EN_OBSERVACION,Cambio reciente de razón social,,False
+PROV-227,Electronics Systems Corp,España,Barcelona,2019-06-25,6,28,EN_OBSERVACION,Dirección no verificada,,False
+PROV-228,Solutions Machinery SpA,España,Valencia,2023-02-04,3,19,EN_OBSERVACION,Dirección no verificada,,False
+PROV-229,Export Solutions SpA,China,Ningbo,2022-07-12,3,30,EN_OBSERVACION,Cambio reciente de razón social,A-2024-0002,False
+PROV-230,Chemicals Electronics Corp,China,Shanghai,2023-09-18,2,42,EN_OBSERVACION,Dirección no verificada,,False
+PROV-231,Manufacturing Systems BV,Japón,Nagoya,2019-08-29,6,44,EN_OBSERVACION,Dirección no verificada,A-2024-0090,False
+PROV-232,Import Technology Inc,Vietnam,Da Nang,2017-12-02,8,22,EN_OBSERVACION,Dirección no verificada,,False
+PROV-233,Import Systems Co Ltd,Japón,Kobe,2021-12-19,4,29,EN_OBSERVACION,Dirección no verificada,A-2024-0064,False
+PROV-234,Electronics Group Co Ltd,Alemania,Stuttgart,2017-10-02,8,25,EN_OBSERVACION,Certificados de origen con irregularidades,A-2024-0089,False
+PROV-235,Export Components Pte Ltd,Alemania,Munich,2017-04-16,8,21,EN_OBSERVACION,Documentación incompleta en operaciones previas,A-2024-0047,False
+PROV-236,Export Chemicals GmbH,España,Bilbao,2024-08-04,1,27,EN_OBSERVACION,Cambio reciente de razón social,,False
+PROV-237,Solutions Systems SpA,España,Madrid,2019-03-25,6,27,EN_OBSERVACION,Cambio reciente de razón social,,False
+PROV-238,Foods Machinery BV,Taiwán,Hsinchu,2022-12-08,3,34,EN_OBSERVACION,Cambio reciente de razón social,,False
+PROV-239,Foods Textiles SA,Estados Unidos,Los Angeles,2021-09-24,4,26,EN_OBSERVACION,Documentación incompleta en operaciones previas,,False
+PROV-240,Manufacturing Manufacturing Co Ltd,Taiwán,Taichung,2017-08-05,8,28,EN_OBSERVACION,Dirección no verificada,A-2024-0031,False
+PROV-241,Export Trading SpA,Corea del Sur,Seoul,2019-01-11,7,15,EN_OBSERVACION,Documentación incompleta en operaciones previas,,False
+PROV-242,Import Trading BV,China,Beijing,2023-10-20,2,10,EN_OBSERVACION,Certificados de origen con irregularidades,A-2024-0032,False
+PROV-243,International Chemicals Pte Ltd,Corea del Sur,Daegu,2023-02-17,3,13,EN_OBSERVACION,Documentación incompleta en operaciones previas,,False
+PROV-244,Group Manufacturing SpA,Italia,Venice,2017-12-25,8,40,EN_OBSERVACION,Cambio reciente de razón social,,False
+PROV-245,Systems Group GmbH,Brasil,Salvador,2020-09-07,5,45,EN_OBSERVACION,Certificados de origen con irregularidades,,False
+PROV-246,Textiles Global Co Ltd,Italia,Turin,2020-12-14,5,31,EN_OBSERVACION,Cambio reciente de razón social,,False
+PROV-247,Systems Systems SA,Alemania,Hamburg,2024-03-15,1,35,EN_OBSERVACION,Cambio reciente de razón social,A-2024-0056,False
+PROV-248,Machinery Group BV,Corea del Sur,Daejeon,2019-11-28,6,5,EN_OBSERVACION,Documentación incompleta en operaciones previas,A-2024-0021,False
+PROV-249,Technology Solutions SA,Taiwán,Tainan,2023-07-30,2,21,EN_OBSERVACION,Documentación incompleta en operaciones previas,A-2024-0096,False
+PROV-250,Import Textiles Inc,España,Valencia,2023-11-30,2,17,EN_OBSERVACION,Dirección no verificada,,False
+PROV-251,Foods Global Corp,Brasil,Salvador,2017-11-28,8,49,EN_OBSERVACION,Cambio reciente de razón social,A-2024-0069,False
+PROV-252,Components Global GmbH,China,Shanghai,2020-12-29,5,23,EN_OBSERVACION,Precios inconsistentes con mercado,A-2024-0002,False
+PROV-253,Chemicals Components Co Ltd,Italia,Rome,2020-06-21,5,31,EN_OBSERVACION,Cambio reciente de razón social,A-2024-0108,False
+PROV-254,Systems Manufacturing GmbH,Alemania,Munich,2023-05-29,2,30,EN_OBSERVACION,Cambio reciente de razón social,,False
+PROV-255,Components Technology Co Ltd,Corea del Sur,Daegu,2021-08-18,4,12,EN_OBSERVACION,Precios inconsistentes con mercado,A-2024-0095,False
+PROV-256,Textiles Foods Corp,Estados Unidos,Chicago,2018-03-21,7,35,EN_OBSERVACION,Documentación incompleta en operaciones previas,,False
+PROV-257,Textiles Industries Pte Ltd,China,Ningbo,2020-06-30,5,12,EN_OBSERVACION,Certificados de origen con irregularidades,,False
+PROV-258,Global Manufacturing SA,Japón,Tokyo,2018-09-19,7,45,EN_OBSERVACION,Documentación incompleta en operaciones previas,,False
+PROV-259,Import Chemicals Inc,Taiwán,Kaohsiung,2017-03-17,8,7,EN_OBSERVACION,Precios inconsistentes con mercado,A-2024-0064,False
+PROV-260,Chemicals Import Inc,Estados Unidos,Chicago,2025-01-31,1,45,EN_OBSERVACION,Cambio reciente de razón social,A-2024-0030,False
+PROV-261,Automotive Chemicals Corp,Vietnam,Can Tho,2022-02-21,4,33,EN_OBSERVACION,Cambio reciente de razón social,A-2024-0006,False
+PROV-262,Manufacturing Group Pte Ltd,Italia,Florence,2017-11-27,8,23,EN_OBSERVACION,Certificados de origen con irregularidades,A-2024-0060,False
+PROV-263,Import Components SA,Corea del Sur,Daejeon,2023-06-05,2,15,EN_OBSERVACION,Certificados de origen con irregularidades,,False
+PROV-264,Global Chemicals GmbH,España,Valencia,2018-11-30,7,5,EN_OBSERVACION,Dirección no verificada,A-2024-0009,False
+PROV-265,Import Textiles Pte Ltd,España,Seville,2017-05-26,8,38,EN_OBSERVACION,Documentación incompleta en operaciones previas,,False
+PROV-266,Import Manufacturing Co Ltd,Vietnam,Ho Chi Minh,2024-02-09,2,38,EN_OBSERVACION,Precios inconsistentes con mercado,A-2024-0063,False
+PROV-267,Systems Solutions SA,Japón,Tokyo,2018-04-02,7,41,EN_OBSERVACION,Precios inconsistentes con mercado,A-2024-0029,False
+PROV-268,Components International Pte Ltd,Brasil,Sao Paulo,2018-01-23,8,18,EN_OBSERVACION,Precios inconsistentes con mercado,,False
+PROV-269,International Trading SA,Taiwán,Taichung,2020-06-06,5,44,EN_OBSERVACION,Precios inconsistentes con mercado,A-2024-0028,False
+PROV-270,Industries Solutions GmbH,España,Barcelona,2018-11-27,7,19,EN_OBSERVACION,Precios inconsistentes con mercado,,False
+PROV-271,Components Machinery Inc,Alemania,Stuttgart,2023-03-23,2,1,LISTA_NEGRA,Sancionado por autoridades locales,A-2024-0024,False
+PROV-272,Components Chemicals Pte Ltd,España,Seville,2024-06-02,1,10,LISTA_NEGRA,Sancionado por autoridades locales,,False
+PROV-273,Group Industries BV,Vietnam,Da Nang,2024-05-18,1,5,LISTA_NEGRA,Relacionado con fraude aduanero,,False
+PROV-274,Textiles Global Corp,Corea del Sur,Incheon,2026-02-13,0,6,LISTA_NEGRA,Relacionado con fraude aduanero,,False
+PROV-275,Electronics Group Corp,Corea del Sur,Seoul,2024-02-20,2,3,LISTA_NEGRA,Empresa fantasma,A-2024-0059,True
+PROV-276,Electronics Textiles Inc,Vietnam,Hanoi,2024-11-03,1,5,LISTA_NEGRA,Certificados de origen apócrifos,,False
+PROV-277,Export Textiles Co Ltd,Brasil,Rio de Janeiro,2024-06-26,1,7,LISTA_NEGRA,Subfacturación comprobada,,False
+PROV-278,Machinery Export GmbH,Brasil,Salvador,2023-07-24,2,5,LISTA_NEGRA,Subfacturación comprobada,,True
+PROV-279,Group Import Pte Ltd,Brasil,Sao Paulo,2025-09-20,0,4,LISTA_NEGRA,Relacionado con fraude aduanero,,True
+PROV-280,Machinery Textiles BV,Japón,Osaka,2025-11-09,0,7,LISTA_NEGRA,Subfacturación comprobada,A-2024-0044,False
+PROV-281,Trading Automotive BV,Estados Unidos,Miami,2022-10-20,3,8,LISTA_NEGRA,Sancionado por autoridades locales,,True
+PROV-282,Industries Group GmbH,Alemania,Berlin,2022-04-04,3,7,LISTA_NEGRA,Relacionado con fraude aduanero,A-2024-0035,True
+PROV-283,Chemicals Chemicals GmbH,Taiwán,Taichung,2022-07-30,3,1,LISTA_NEGRA,Sancionado por autoridades locales,A-2024-0077,True
+PROV-284,Import Components Co Ltd,China,Guangzhou,2022-04-18,3,9,LISTA_NEGRA,Certificados de origen apócrifos,,False
+PROV-285,Technology Import SA,Japón,Osaka,2026-02-03,0,1,LISTA_NEGRA,Empresa fantasma,A-2024-0089,True
+PROV-286,Group Industries GmbH,Estados Unidos,Houston,2023-11-16,2,0,LISTA_NEGRA,Relacionado con fraude aduanero,,False
+PROV-287,Solutions International SA,Corea del Sur,Daejeon,2025-08-22,0,10,LISTA_NEGRA,Relacionado con fraude aduanero,A-2024-0037,True
+PROV-288,Automotive Electronics Pte Ltd,Japón,Kobe,2026-01-27,0,7,LISTA_NEGRA,Empresa fantasma,,True
+PROV-289,Systems Group Inc,China,Guangzhou,2025-09-22,0,6,LISTA_NEGRA,Relacionado con fraude aduanero,A-2024-0065,True
+PROV-290,Systems Automotive Corp,Italia,Venice,2023-09-14,2,3,LISTA_NEGRA,Subfacturación comprobada,A-2024-0088,True
+PROV-291,Electronics Automotive Co Ltd,Vietnam,Da Nang,2024-01-31,2,8,LISTA_NEGRA,Empresa fantasma,,True
+PROV-292,Automotive Solutions GmbH,Corea del Sur,Busan,2025-01-17,1,6,LISTA_NEGRA,Certificados de origen apócrifos,,False
+PROV-293,Group Import GmbH,Brasil,Rio de Janeiro,2023-07-17,2,9,LISTA_NEGRA,Relacionado con fraude aduanero,,False
+PROV-294,Import Manufacturing Pte Ltd,Brasil,Fortaleza,2024-07-25,1,4,LISTA_NEGRA,Certificados de origen apócrifos,A-2024-0069,True
+PROV-295,Machinery Textiles SpA,Estados Unidos,New York,2023-08-04,2,0,LISTA_NEGRA,Empresa fantasma,,True
+PROV-296,Electronics Technology GmbH,Corea del Sur,Busan,2025-02-17,1,2,LISTA_NEGRA,Certificados de origen apócrifos,A-2024-0004,True
+PROV-297,Chemicals Manufacturing BV,Vietnam,Ho Chi Minh,2022-03-04,3,8,LISTA_NEGRA,Relacionado con fraude aduanero,,True
+PROV-298,Electronics Machinery GmbH,Alemania,Berlin,2023-02-24,3,0,LISTA_NEGRA,Certificados de origen apócrifos,,True
+PROV-299,Foods Components GmbH,Japón,Osaka,2022-03-16,3,7,LISTA_NEGRA,Subfacturación comprobada,,True
+PROV-300,Export Components SpA,China,Ningbo,2025-06-09,0,6,LISTA_NEGRA,Relacionado con fraude aduanero,,False

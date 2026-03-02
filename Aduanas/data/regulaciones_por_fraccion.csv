@@ -1,0 +1,301 @@
+fraccion_arancelaria,descripcion_producto,requiere_cofepris,requiere_senasica,requiere_semarnat,requiere_sedena,noms_aplicables,permisos_previos,requiere_certificado_origen,tratados_aplicables,notas_especiales,fecha_ultima_actualizacion,canal_sugerido_default
+8471.30,Computadoras portátiles,False,False,False,False,"[""NOM-019-SCFI""]",[],True,"[""T-MEC"", ""TLCUE""]",Certificado de origen puede ser declaración en factura si valor <1000 USD,2025-09-20,VERDE
+8542.31,Procesadores y controladores,False,False,False,False,"[""NOM-019-SCFI""]",[],True,"[""T-MEC""]",Certificado de origen puede ser declaración en factura si valor <1000 USD,2026-02-02,VERDE
+8517.12,Teléfonos celulares,False,False,False,False,"[""NOM-208-SCFI"", ""IFT""]","[""Homologaci\u00f3n IFT""]",True,"[""T-MEC""]",Certificado de origen puede ser declaración en factura si valor <1000 USD,2026-02-24,AMARILLO
+8528.72,Monitores LED,False,False,False,False,"[""NOM-019-SCFI"", ""NOM-024-SCFI""]",[],True,"[""T-MEC""]",Certificado de origen puede ser declaración en factura si valor <1000 USD,2025-12-22,VERDE
+8473.30,Partes de computadoras,False,False,False,False,"[""NOM-019-SCFI""]",[],True,"[""T-MEC""]",Certificado de origen puede ser declaración en factura si valor <1000 USD,2025-12-30,VERDE
+6203.42,Pantalones de algodón hombre,False,False,False,False,"[""NOM-004-SE""]",[],True,"[""T-MEC""]",Certificado de origen puede ser declaración en factura si valor <1000 USD,2026-01-04,VERDE
+6204.62,Pantalones de algodón mujer,False,False,False,False,"[""NOM-004-SE""]",[],True,"[""T-MEC""]",Certificado de origen puede ser declaración en factura si valor <1000 USD,2026-01-26,VERDE
+6110.20,Suéteres de algodón,False,False,False,False,"[""NOM-004-SE""]",[],True,"[""T-MEC""]",Certificado de origen puede ser declaración en factura si valor <1000 USD,2026-02-04,VERDE
+8708.29,Partes de carrocería,False,False,False,False,"[""NOM-050-SCFI""]",[],True,"[""T-MEC""]",Certificado de origen puede ser declaración en factura si valor <1000 USD,2025-09-10,VERDE
+8708.99,Otras partes de vehículos,False,False,False,False,"[""NOM-050-SCFI""]",[],True,"[""T-MEC""]",Certificado de origen puede ser declaración en factura si valor <1000 USD,2025-10-14,VERDE
+2106.90,Preparaciones alimenticias,True,True,False,False,"[""NOM-051-SCFI"", ""NOM-002-SCFI""]","[""Registro COFEPRIS""]",False,[],Requiere registro sanitario vigente (máximo 5 años) | Certificado zoosanitario debe ser emitido en país de origen,2026-02-08,AMARILLO
+1901.90,Extractos de malta,True,True,False,False,"[""NOM-051-SCFI"", ""NOM-002-SCFI""]","[""Registro COFEPRIS""]",False,[],Requiere registro sanitario vigente (máximo 5 años) | Certificado zoosanitario debe ser emitido en país de origen,2025-10-02,AMARILLO
+0201.10,Carne de bovino fresca,True,True,False,False,"[""NOM-194-SSA1""]","[""Certificado zoosanitario SENASICA""]",False,[],Requiere registro sanitario vigente (máximo 5 años) | Certificado zoosanitario debe ser emitido en país de origen,2025-11-14,ROJO
+0203.12,Carne de porcino fresca,True,True,False,False,"[""NOM-194-SSA1""]","[""Certificado zoosanitario SENASICA""]",False,[],Requiere registro sanitario vigente (máximo 5 años) | Certificado zoosanitario debe ser emitido en país de origen,2026-02-22,ROJO
+3004.90,Medicamentos en dosis,True,False,False,False,"[""NOM-072-SSA1"", ""NOM-073-SSA1""]","[""Registro sanitario COFEPRIS""]",False,[],Requiere registro sanitario vigente (máximo 5 años),2026-02-23,ROJO
+3003.90,Medicamentos sin dosificar,True,False,False,False,"[""NOM-072-SSA1""]","[""Registro sanitario COFEPRIS""]",False,[],Requiere registro sanitario vigente (máximo 5 años),2026-02-07,ROJO
+2804.10,Hidrógeno,False,False,True,False,"[""NOM-018-STPS""]","[""Permiso SEMARNAT""]",False,[],Verificar que el producto no esté en lista CITES,2026-01-06,ROJO
+2811.21,Dióxido de carbono,False,False,True,False,"[""NOM-018-STPS""]","[""Permiso SEMARNAT""]",False,[],Verificar que el producto no esté en lista CITES,2026-01-02,AMARILLO
+9503.00,Juguetes diversos,False,False,False,False,"[""NOM-015-SCFI""]",[],False,[],Sin notas especiales,2025-10-24,AMARILLO
+9403.60,Muebles de madera,False,False,True,False,"[""NOM-008-SCFI""]","[""Certificado SEMARNAT si es madera tropical""]",False,[],Verificar que el producto no esté en lista CITES,2025-09-29,VERDE
+9403.70,Muebles de plástico,False,False,False,False,"[""NOM-008-SCFI""]",[],False,[],Sin notas especiales,2026-02-24,VERDE
+8544.42,Cables eléctricos,False,False,False,False,"[""NOM-001-SEDE""]",[],False,[],Sin notas especiales,2025-10-10,VERDE
+8536.69,Conectores eléctricos,False,False,False,False,"[""NOM-003-SCFI""]",[],False,[],Sin notas especiales,2026-01-11,VERDE
+8504.40,Convertidores estáticos,False,False,False,False,"[""NOM-019-SCFI""]",[],True,"[""T-MEC""]",Certificado de origen puede ser declaración en factura si valor <1000 USD,2025-09-17,VERDE
+3926.90,Manufacturas de plástico,False,False,False,False,[],[],False,[],Sin notas especiales,2025-09-04,VERDE
+3923.30,Bombonas de plástico,False,False,False,False,"[""NOM-002-SCFI""]",[],False,[],Sin notas especiales,2025-10-14,VERDE
+7326.90,Manufacturas de hierro,False,False,False,False,[],[],False,[],Sin notas especiales,2025-11-15,VERDE
+7308.90,Construcciones de hierro,False,False,False,False,"[""NOM-008-SCFI""]",[],False,[],Sin notas especiales,2026-01-05,VERDE
+9018.90,Instrumentos médicos,True,False,False,False,"[""NOM-241-SSA1""]","[""Registro COFEPRIS""]",False,[],Requiere registro sanitario vigente (máximo 5 años),2025-11-08,ROJO
+9018.19,Aparatos de electrodiagnóstico,True,False,False,False,"[""NOM-241-SSA1""]","[""Registro COFEPRIS""]",False,[],Requiere registro sanitario vigente (máximo 5 años),2025-10-03,ROJO
+8481.80,Válvulas diversas,False,False,False,False,[],[],False,[],Sin notas especiales,2025-12-21,VERDE
+8481.10,Válvulas reductoras,False,False,False,False,"[""NOM-020-STPS""]",[],False,[],Sin notas especiales,2026-03-01,VERDE
+8501.10,Motores pequeños,False,False,False,False,"[""NOM-016-ENER""]",[],False,[],Sin notas especiales,2026-01-21,VERDE
+8501.40,Motores AC,False,False,False,False,"[""NOM-016-ENER""]",[],False,[],Sin notas especiales,2025-09-05,VERDE
+8507.60,Baterías de litio,False,False,True,False,"[""NOM-001-SEDE""]","[""Certificado UN38.3""]",False,[],Verificar que el producto no esté en lista CITES,2025-11-14,AMARILLO
+8507.80,Otros acumuladores,False,False,True,False,"[""NOM-001-SEDE""]",[],False,[],Verificar que el producto no esté en lista CITES,2025-12-05,VERDE
+8418.69,Grupos frigoríficos,False,False,True,False,"[""NOM-023-ENER""]","[""Certificado gases refrigerantes""]",False,[],Verificar que el producto no esté en lista CITES,2025-12-21,AMARILLO
+8418.99,Partes de refrigeradores,False,False,False,False,[],[],False,[],Sin notas especiales,2026-01-22,VERDE
+8421.23,Filtros de lubricantes,False,False,False,False,[],[],False,[],Sin notas especiales,2026-01-06,VERDE
+8421.39,Filtros de gases,False,False,False,False,[],[],False,[],Sin notas especiales,2025-12-06,VERDE
+9405.40,Lámparas portátiles,False,False,False,False,"[""NOM-058-SCFI""]",[],False,[],Sin notas especiales,2026-02-04,VERDE
+9405.10,Lámparas de techo,False,False,False,False,"[""NOM-058-SCFI""]",[],False,[],Sin notas especiales,2026-02-07,VERDE
+8467.21,Taladros eléctricos,False,False,False,False,"[""NOM-003-SCFI""]",[],False,[],Sin notas especiales,2025-11-25,VERDE
+8467.29,Otras herramientas eléctricas,False,False,False,False,"[""NOM-003-SCFI""]",[],False,[],Sin notas especiales,2026-02-06,VERDE
+6403.99,Calzado de cuero,False,False,False,False,"[""NOM-020-SCFI""]",[],False,[],Sin notas especiales,2025-12-01,VERDE
+6404.19,Calzado deportivo,False,False,False,False,"[""NOM-020-SCFI""]",[],False,[],Sin notas especiales,2025-12-04,VERDE
+3304.99,Productos de belleza,True,False,False,False,"[""NOM-141-SSA1""]","[""Aviso sanitario COFEPRIS""]",False,[],Requiere registro sanitario vigente (máximo 5 años),2025-09-29,AMARILLO
+3305.90,Preparaciones capilares,True,False,False,False,"[""NOM-141-SSA1""]","[""Aviso sanitario COFEPRIS""]",False,[],Requiere registro sanitario vigente (máximo 5 años),2025-12-25,AMARILLO
+2202.99,Bebidas no alcohólicas,True,False,False,False,"[""NOM-051-SCFI"", ""NOM-218-SSA1""]","[""Registro COFEPRIS""]",False,[],Requiere registro sanitario vigente (máximo 5 años),2026-02-19,AMARILLO
+2203.00,Cerveza,True,False,False,False,"[""NOM-199-SCFI""]","[""Marbete IEPS""]",False,[],Requiere registro sanitario vigente (máximo 5 años),2025-11-05,ROJO
+9303.30,Armas de fuego deportivas,False,False,False,True,[],"[""Permiso SEDENA""]",False,[],CRÍTICO: Requiere autorización previa SEDENA,2025-10-16,ROJO
+9306.30,Cartuchos,False,False,False,True,[],"[""Permiso SEDENA""]",False,[],CRÍTICO: Requiere autorización previa SEDENA,2026-01-30,ROJO
+8471.60,Producto clasificado en 8471.60,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.70,Producto clasificado en 8471.70,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8525.80,Producto clasificado en 8525.80,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8525.89,Producto clasificado en 8525.89,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8483.40,Producto clasificado en 8483.40,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8483.50,Producto clasificado en 8483.50,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8419.89,Producto clasificado en 8419.89,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8419.90,Producto clasificado en 8419.90,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7318.15,Producto clasificado en 7318.15,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+7318.16,Producto clasificado en 7318.16,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+3920.10,Producto clasificado en 3920.10,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+3920.20,Producto clasificado en 3920.20,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+4011.10,Producto clasificado en 4011.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+4011.20,Producto clasificado en 4011.20,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8302.10,Producto clasificado en 8302.10,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8302.42,Producto clasificado en 8302.42,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7616.99,Producto clasificado en 7616.99,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+7616.10,Producto clasificado en 7616.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8414.80,Producto clasificado en 8414.80,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8414.90,Producto clasificado en 8414.90,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8415.10,Producto clasificado en 8415.10,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8415.90,Producto clasificado en 8415.90,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8450.11,Producto clasificado en 8450.11,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8450.19,Producto clasificado en 8450.19,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8516.10,Producto clasificado en 8516.10,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8516.60,Producto clasificado en 8516.60,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8509.40,Producto clasificado en 8509.40,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8509.80,Producto clasificado en 8509.80,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+9506.91,Producto clasificado en 9506.91,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+9506.99,Producto clasificado en 9506.99,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.60,Producto clasificado en 8471.60,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8471.70,Producto clasificado en 8471.70,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8525.80,Producto clasificado en 8525.80,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8525.89,Producto clasificado en 8525.89,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8483.40,Producto clasificado en 8483.40,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8483.50,Producto clasificado en 8483.50,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8419.89,Producto clasificado en 8419.89,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8419.90,Producto clasificado en 8419.90,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+7318.15,Producto clasificado en 7318.15,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+7318.16,Producto clasificado en 7318.16,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+3920.10,Producto clasificado en 3920.10,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+3920.20,Producto clasificado en 3920.20,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+4011.10,Producto clasificado en 4011.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+4011.20,Producto clasificado en 4011.20,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8302.10,Producto clasificado en 8302.10,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8302.42,Producto clasificado en 8302.42,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7616.99,Producto clasificado en 7616.99,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7616.10,Producto clasificado en 7616.10,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8414.80,Producto clasificado en 8414.80,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8414.90,Producto clasificado en 8414.90,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8415.10,Producto clasificado en 8415.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8415.90,Producto clasificado en 8415.90,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8450.11,Producto clasificado en 8450.11,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8450.19,Producto clasificado en 8450.19,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8516.10,Producto clasificado en 8516.10,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8516.60,Producto clasificado en 8516.60,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8509.40,Producto clasificado en 8509.40,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8509.80,Producto clasificado en 8509.80,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+9506.91,Producto clasificado en 9506.91,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+9506.99,Producto clasificado en 9506.99,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.60,Producto clasificado en 8471.60,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.70,Producto clasificado en 8471.70,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8525.80,Producto clasificado en 8525.80,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8525.89,Producto clasificado en 8525.89,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8483.40,Producto clasificado en 8483.40,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8483.50,Producto clasificado en 8483.50,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8419.89,Producto clasificado en 8419.89,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8419.90,Producto clasificado en 8419.90,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7318.15,Producto clasificado en 7318.15,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7318.16,Producto clasificado en 7318.16,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+3920.10,Producto clasificado en 3920.10,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+3920.20,Producto clasificado en 3920.20,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+4011.10,Producto clasificado en 4011.10,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+4011.20,Producto clasificado en 4011.20,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8302.10,Producto clasificado en 8302.10,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8302.42,Producto clasificado en 8302.42,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7616.99,Producto clasificado en 7616.99,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+7616.10,Producto clasificado en 7616.10,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8414.80,Producto clasificado en 8414.80,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8414.90,Producto clasificado en 8414.90,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8415.10,Producto clasificado en 8415.10,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8415.90,Producto clasificado en 8415.90,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8450.11,Producto clasificado en 8450.11,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8450.19,Producto clasificado en 8450.19,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8516.10,Producto clasificado en 8516.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8516.60,Producto clasificado en 8516.60,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8509.40,Producto clasificado en 8509.40,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8509.80,Producto clasificado en 8509.80,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+9506.91,Producto clasificado en 9506.91,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+9506.99,Producto clasificado en 9506.99,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.60,Producto clasificado en 8471.60,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.70,Producto clasificado en 8471.70,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8525.80,Producto clasificado en 8525.80,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8525.89,Producto clasificado en 8525.89,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8483.40,Producto clasificado en 8483.40,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8483.50,Producto clasificado en 8483.50,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8419.89,Producto clasificado en 8419.89,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8419.90,Producto clasificado en 8419.90,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+7318.15,Producto clasificado en 7318.15,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7318.16,Producto clasificado en 7318.16,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+3920.10,Producto clasificado en 3920.10,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+3920.20,Producto clasificado en 3920.20,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+4011.10,Producto clasificado en 4011.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+4011.20,Producto clasificado en 4011.20,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8302.10,Producto clasificado en 8302.10,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8302.42,Producto clasificado en 8302.42,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7616.99,Producto clasificado en 7616.99,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+7616.10,Producto clasificado en 7616.10,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8414.80,Producto clasificado en 8414.80,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8414.90,Producto clasificado en 8414.90,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8415.10,Producto clasificado en 8415.10,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8415.90,Producto clasificado en 8415.90,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8450.11,Producto clasificado en 8450.11,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8450.19,Producto clasificado en 8450.19,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8516.10,Producto clasificado en 8516.10,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8516.60,Producto clasificado en 8516.60,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8509.40,Producto clasificado en 8509.40,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8509.80,Producto clasificado en 8509.80,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+9506.91,Producto clasificado en 9506.91,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+9506.99,Producto clasificado en 9506.99,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8471.60,Producto clasificado en 8471.60,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.70,Producto clasificado en 8471.70,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8525.80,Producto clasificado en 8525.80,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8525.89,Producto clasificado en 8525.89,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8483.40,Producto clasificado en 8483.40,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8483.50,Producto clasificado en 8483.50,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8419.89,Producto clasificado en 8419.89,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8419.90,Producto clasificado en 8419.90,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+7318.15,Producto clasificado en 7318.15,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7318.16,Producto clasificado en 7318.16,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+3920.10,Producto clasificado en 3920.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+3920.20,Producto clasificado en 3920.20,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+4011.10,Producto clasificado en 4011.10,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+4011.20,Producto clasificado en 4011.20,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8302.10,Producto clasificado en 8302.10,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8302.42,Producto clasificado en 8302.42,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7616.99,Producto clasificado en 7616.99,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7616.10,Producto clasificado en 7616.10,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8414.80,Producto clasificado en 8414.80,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8414.90,Producto clasificado en 8414.90,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8415.10,Producto clasificado en 8415.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8415.90,Producto clasificado en 8415.90,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8450.11,Producto clasificado en 8450.11,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8450.19,Producto clasificado en 8450.19,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8516.10,Producto clasificado en 8516.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8516.60,Producto clasificado en 8516.60,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8509.40,Producto clasificado en 8509.40,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8509.80,Producto clasificado en 8509.80,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+9506.91,Producto clasificado en 9506.91,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+9506.99,Producto clasificado en 9506.99,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.60,Producto clasificado en 8471.60,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.70,Producto clasificado en 8471.70,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8525.80,Producto clasificado en 8525.80,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8525.89,Producto clasificado en 8525.89,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8483.40,Producto clasificado en 8483.40,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8483.50,Producto clasificado en 8483.50,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8419.89,Producto clasificado en 8419.89,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8419.90,Producto clasificado en 8419.90,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+7318.15,Producto clasificado en 7318.15,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7318.16,Producto clasificado en 7318.16,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+3920.10,Producto clasificado en 3920.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+3920.20,Producto clasificado en 3920.20,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+4011.10,Producto clasificado en 4011.10,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+4011.20,Producto clasificado en 4011.20,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8302.10,Producto clasificado en 8302.10,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8302.42,Producto clasificado en 8302.42,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+7616.99,Producto clasificado en 7616.99,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+7616.10,Producto clasificado en 7616.10,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8414.80,Producto clasificado en 8414.80,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8414.90,Producto clasificado en 8414.90,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8415.10,Producto clasificado en 8415.10,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8415.90,Producto clasificado en 8415.90,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8450.11,Producto clasificado en 8450.11,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8450.19,Producto clasificado en 8450.19,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8516.10,Producto clasificado en 8516.10,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8516.60,Producto clasificado en 8516.60,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8509.40,Producto clasificado en 8509.40,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8509.80,Producto clasificado en 8509.80,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+9506.91,Producto clasificado en 9506.91,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+9506.99,Producto clasificado en 9506.99,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.60,Producto clasificado en 8471.60,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.70,Producto clasificado en 8471.70,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8525.80,Producto clasificado en 8525.80,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8525.89,Producto clasificado en 8525.89,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8483.40,Producto clasificado en 8483.40,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8483.50,Producto clasificado en 8483.50,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8419.89,Producto clasificado en 8419.89,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8419.90,Producto clasificado en 8419.90,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7318.15,Producto clasificado en 7318.15,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7318.16,Producto clasificado en 7318.16,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+3920.10,Producto clasificado en 3920.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+3920.20,Producto clasificado en 3920.20,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+4011.10,Producto clasificado en 4011.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+4011.20,Producto clasificado en 4011.20,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8302.10,Producto clasificado en 8302.10,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8302.42,Producto clasificado en 8302.42,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7616.99,Producto clasificado en 7616.99,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7616.10,Producto clasificado en 7616.10,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8414.80,Producto clasificado en 8414.80,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8414.90,Producto clasificado en 8414.90,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8415.10,Producto clasificado en 8415.10,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8415.90,Producto clasificado en 8415.90,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8450.11,Producto clasificado en 8450.11,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8450.19,Producto clasificado en 8450.19,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8516.10,Producto clasificado en 8516.10,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8516.60,Producto clasificado en 8516.60,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8509.40,Producto clasificado en 8509.40,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8509.80,Producto clasificado en 8509.80,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+9506.91,Producto clasificado en 9506.91,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+9506.99,Producto clasificado en 9506.99,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8471.60,Producto clasificado en 8471.60,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.70,Producto clasificado en 8471.70,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8525.80,Producto clasificado en 8525.80,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8525.89,Producto clasificado en 8525.89,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8483.40,Producto clasificado en 8483.40,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8483.50,Producto clasificado en 8483.50,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8419.89,Producto clasificado en 8419.89,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8419.90,Producto clasificado en 8419.90,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+7318.15,Producto clasificado en 7318.15,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+7318.16,Producto clasificado en 7318.16,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+3920.10,Producto clasificado en 3920.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+3920.20,Producto clasificado en 3920.20,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+4011.10,Producto clasificado en 4011.10,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+4011.20,Producto clasificado en 4011.20,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8302.10,Producto clasificado en 8302.10,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8302.42,Producto clasificado en 8302.42,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+7616.99,Producto clasificado en 7616.99,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+7616.10,Producto clasificado en 7616.10,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8414.80,Producto clasificado en 8414.80,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8414.90,Producto clasificado en 8414.90,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8415.10,Producto clasificado en 8415.10,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8415.90,Producto clasificado en 8415.90,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8450.11,Producto clasificado en 8450.11,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8450.19,Producto clasificado en 8450.19,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8516.10,Producto clasificado en 8516.10,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8516.60,Producto clasificado en 8516.60,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8509.40,Producto clasificado en 8509.40,False,False,False,False,[],[],False,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8509.80,Producto clasificado en 8509.80,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+9506.91,Producto clasificado en 9506.91,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+9506.99,Producto clasificado en 9506.99,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8471.60,Producto clasificado en 8471.60,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8471.70,Producto clasificado en 8471.70,False,False,False,False,[],[],False,[],Sin regulaciones especiales,2026-03-02,VERDE
+8525.80,Producto clasificado en 8525.80,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8525.89,Producto clasificado en 8525.89,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8483.40,Producto clasificado en 8483.40,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8483.50,Producto clasificado en 8483.50,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE
+8419.89,Producto clasificado en 8419.89,False,False,False,False,[],[],True,[],Sin regulaciones especiales,2026-03-02,VERDE
+8419.90,Producto clasificado en 8419.90,False,False,False,False,[],[],True,"[""T-MEC""]",Sin regulaciones especiales,2026-03-02,VERDE

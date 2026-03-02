@@ -1,0 +1,296 @@
+fraccion_arancelaria,descripcion,pais_origen,precio_unitario_promedio_usd,precio_min_usd,precio_max_usd,unidad_medida,fecha_actualizacion,fuente_referencia,tendencia_30d,variacion_pct_30d
+8471.30,Computadoras portátiles y notebooks,China,633.62,473.5,888.98,PZA,2026-02-17,COMTRADE,ESTABLE,-1.65
+8471.30,Computadoras portátiles y notebooks,Canadá,768.49,494.7,1038.7,PZA,2026-02-08,ESTIMADO,ALZA,9.3
+8471.30,Computadoras portátiles y notebooks,Corea del Sur,822.83,590.67,1187.2,PZA,2026-02-25,ESTIMADO,ALZA,11.86
+8471.30,Computadoras portátiles y notebooks,Japón,1046.97,660.74,1557.02,PZA,2026-02-18,COMTRADE,BAJA,-13.67
+8542.31,Procesadores y controladores,Canadá,42.28,33.6,55.54,PZA,2026-02-10,INEGI,ESTABLE,-0.83
+8542.31,Procesadores y controladores,Brasil,42.82,31.73,51.97,PZA,2026-02-28,BLOOMBERG,ALZA,12.05
+8542.31,Procesadores y controladores,Corea del Sur,46.64,31.53,62.31,PZA,2026-02-19,BLOOMBERG,BAJA,-12.89
+8542.31,Procesadores y controladores,Francia,44.05,32.61,61.89,PZA,2026-02-25,BLOOMBERG,ALZA,9.92
+8542.31,Procesadores y controladores,China,28.56,19.3,42.75,PZA,2026-02-23,INEGI,ESTABLE,0.75
+8542.31,Procesadores y controladores,Italia,46.33,34.99,58.78,PZA,2026-02-18,INEGI,ALZA,12.47
+8542.32,Memorias RAM,Taiwán,60.37,44.14,79.61,PZA,2026-02-22,BLOOMBERG,ESTABLE,-0.16
+8542.32,Memorias RAM,India,38.74,27.59,49.54,PZA,2026-02-12,ESTIMADO,ESTABLE,-0.29
+8542.32,Memorias RAM,Brasil,61.33,49.03,76.14,PZA,2026-03-01,COMTRADE,BAJA,-13.82
+8542.32,Memorias RAM,Canadá,57.1,36.09,80.18,PZA,2026-02-18,ESTIMADO,ESTABLE,-1.75
+8517.12,Teléfonos celulares smartphones,España,489.53,327.02,630.54,PZA,2026-01-31,INEGI,ALZA,7.9
+8517.12,Teléfonos celulares smartphones,Tailandia,375.99,282.89,508.45,PZA,2026-02-21,BLOOMBERG,ALZA,13.32
+8517.12,Teléfonos celulares smartphones,Reino Unido,401.78,302.34,547.15,PZA,2026-02-11,INEGI,ESTABLE,1.67
+8517.12,Teléfonos celulares smartphones,China,354.63,220.71,464.17,PZA,2026-02-23,COMTRADE,BAJA,-11.89
+8517.12,Teléfonos celulares smartphones,México,392.21,273.45,478.8,PZA,2026-02-26,ESTIMADO,ESTABLE,1.06
+8517.12,Teléfonos celulares smartphones,Estados Unidos,609.93,386.1,828.47,PZA,2026-02-24,BLOOMBERG,ESTABLE,-0.31
+8517.12,Teléfonos celulares smartphones,India,339.1,230.52,475.25,PZA,2026-02-14,ESTIMADO,BAJA,-9.3
+8517.12,Teléfonos celulares smartphones,Corea del Sur,397.24,256.2,516.98,PZA,2026-02-12,BLOOMBERG,ESTABLE,0.22
+8517.62,Módems y routers,Alemania,90.84,70.95,132.43,PZA,2026-02-22,ESTIMADO,ALZA,8.68
+8517.62,Módems y routers,Canadá,73.46,46.02,108.77,PZA,2026-02-23,ESTIMADO,ESTABLE,0.3
+8517.62,Módems y routers,México,88.59,56.53,108.88,PZA,2026-02-17,ESTIMADO,BAJA,-10.39
+8517.62,Módems y routers,China,73.03,44.61,101.95,PZA,2026-02-18,INEGI,ESTABLE,-1.61
+6203.42,Pantalones de algodón para hombre,Italia,20.09,13.75,25.79,PZA,2026-02-28,ESTIMADO,ALZA,13.37
+6203.42,Pantalones de algodón para hombre,Japón,26.71,20.6,32.84,PZA,2026-02-04,COMTRADE,ESTABLE,2.0
+6203.42,Pantalones de algodón para hombre,India,17.0,13.35,24.73,PZA,2026-02-15,BLOOMBERG,ALZA,7.28
+6203.42,Pantalones de algodón para hombre,España,22.78,17.78,28.46,PZA,2026-02-22,ESTIMADO,ALZA,14.81
+6204.62,Pantalones de algodón para mujer,Reino Unido,25.39,16.02,32.73,PZA,2026-02-13,COMTRADE,ALZA,9.53
+6204.62,Pantalones de algodón para mujer,Canadá,25.61,15.66,35.22,PZA,2026-02-14,BLOOMBERG,ESTABLE,1.68
+6204.62,Pantalones de algodón para mujer,India,12.93,9.07,18.82,PZA,2026-02-09,BLOOMBERG,ALZA,9.74
+6204.62,Pantalones de algodón para mujer,Francia,23.03,18.15,31.57,PZA,2026-02-11,COMTRADE,ESTABLE,0.38
+6204.62,Pantalones de algodón para mujer,España,23.14,16.59,31.4,PZA,2026-02-08,INEGI,BAJA,-12.34
+6204.62,Pantalones de algodón para mujer,México,21.79,14.8,30.54,PZA,2026-02-01,COMTRADE,BAJA,-9.06
+6110.20,Suéteres de algodón,India,14.88,9.56,19.04,PZA,2026-02-02,BLOOMBERG,BAJA,-3.55
+6110.20,Suéteres de algodón,Brasil,25.96,16.4,37.65,PZA,2026-02-05,COMTRADE,ESTABLE,-0.79
+6110.20,Suéteres de algodón,Tailandia,19.96,14.19,29.53,PZA,2026-02-26,INEGI,ALZA,14.21
+6110.20,Suéteres de algodón,Estados Unidos,29.49,18.33,40.28,PZA,2026-02-24,INEGI,BAJA,-11.34
+8708.29,Partes de carrocería automotriz,España,41.38,28.33,53.09,KG,2026-02-26,INEGI,ALZA,6.34
+8708.29,Partes de carrocería automotriz,Tailandia,27.42,18.88,38.71,KG,2026-02-28,BLOOMBERG,ESTABLE,-1.96
+8708.29,Partes de carrocería automotriz,Italia,48.18,36.95,66.24,KG,2026-03-01,INEGI,ALZA,7.59
+8708.29,Partes de carrocería automotriz,Corea del Sur,45.47,35.77,67.83,KG,2026-02-24,BLOOMBERG,ALZA,13.69
+8708.29,Partes de carrocería automotriz,China,40.0,26.83,54.72,KG,2026-02-07,BLOOMBERG,BAJA,-2.34
+8708.99,Otras partes de vehículos,Vietnam,17.76,13.27,23.08,KG,2026-02-03,BLOOMBERG,BAJA,-4.57
+8708.99,Otras partes de vehículos,Francia,30.8,23.33,37.96,KG,2026-02-23,BLOOMBERG,ALZA,13.16
+8708.99,Otras partes de vehículos,India,26.07,18.04,33.67,KG,2026-02-09,BLOOMBERG,ALZA,4.9
+8708.99,Otras partes de vehículos,Alemania,39.18,25.69,47.83,KG,2026-02-14,ESTIMADO,BAJA,-10.44
+8708.99,Otras partes de vehículos,Taiwán,35.13,27.01,45.65,KG,2026-02-22,BLOOMBERG,ALZA,3.5
+2106.90,Preparaciones alimenticias diversas,España,14.24,10.0,18.73,KG,2026-03-01,ESTIMADO,ESTABLE,-1.24
+2106.90,Preparaciones alimenticias diversas,China,8.71,6.84,11.86,KG,2026-02-07,BLOOMBERG,ESTABLE,1.76
+2106.90,Preparaciones alimenticias diversas,Estados Unidos,16.08,9.87,22.5,KG,2026-02-09,COMTRADE,BAJA,-6.9
+2106.90,Preparaciones alimenticias diversas,Brasil,14.73,9.72,19.04,KG,2026-02-08,INEGI,BAJA,-10.76
+2106.90,Preparaciones alimenticias diversas,Taiwán,14.01,8.94,19.61,KG,2026-02-02,BLOOMBERG,BAJA,-6.19
+2106.90,Preparaciones alimenticias diversas,Vietnam,9.93,6.56,13.55,KG,2026-02-24,ESTIMADO,ALZA,5.95
+2106.90,Preparaciones alimenticias diversas,México,15.02,10.83,19.48,KG,2026-02-24,ESTIMADO,BAJA,-9.25
+2106.90,Preparaciones alimenticias diversas,Canadá,15.05,11.92,21.38,KG,2026-02-14,INEGI,ESTABLE,-1.66
+1901.90,Extractos de malta y preparaciones,Italia,10.94,6.89,13.28,KG,2026-02-06,COMTRADE,BAJA,-7.05
+1901.90,Extractos de malta y preparaciones,México,9.83,7.64,13.49,KG,2026-02-15,ESTIMADO,ESTABLE,0.79
+1901.90,Extractos de malta y preparaciones,Corea del Sur,9.17,6.71,11.02,KG,2026-02-23,BLOOMBERG,ALZA,12.12
+1901.90,Extractos de malta y preparaciones,Japón,13.03,9.63,17.45,KG,2026-02-03,COMTRADE,ESTABLE,-1.0
+8528.72,Monitores y proyectores LED,Corea del Sur,299.89,225.23,399.69,PZA,2026-02-17,ESTIMADO,ESTABLE,1.57
+8528.72,Monitores y proyectores LED,Francia,358.17,268.17,480.81,PZA,2026-02-04,INEGI,BAJA,-5.23
+8528.72,Monitores y proyectores LED,Italia,344.96,242.94,478.81,PZA,2026-02-08,INEGI,BAJA,-9.28
+8528.72,Monitores y proyectores LED,México,291.57,194.53,428.0,PZA,2026-02-23,ESTIMADO,ALZA,3.8
+8528.72,Monitores y proyectores LED,España,337.74,250.36,411.8,PZA,2026-02-16,ESTIMADO,BAJA,-10.7
+8528.72,Monitores y proyectores LED,Canadá,274.26,210.24,361.16,PZA,2026-03-02,ESTIMADO,ESTABLE,1.78
+8528.72,Monitores y proyectores LED,Brasil,315.94,249.13,407.43,PZA,2026-01-31,ESTIMADO,BAJA,-3.91
+8528.59,Otros monitores,Italia,216.2,159.09,285.66,PZA,2026-02-01,BLOOMBERG,ALZA,12.93
+8528.59,Otros monitores,Tailandia,190.61,134.73,280.59,PZA,2026-03-02,COMTRADE,ESTABLE,0.26
+8528.59,Otros monitores,Japón,286.28,179.54,383.19,PZA,2026-02-20,BLOOMBERG,ALZA,5.38
+8528.59,Otros monitores,Corea del Sur,224.74,150.01,329.0,PZA,2026-02-04,ESTIMADO,BAJA,-5.22
+8528.59,Otros monitores,Taiwán,210.16,129.54,253.41,PZA,2026-01-31,INEGI,ESTABLE,-1.79
+8528.59,Otros monitores,India,136.14,83.55,202.47,PZA,2026-01-31,BLOOMBERG,ALZA,11.81
+8528.59,Otros monitores,China,158.35,95.66,197.26,PZA,2026-02-27,BLOOMBERG,ALZA,8.16
+8528.59,Otros monitores,Canadá,225.48,146.84,295.53,PZA,2026-02-07,COMTRADE,ESTABLE,0.43
+3004.90,Medicamentos en dosis,Brasil,155.64,121.65,204.29,KG,2026-02-12,BLOOMBERG,ESTABLE,-1.21
+3004.90,Medicamentos en dosis,Estados Unidos,164.89,124.41,239.93,KG,2026-02-05,COMTRADE,ESTABLE,1.22
+3004.90,Medicamentos en dosis,Tailandia,96.67,66.28,126.75,KG,2026-03-02,ESTIMADO,ESTABLE,0.59
+3004.90,Medicamentos en dosis,China,135.47,84.14,201.61,KG,2026-02-16,BLOOMBERG,ESTABLE,1.57
+3004.90,Medicamentos en dosis,Corea del Sur,148.9,111.19,221.81,KG,2026-02-01,ESTIMADO,BAJA,-6.99
+3003.90,Medicamentos sin dosificar,Reino Unido,120.66,74.49,176.71,KG,2026-02-12,ESTIMADO,ALZA,11.76
+3003.90,Medicamentos sin dosificar,Tailandia,69.11,48.3,89.67,KG,2026-02-05,INEGI,BAJA,-12.24
+3003.90,Medicamentos sin dosificar,Canadá,103.74,80.51,146.31,KG,2026-02-14,BLOOMBERG,BAJA,-7.77
+3003.90,Medicamentos sin dosificar,Brasil,94.95,70.64,127.86,KG,2026-02-10,ESTIMADO,ALZA,10.98
+3003.90,Medicamentos sin dosificar,Corea del Sur,107.46,64.85,138.44,KG,2026-02-21,INEGI,BAJA,-6.01
+3003.90,Medicamentos sin dosificar,Vietnam,73.83,52.14,98.02,KG,2026-02-19,ESTIMADO,ESTABLE,0.2
+3003.90,Medicamentos sin dosificar,Japón,124.35,80.86,153.72,KG,2026-02-07,BLOOMBERG,ALZA,6.1
+8473.30,Partes de máquinas de procesamiento,Taiwán,38.1,28.65,52.54,KG,2026-02-21,BLOOMBERG,ALZA,12.82
+8473.30,Partes de máquinas de procesamiento,Canadá,35.42,23.39,50.03,KG,2026-03-01,INEGI,ALZA,5.57
+8473.30,Partes de máquinas de procesamiento,Italia,39.36,24.61,57.49,KG,2026-03-02,INEGI,BAJA,-13.67
+8473.30,Partes de máquinas de procesamiento,Corea del Sur,36.69,25.25,46.06,KG,2026-02-03,ESTIMADO,ALZA,5.28
+8473.30,Partes de máquinas de procesamiento,India,20.83,12.77,28.07,KG,2026-03-01,BLOOMBERG,ESTABLE,0.52
+8473.50,Partes de otras máquinas,Brasil,25.73,18.56,36.98,KG,2026-02-18,ESTIMADO,ALZA,12.08
+8473.50,Partes de otras máquinas,Estados Unidos,31.81,20.98,43.79,KG,2026-02-11,COMTRADE,BAJA,-11.03
+8473.50,Partes de otras máquinas,Japón,29.57,22.12,43.89,KG,2026-02-22,COMTRADE,ALZA,10.13
+8473.50,Partes de otras máquinas,India,13.68,8.68,16.72,KG,2026-02-08,ESTIMADO,ALZA,7.31
+8473.50,Partes de otras máquinas,España,22.18,14.33,31.32,KG,2026-02-28,BLOOMBERG,ESTABLE,1.44
+9403.60,Muebles de madera,Taiwán,223.84,146.2,278.16,PZA,2026-02-21,INEGI,ALZA,4.16
+9403.60,Muebles de madera,Tailandia,167.41,116.14,216.16,PZA,2026-02-14,ESTIMADO,BAJA,-2.75
+9403.60,Muebles de madera,Estados Unidos,299.8,215.74,439.75,PZA,2026-02-22,COMTRADE,ESTABLE,-0.71
+9403.60,Muebles de madera,España,219.26,173.74,318.1,PZA,2026-03-02,INEGI,ESTABLE,0.35
+9403.60,Muebles de madera,Japón,310.81,233.92,389.31,PZA,2026-02-01,INEGI,ESTABLE,0.61
+9403.60,Muebles de madera,México,226.43,162.37,314.84,PZA,2026-02-15,INEGI,BAJA,-2.4
+9403.70,Muebles de plástico,México,105.85,69.61,157.03,PZA,2026-02-28,INEGI,ESTABLE,-1.85
+9403.70,Muebles de plástico,Vietnam,60.45,37.67,86.55,PZA,2026-03-02,ESTIMADO,ESTABLE,1.3
+9403.70,Muebles de plástico,Tailandia,65.52,41.77,85.74,PZA,2026-02-06,COMTRADE,BAJA,-6.87
+9403.70,Muebles de plástico,Estados Unidos,111.41,79.08,164.7,PZA,2026-02-15,COMTRADE,BAJA,-3.55
+9403.70,Muebles de plástico,Alemania,105.91,76.89,152.49,PZA,2026-02-13,COMTRADE,ESTABLE,-1.37
+9403.70,Muebles de plástico,India,69.9,43.24,104.69,PZA,2026-02-27,BLOOMBERG,ALZA,8.0
+9403.70,Muebles de plástico,Taiwán,99.7,74.11,134.86,PZA,2026-02-15,ESTIMADO,BAJA,-9.6
+8544.42,Cables eléctricos con conectores,India,10.1,7.09,14.78,KG,2026-02-05,ESTIMADO,ALZA,5.59
+8544.42,Cables eléctricos con conectores,España,11.73,8.89,15.02,KG,2026-02-21,ESTIMADO,ALZA,5.68
+8544.42,Cables eléctricos con conectores,Alemania,16.37,11.28,22.02,KG,2026-02-13,ESTIMADO,BAJA,-7.83
+8544.42,Cables eléctricos con conectores,Taiwán,12.18,8.09,15.31,KG,2026-02-18,BLOOMBERG,ESTABLE,-1.04
+8544.42,Cables eléctricos con conectores,Japón,16.34,11.15,21.17,KG,2026-02-05,ESTIMADO,BAJA,-5.83
+8544.49,Otros conductores eléctricos,Corea del Sur,11.14,8.63,14.84,KG,2026-03-02,BLOOMBERG,ESTABLE,1.64
+8544.49,Otros conductores eléctricos,Italia,9.69,7.08,12.08,KG,2026-02-22,INEGI,BAJA,-4.84
+8544.49,Otros conductores eléctricos,China,8.26,5.61,10.11,KG,2026-02-03,ESTIMADO,BAJA,-3.92
+8544.49,Otros conductores eléctricos,Alemania,13.51,9.8,19.81,KG,2026-03-01,COMTRADE,BAJA,-3.66
+8544.49,Otros conductores eléctricos,España,9.14,6.74,11.76,KG,2026-02-17,COMTRADE,ALZA,11.71
+8544.49,Otros conductores eléctricos,Brasil,10.8,8.0,13.29,KG,2026-02-02,COMTRADE,ALZA,11.02
+8544.49,Otros conductores eléctricos,Vietnam,5.39,4.09,6.94,KG,2026-02-23,ESTIMADO,BAJA,-9.4
+3926.90,Manufacturas de plástico diversas,Vietnam,4.55,3.26,5.78,KG,2026-02-22,COMTRADE,ESTABLE,-0.98
+3926.90,Manufacturas de plástico diversas,Alemania,8.89,6.16,11.44,KG,2026-02-16,INEGI,ESTABLE,-1.37
+3926.90,Manufacturas de plástico diversas,India,5.57,3.68,8.29,KG,2026-02-03,INEGI,ESTABLE,-1.0
+3926.90,Manufacturas de plástico diversas,Estados Unidos,7.42,5.02,9.98,KG,2026-02-19,INEGI,ALZA,6.96
+3926.90,Manufacturas de plástico diversas,Brasil,7.68,5.06,11.47,KG,2026-03-02,COMTRADE,ESTABLE,-0.42
+3926.90,Manufacturas de plástico diversas,Taiwán,7.51,5.63,10.89,KG,2026-02-23,INEGI,BAJA,-4.92
+3926.90,Manufacturas de plástico diversas,Canadá,6.06,3.87,7.73,KG,2026-02-09,BLOOMBERG,ESTABLE,1.07
+3926.90,Manufacturas de plástico diversas,Japón,8.32,6.5,11.6,KG,2026-03-01,INEGI,BAJA,-4.75
+3923.30,Bombonas y botellas de plástico,Alemania,5.34,3.42,7.67,KG,2026-02-01,INEGI,BAJA,-8.1
+3923.30,Bombonas y botellas de plástico,India,3.56,2.32,5.15,KG,2026-02-21,INEGI,BAJA,-2.42
+3923.30,Bombonas y botellas de plástico,Corea del Sur,4.95,3.43,6.05,KG,2026-02-07,ESTIMADO,ALZA,13.18
+3923.30,Bombonas y botellas de plástico,Vietnam,3.75,2.85,4.91,KG,2026-02-13,COMTRADE,BAJA,-14.82
+3923.30,Bombonas y botellas de plástico,Canadá,4.45,3.27,6.24,KG,2026-02-10,INEGI,ESTABLE,-0.48
+8536.69,Conectores para tensión <= 1000V,Italia,5.22,3.72,7.7,PZA,2026-02-10,ESTIMADO,ALZA,10.42
+8536.69,Conectores para tensión <= 1000V,Tailandia,3.79,2.5,5.01,PZA,2026-03-01,INEGI,ALZA,2.59
+8536.69,Conectores para tensión <= 1000V,China,4.4,2.74,5.59,PZA,2026-02-16,INEGI,ESTABLE,-1.46
+8536.69,Conectores para tensión <= 1000V,Brasil,4.91,3.68,7.29,PZA,2026-02-07,BLOOMBERG,BAJA,-7.36
+8536.90,Otros aparatos eléctricos,Japón,9.78,6.29,13.04,PZA,2026-02-27,INEGI,ALZA,13.12
+8536.90,Otros aparatos eléctricos,Reino Unido,7.8,6.21,10.2,PZA,2026-01-31,COMTRADE,BAJA,-11.41
+8536.90,Otros aparatos eléctricos,Italia,8.79,6.72,10.79,PZA,2026-02-11,COMTRADE,ALZA,10.34
+8536.90,Otros aparatos eléctricos,Brasil,6.6,4.4,9.88,PZA,2026-02-04,BLOOMBERG,ESTABLE,-1.18
+8536.90,Otros aparatos eléctricos,Taiwán,7.9,6.02,10.03,PZA,2026-02-11,COMTRADE,ALZA,12.25
+8536.90,Otros aparatos eléctricos,Corea del Sur,7.15,5.7,10.7,PZA,2026-02-25,COMTRADE,ESTABLE,-1.0
+8536.90,Otros aparatos eléctricos,China,6.47,3.92,7.79,PZA,2026-03-02,BLOOMBERG,ALZA,9.66
+8504.40,Convertidores estáticos,Estados Unidos,96.67,67.21,138.57,PZA,2026-02-16,BLOOMBERG,ESTABLE,0.37
+8504.40,Convertidores estáticos,Alemania,101.41,61.73,145.52,PZA,2026-02-16,COMTRADE,ESTABLE,0.09
+8504.40,Convertidores estáticos,Canadá,64.64,44.98,85.36,PZA,2026-02-08,ESTIMADO,ESTABLE,-1.57
+8504.40,Convertidores estáticos,Taiwán,64.94,40.01,89.78,PZA,2026-02-11,INEGI,ALZA,3.64
+8504.40,Convertidores estáticos,España,72.23,51.97,93.07,PZA,2026-02-27,COMTRADE,ESTABLE,0.42
+8504.40,Convertidores estáticos,Tailandia,59.71,43.6,85.43,PZA,2026-02-17,ESTIMADO,ESTABLE,1.46
+8504.90,Partes de transformadores,Reino Unido,29.13,18.03,38.69,KG,2026-01-31,BLOOMBERG,ESTABLE,-0.98
+8504.90,Partes de transformadores,Vietnam,22.24,15.45,27.3,KG,2026-02-27,INEGI,ALZA,3.21
+8504.90,Partes de transformadores,Tailandia,23.42,16.66,32.22,KG,2026-02-09,COMTRADE,ESTABLE,0.25
+8504.90,Partes de transformadores,Italia,29.08,22.53,43.11,KG,2026-02-07,COMTRADE,BAJA,-3.71
+8504.90,Partes de transformadores,Taiwán,34.35,24.73,44.84,KG,2026-02-26,ESTIMADO,ESTABLE,0.03
+7326.90,Manufacturas de hierro o acero,Japón,16.55,10.85,20.98,KG,2026-02-06,COMTRADE,BAJA,-4.01
+7326.90,Manufacturas de hierro o acero,Vietnam,10.92,7.99,15.38,KG,2026-02-08,INEGI,ALZA,4.35
+7326.90,Manufacturas de hierro o acero,Reino Unido,17.22,11.54,21.6,KG,2026-02-18,COMTRADE,ALZA,9.36
+7326.90,Manufacturas de hierro o acero,España,13.48,9.8,16.3,KG,2026-02-18,ESTIMADO,ESTABLE,0.12
+7326.90,Manufacturas de hierro o acero,India,10.18,6.43,13.17,KG,2026-02-12,COMTRADE,BAJA,-4.9
+7308.90,Construcciones de hierro o acero,Corea del Sur,16.71,10.3,22.27,KG,2026-02-16,ESTIMADO,BAJA,-8.69
+7308.90,Construcciones de hierro o acero,Alemania,22.18,16.66,27.37,KG,2026-02-09,ESTIMADO,BAJA,-13.56
+7308.90,Construcciones de hierro o acero,Francia,19.64,13.0,24.87,KG,2026-02-24,INEGI,ESTABLE,-1.78
+7308.90,Construcciones de hierro o acero,Brasil,22.21,16.73,31.74,KG,2026-03-02,ESTIMADO,BAJA,-10.73
+8471.60,Unidades de entrada o salida,Vietnam,45.06,33.06,58.86,PZA,2026-03-01,ESTIMADO,BAJA,-3.8
+8471.60,Unidades de entrada o salida,Alemania,67.88,53.23,99.01,PZA,2026-02-18,ESTIMADO,ESTABLE,-0.28
+8471.60,Unidades de entrada o salida,Taiwán,59.86,40.77,89.18,PZA,2026-02-11,ESTIMADO,ALZA,12.42
+8471.60,Unidades de entrada o salida,España,70.85,55.54,86.89,PZA,2026-02-12,ESTIMADO,ALZA,5.16
+8471.60,Unidades de entrada o salida,Canadá,64.61,43.88,83.55,PZA,2026-02-06,BLOOMBERG,BAJA,-12.12
+8471.60,Unidades de entrada o salida,Japón,69.05,50.17,93.85,PZA,2026-02-19,INEGI,ALZA,13.78
+8471.60,Unidades de entrada o salida,Francia,68.73,52.5,99.28,PZA,2026-02-22,BLOOMBERG,ALZA,3.34
+8471.70,Unidades de memoria,Corea del Sur,95.98,72.42,129.4,PZA,2026-02-16,INEGI,ESTABLE,1.04
+8471.70,Unidades de memoria,Francia,119.17,86.45,148.4,PZA,2026-02-10,INEGI,ALZA,8.1
+8471.70,Unidades de memoria,India,83.13,59.71,108.53,PZA,2026-02-16,COMTRADE,ALZA,6.04
+8471.70,Unidades de memoria,México,91.92,70.44,112.42,PZA,2026-02-14,ESTIMADO,ALZA,10.0
+8471.70,Unidades de memoria,Estados Unidos,128.12,91.08,184.18,PZA,2026-02-05,BLOOMBERG,ALZA,7.85
+8525.80,Cámaras de video,Tailandia,252.72,193.96,377.74,PZA,2026-02-25,COMTRADE,ALZA,8.56
+8525.80,Cámaras de video,España,297.27,204.39,395.91,PZA,2026-02-19,INEGI,ESTABLE,0.44
+8525.80,Cámaras de video,Alemania,433.63,293.78,621.11,PZA,2026-02-05,INEGI,ESTABLE,0.39
+8525.80,Cámaras de video,China,210.72,130.41,295.75,PZA,2026-02-03,BLOOMBERG,BAJA,-11.72
+8525.80,Cámaras de video,Italia,306.0,219.26,380.18,PZA,2026-02-10,ESTIMADO,BAJA,-10.97
+8525.80,Cámaras de video,Estados Unidos,353.15,261.95,432.76,PZA,2026-02-05,INEGI,ESTABLE,-0.49
+8525.89,Otras cámaras,Alemania,249.42,167.74,312.79,PZA,2026-02-06,ESTIMADO,ALZA,6.44
+8525.89,Otras cámaras,México,192.96,154.37,240.52,PZA,2026-02-27,COMTRADE,BAJA,-4.02
+8525.89,Otras cámaras,India,157.18,121.86,217.76,PZA,2026-02-25,BLOOMBERG,ESTABLE,-0.49
+8525.89,Otras cámaras,Taiwán,236.12,178.09,340.65,PZA,2026-03-01,ESTIMADO,ALZA,11.38
+8525.89,Otras cámaras,España,204.59,152.2,305.02,PZA,2026-02-07,ESTIMADO,ESTABLE,-0.86
+9018.90,Instrumentos médicos diversos,Italia,149.97,95.8,210.48,PZA,2026-02-16,INEGI,ESTABLE,1.94
+9018.90,Instrumentos médicos diversos,Corea del Sur,144.68,101.36,191.79,PZA,2026-02-05,BLOOMBERG,ALZA,12.62
+9018.90,Instrumentos médicos diversos,Francia,148.67,90.75,199.84,PZA,2026-02-27,COMTRADE,BAJA,-7.79
+9018.90,Instrumentos médicos diversos,Reino Unido,123.97,93.3,158.91,PZA,2026-02-17,COMTRADE,ESTABLE,-1.41
+9018.90,Instrumentos médicos diversos,Tailandia,109.75,70.72,146.55,PZA,2026-02-17,COMTRADE,BAJA,-2.9
+9018.19,Otros aparatos de electro diagnóstico,Canadá,403.02,249.8,570.04,PZA,2026-02-26,COMTRADE,BAJA,-4.71
+9018.19,Otros aparatos de electro diagnóstico,Japón,488.73,374.34,688.53,PZA,2026-02-15,ESTIMADO,ALZA,11.86
+9018.19,Otros aparatos de electro diagnóstico,Taiwán,443.07,346.11,534.21,PZA,2026-02-13,ESTIMADO,ALZA,12.85
+9018.19,Otros aparatos de electro diagnóstico,Estados Unidos,465.01,305.8,600.02,PZA,2026-02-10,ESTIMADO,ALZA,5.1
+9018.19,Otros aparatos de electro diagnóstico,Vietnam,233.48,179.16,315.19,PZA,2026-02-14,BLOOMBERG,ESTABLE,-1.93
+9018.19,Otros aparatos de electro diagnóstico,India,322.0,211.96,386.55,PZA,2026-02-17,BLOOMBERG,BAJA,-11.87
+9018.19,Otros aparatos de electro diagnóstico,China,359.69,221.97,536.8,PZA,2026-02-13,COMTRADE,ALZA,14.39
+8481.80,Válvulas diversas,Tailandia,15.18,9.31,19.31,PZA,2026-02-06,INEGI,ESTABLE,0.51
+8481.80,Válvulas diversas,China,16.0,10.73,20.83,PZA,2026-02-06,ESTIMADO,ESTABLE,-1.3
+8481.80,Válvulas diversas,México,27.36,19.03,34.33,PZA,2026-02-06,ESTIMADO,ALZA,2.82
+8481.80,Válvulas diversas,Taiwán,20.28,12.99,29.15,PZA,2026-02-21,ESTIMADO,ALZA,6.1
+8481.80,Válvulas diversas,Vietnam,19.92,14.12,25.42,PZA,2026-02-19,COMTRADE,ESTABLE,-1.24
+8481.80,Válvulas diversas,Corea del Sur,26.49,17.65,32.78,PZA,2026-02-18,ESTIMADO,BAJA,-9.32
+8481.80,Válvulas diversas,India,19.21,13.01,28.66,PZA,2026-02-19,INEGI,BAJA,-6.0
+8481.10,Válvulas reductoras de presión,Reino Unido,40.1,25.51,51.65,PZA,2026-02-09,INEGI,ALZA,3.04
+8481.10,Válvulas reductoras de presión,Estados Unidos,39.86,28.72,52.93,PZA,2026-02-16,COMTRADE,ESTABLE,-0.22
+8481.10,Válvulas reductoras de presión,Taiwán,37.16,29.07,51.45,PZA,2026-02-05,COMTRADE,BAJA,-11.43
+8481.10,Válvulas reductoras de presión,Brasil,30.02,21.84,39.3,PZA,2026-01-31,COMTRADE,ESTABLE,0.72
+8483.40,Engranajes y ruedas de fricción,India,31.18,20.99,41.0,KG,2026-02-26,ESTIMADO,ESTABLE,-1.87
+8483.40,Engranajes y ruedas de fricción,China,37.6,25.36,53.73,KG,2026-02-19,ESTIMADO,ESTABLE,-1.45
+8483.40,Engranajes y ruedas de fricción,Alemania,46.51,30.5,69.21,KG,2026-02-15,ESTIMADO,ALZA,11.56
+8483.40,Engranajes y ruedas de fricción,Estados Unidos,54.15,33.77,77.57,KG,2026-02-11,INEGI,ESTABLE,-0.21
+8483.40,Engranajes y ruedas de fricción,Japón,51.35,41.07,64.7,KG,2026-02-16,BLOOMBERG,ALZA,13.09
+8483.50,Volantes y poleas,Alemania,36.7,24.15,47.34,KG,2026-02-01,BLOOMBERG,ALZA,11.25
+8483.50,Volantes y poleas,Francia,32.7,22.95,40.43,KG,2026-02-23,ESTIMADO,ALZA,12.3
+8483.50,Volantes y poleas,México,25.45,18.09,33.36,KG,2026-02-02,COMTRADE,ESTABLE,-1.48
+8483.50,Volantes y poleas,Vietnam,16.37,11.13,23.16,KG,2026-02-06,ESTIMADO,BAJA,-8.17
+8483.50,Volantes y poleas,Reino Unido,32.98,20.27,49.2,KG,2026-02-16,INEGI,ESTABLE,-1.7
+8483.50,Volantes y poleas,India,16.96,12.99,23.16,KG,2026-01-31,BLOOMBERG,ESTABLE,-1.27
+8483.50,Volantes y poleas,Estados Unidos,35.59,27.84,43.3,KG,2026-02-21,BLOOMBERG,ALZA,8.74
+8501.10,Motores de potencia <= 37.5 W,México,24.4,17.17,31.36,PZA,2026-02-10,INEGI,ALZA,5.26
+8501.10,Motores de potencia <= 37.5 W,India,12.09,7.99,16.44,PZA,2026-02-12,BLOOMBERG,ESTABLE,0.56
+8501.10,Motores de potencia <= 37.5 W,Canadá,19.16,13.89,28.18,PZA,2026-02-12,COMTRADE,BAJA,-4.05
+8501.10,Motores de potencia <= 37.5 W,Japón,28.07,17.0,34.07,PZA,2026-02-22,BLOOMBERG,ESTABLE,1.08
+8501.10,Motores de potencia <= 37.5 W,Vietnam,16.43,11.23,22.87,PZA,2026-02-13,INEGI,BAJA,-3.44
+8501.40,Motores de corriente alterna,Tailandia,58.92,36.21,71.76,PZA,2026-02-16,BLOOMBERG,BAJA,-9.6
+8501.40,Motores de corriente alterna,Japón,110.21,69.29,160.74,PZA,2026-02-03,INEGI,BAJA,-5.46
+8501.40,Motores de corriente alterna,Francia,109.26,68.41,143.26,PZA,2026-02-23,ESTIMADO,ESTABLE,-1.58
+8501.40,Motores de corriente alterna,Reino Unido,83.68,57.73,103.95,PZA,2026-02-18,ESTIMADO,ALZA,5.77
+8501.40,Motores de corriente alterna,México,87.45,67.6,109.13,PZA,2026-02-07,INEGI,BAJA,-2.86
+8501.40,Motores de corriente alterna,Taiwán,85.7,54.15,128.45,PZA,2026-02-21,ESTIMADO,BAJA,-8.52
+8507.60,Acumuladores de iones de litio,Alemania,87.08,55.99,113.72,PZA,2026-02-11,ESTIMADO,ALZA,5.66
+8507.60,Acumuladores de iones de litio,Taiwán,59.79,35.97,73.68,PZA,2026-02-07,INEGI,ALZA,13.47
+8507.60,Acumuladores de iones de litio,España,69.47,46.77,91.71,PZA,2026-02-19,INEGI,ESTABLE,0.25
+8507.60,Acumuladores de iones de litio,Italia,55.49,38.89,79.31,PZA,2026-02-11,COMTRADE,BAJA,-4.27
+8507.80,Otros acumuladores,Japón,55.45,37.32,68.94,PZA,2026-02-14,COMTRADE,ESTABLE,0.04
+8507.80,Otros acumuladores,Taiwán,38.65,24.25,50.24,PZA,2026-02-26,BLOOMBERG,BAJA,-8.25
+8507.80,Otros acumuladores,Vietnam,28.42,20.54,35.49,PZA,2026-02-21,INEGI,ESTABLE,0.96
+8507.80,Otros acumuladores,Francia,45.23,31.75,60.92,PZA,2026-02-04,COMTRADE,ESTABLE,-0.8
+8507.80,Otros acumuladores,Reino Unido,43.25,31.78,64.61,PZA,2026-02-02,COMTRADE,ESTABLE,-0.77
+8418.69,Grupos frigoríficos,Tailandia,354.4,224.73,492.16,PZA,2026-02-18,BLOOMBERG,ESTABLE,1.1
+8418.69,Grupos frigoríficos,Corea del Sur,549.41,356.26,753.66,PZA,2026-03-02,ESTIMADO,ESTABLE,-1.56
+8418.69,Grupos frigoríficos,México,469.41,295.86,660.53,PZA,2026-02-11,ESTIMADO,BAJA,-8.48
+8418.69,Grupos frigoríficos,Francia,557.47,416.52,679.38,PZA,2026-02-13,INEGI,ALZA,8.74
+8418.69,Grupos frigoríficos,Brasil,577.2,401.54,757.89,PZA,2026-02-13,INEGI,ALZA,7.98
+8418.69,Grupos frigoríficos,Canadá,506.04,372.03,738.97,PZA,2026-02-08,INEGI,ESTABLE,0.57
+8418.69,Grupos frigoríficos,Japón,621.09,396.54,791.24,PZA,2026-01-31,INEGI,ESTABLE,-0.81
+8418.69,Grupos frigoríficos,China,436.46,323.41,614.13,PZA,2026-02-19,INEGI,BAJA,-10.88
+8418.99,Partes de refrigeradores,Japón,42.35,33.5,61.04,KG,2026-01-31,COMTRADE,BAJA,-14.45
+8418.99,Partes de refrigeradores,Brasil,30.73,21.16,39.24,KG,2026-02-04,INEGI,BAJA,-12.22
+8418.99,Partes de refrigeradores,México,36.72,27.14,45.58,KG,2026-02-23,BLOOMBERG,ESTABLE,0.96
+8418.99,Partes de refrigeradores,España,27.72,21.65,35.14,KG,2026-02-17,INEGI,ALZA,2.68
+8418.99,Partes de refrigeradores,Taiwán,34.52,21.41,49.41,KG,2026-02-01,BLOOMBERG,ALZA,14.54
+8418.99,Partes de refrigeradores,Canadá,31.35,24.67,45.88,KG,2026-02-06,INEGI,BAJA,-6.54
+8419.89,Aparatos para tratamiento de materias,Brasil,826.4,584.29,1170.96,PZA,2026-02-25,ESTIMADO,ALZA,13.87
+8419.89,Aparatos para tratamiento de materias,México,904.97,574.8,1335.64,PZA,2026-02-25,INEGI,BAJA,-4.76
+8419.89,Aparatos para tratamiento de materias,China,733.57,441.5,1005.28,PZA,2026-02-20,INEGI,ALZA,14.07
+8419.89,Aparatos para tratamiento de materias,Francia,795.86,579.59,1080.22,PZA,2026-02-16,INEGI,ALZA,13.06
+8419.89,Aparatos para tratamiento de materias,Estados Unidos,899.17,559.76,1122.84,PZA,2026-02-08,BLOOMBERG,BAJA,-6.57
+8419.89,Aparatos para tratamiento de materias,India,428.59,286.05,552.24,PZA,2026-02-25,ESTIMADO,ESTABLE,1.03
+8419.90,Partes de aparatos,México,48.11,37.87,57.83,KG,2026-02-06,INEGI,BAJA,-11.94
+8419.90,Partes de aparatos,Estados Unidos,65.6,43.32,92.95,KG,2026-02-19,BLOOMBERG,ALZA,5.4
+8419.90,Partes de aparatos,Taiwán,41.75,26.04,53.94,KG,2026-02-01,INEGI,BAJA,-6.08
+8419.90,Partes de aparatos,Tailandia,36.06,26.24,53.45,KG,2026-02-23,BLOOMBERG,BAJA,-7.01
+8419.90,Partes de aparatos,India,32.82,22.68,49.12,KG,2026-02-13,ESTIMADO,BAJA,-9.59
+8419.90,Partes de aparatos,Alemania,62.59,47.59,90.61,KG,2026-02-11,COMTRADE,ALZA,10.84
+8419.90,Partes de aparatos,Francia,48.84,34.46,63.91,KG,2026-02-04,BLOOMBERG,ESTABLE,-1.55
+8421.23,Aparatos para filtrar lubricantes,Corea del Sur,30.2,21.2,43.57,PZA,2026-02-17,ESTIMADO,BAJA,-13.28
+8421.23,Aparatos para filtrar lubricantes,Alemania,42.67,30.37,59.82,PZA,2026-02-18,INEGI,BAJA,-5.6
+8421.23,Aparatos para filtrar lubricantes,Vietnam,27.19,20.37,37.35,PZA,2026-02-08,COMTRADE,ALZA,7.51
+8421.23,Aparatos para filtrar lubricantes,España,35.13,21.5,51.58,PZA,2026-02-17,BLOOMBERG,BAJA,-14.59
+8421.23,Aparatos para filtrar lubricantes,Italia,37.62,28.33,56.19,PZA,2026-02-19,ESTIMADO,ESTABLE,1.86
+8421.23,Aparatos para filtrar lubricantes,Estados Unidos,41.41,32.44,54.38,PZA,2026-02-09,BLOOMBERG,ALZA,10.88
+8421.23,Aparatos para filtrar lubricantes,Japón,43.66,29.23,54.73,PZA,2026-02-26,BLOOMBERG,ESTABLE,-0.43
+8421.23,Aparatos para filtrar lubricantes,Canadá,38.34,28.8,57.26,PZA,2026-02-13,ESTIMADO,BAJA,-6.24
+8421.39,Aparatos para filtrar gases,Francia,96.36,74.68,137.76,PZA,2026-02-17,COMTRADE,ALZA,12.52
+8421.39,Aparatos para filtrar gases,Reino Unido,98.12,60.19,135.23,PZA,2026-02-08,COMTRADE,BAJA,-7.23
+8421.39,Aparatos para filtrar gases,Japón,120.76,73.52,160.81,PZA,2026-02-03,COMTRADE,ESTABLE,-1.13
+8421.39,Aparatos para filtrar gases,India,60.98,48.7,77.46,PZA,2026-02-12,INEGI,ESTABLE,0.3
+8421.39,Aparatos para filtrar gases,Italia,98.0,75.97,146.58,PZA,2026-02-21,INEGI,ESTABLE,-1.12
+8421.39,Aparatos para filtrar gases,Vietnam,58.31,46.05,85.36,PZA,2026-02-17,ESTIMADO,ALZA,10.14
+8421.39,Aparatos para filtrar gases,Alemania,114.08,76.31,158.91,PZA,2026-02-20,ESTIMADO,BAJA,-4.78
+8421.39,Aparatos para filtrar gases,Corea del Sur,103.78,68.49,130.26,PZA,2026-02-03,BLOOMBERG,ESTABLE,-0.11
+9405.40,Lámparas eléctricas portátiles,Corea del Sur,21.81,15.52,27.05,PZA,2026-02-20,COMTRADE,ALZA,5.31
+9405.40,Lámparas eléctricas portátiles,Francia,21.53,16.57,26.43,PZA,2026-03-01,INEGI,ESTABLE,1.32
+9405.40,Lámparas eléctricas portátiles,Italia,18.26,13.17,22.13,PZA,2026-02-06,BLOOMBERG,ALZA,4.45
+9405.40,Lámparas eléctricas portátiles,China,14.88,11.52,19.34,PZA,2026-02-24,COMTRADE,ALZA,4.75
+9405.40,Lámparas eléctricas portátiles,España,20.48,15.38,30.19,PZA,2026-02-24,ESTIMADO,ESTABLE,0.42
+9405.40,Lámparas eléctricas portátiles,Taiwán,21.49,15.27,30.79,PZA,2026-02-10,INEGI,BAJA,-8.94
