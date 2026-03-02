@@ -1,0 +1,635 @@
+openapi: 3.0.0
+info:
+  title: Sistema de Análisis de Importaciones - API de Inteligencia Aduanera
+  description: |
+    API especializada en análisis de operaciones de importación para México con 4 módulos de inteligencia:
+    
+    **MÓDULO 1 - Historial del Importador (24 meses)**
+    - Análisis completo de operaciones históricas
+    - Perfil de riesgo automático (🟢 Verde / 🟡 Amarillo / 🔴 Rojo)
+    - Detección de patrones anormales
+    - Comparación con promedio del sector
+    
+    **MÓDULO 2 - Valor de Referencia Internacional**
+    - Comparación con precios de mercado internacional
+    - Detección de subfacturación/sobrefacturación
+    - Cálculo de percentiles de mercado
+    - Análisis de tendencias de precios
+    
+    **MÓDULO 3 - Alertas Activas de Inteligencia**
+    - 40 alertas vigentes de fraude aduanero
+    - 7 tipos: Triangulación, Subfacturación, Clasificación incorrecta, etc.
+    - Verificación de proveedores en listas de observación
+    - Modus operandi documentados
+    
+    **MÓDULO 4 - Checklist Regulatorio Personalizado**
+    - Checklist dinámico por fracción arancelaria
+    - Verificación de NOMs aplicables
+    - Permisos previos requeridos
+    - Tratados comerciales disponibles
+    
+    **Base de datos**: 17,750+ registros sintéticos
+    **Tiempo de respuesta**: <10 segundos
+    **Cobertura**: 500 empresas, 15,000 operaciones, 800 precios de referencia
+    
+  version: 1.0.0
+  contact:
+    name: Sistema de Análisis de Importaciones
+    url: https://github.com/tu-usuario/sistema-analisis-importaciones
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://sistema-analisis-importaciones.onrender.com
+    description: Servidor de producción en Render
+  - url: http://localhost:8000
+    description: Servidor de desarrollo local
+
+tags:
+  - name: Análisis Principal
+    description: Endpoint principal que ejecuta los 4 módulos de análisis
+  - name: Módulo 1 - Historial
+    description: Análisis del historial del importador (24 meses)
+  - name: Módulo 2 - Valor
+    description: Análisis de valor declarado vs mercado internacional
+  - name: Módulo 3 - Alertas
+    description: Alertas de inteligencia aduanera y fraudes
+  - name: Módulo 4 - Checklist
+    description: Checklist regulatorio personalizado
+  - name: Sistema
+    description: Endpoints de sistema y salud
+
+paths:
+  /:
+    get:
+      summary: Información del Sistema
+      description: Retorna información general del sistema y endpoints disponibles
+      operationId: root
+      tags:
+        - Sistema
+      responses:
+        '200':
+          description: Información del sistema
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sistema:
+                    type: string
+                  version:
+                    type: string
+                  modulos:
+                    type: array
+                    items:
+                      type: string
+
+  /health:
+    get:
+      summary: Health Check
+      description: Verifica el estado operativo del sistema
+      operationId: healthCheck
+      tags:
+        - Sistema
+      responses:
+        '200':
+          description: Sistema operativo
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: healthy
+                  timestamp:
+                    type: string
+                    format: date-time
+                  modulos:
+                    type: object
+
+  /api/analisis/completo:
+    get:
+      summary: Análisis Completo de Importación
+      description: |
+        Ejecuta los 4 módulos de análisis en una sola consulta:
+        1. Historial del importador
+        2. Análisis de valor vs mercado
+        3. Búsqueda de alertas activas
+        4. Generación de checklist regulatorio
+        
+        Retorna un análisis completo con recomendación de canal y acciones inmediatas.
+      operationId: analisisCompleto
+      tags:
+        - Análisis Principal
+      parameters:
+        - name: rfc
+          in: query
+          required: true
+          schema:
+            type: string
+            pattern: '^[A-Z]{3,4}[0-9]{6}[A-Z0-9]{3}$'
+          description: RFC del importador (formato mexicano)
+          example: "ABC700101ABC"
+        - name: fraccion
+          in: query
+          required: true
+          schema:
+            type: string
+            pattern: '^\d{4}\.\d{2}$'
+          description: Fracción arancelaria (formato XXXX.XX)
+          example: "8471.30"
+        - name: pais_origen
+          in: query
+          required: true
+          schema:
+            type: string
+          description: País de origen de la mercancía
+          example: "China"
+        - name: valor_unitario
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+            minimum: 0.01
+          description: Valor unitario declarado en USD
+          example: 450.00
+        - name: cantidad
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+          description: Cantidad de unidades
+          example: 100
+        - name: proveedor_id
+          in: query
+          required: false
+          schema:
+            type: string
+          description: ID del proveedor extranjero (formato PROV-XXX)
+          example: "PROV-001"
+      responses:
+        '200':
+          description: Análisis completado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalisisCompleto'
+        '404':
+          description: RFC no encontrado
+        '500':
+          description: Error en el análisis
+
+  /api/importador/{rfc}:
+    get:
+      summary: Consultar Historial de Importador
+      description: Obtiene el historial completo de operaciones de un importador (Módulo 1)
+      operationId: consultarImportador
+      tags:
+        - Módulo 1 - Historial
+      parameters:
+        - name: rfc
+          in: path
+          required: true
+          schema:
+            type: string
+          description: RFC del importador
+          example: "ABC700101ABC"
+        - name: meses_historial
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 24
+            minimum: 1
+            maximum: 60
+          description: Meses de historial a analizar
+          example: 24
+      responses:
+        '200':
+          description: Historial del importador
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HistorialImportador'
+        '404':
+          description: RFC no encontrado
+
+  /api/importador/{rfc}/operaciones:
+    get:
+      summary: Últimas Operaciones del Importador
+      description: Obtiene las últimas operaciones de importación realizadas
+      operationId: historialOperaciones
+      tags:
+        - Módulo 1 - Historial
+      parameters:
+        - name: rfc
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "ABC700101ABC"
+        - name: limite
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 1
+            maximum: 100
+          example: 10
+      responses:
+        '200':
+          description: Lista de operaciones
+        '404':
+          description: No se encontraron operaciones
+
+  /api/importador/{rfc}/comparacion-sector:
+    get:
+      summary: Comparar con Promedio del Sector
+      description: Compara las métricas del importador con el promedio de su sector
+      operationId: compararSector
+      tags:
+        - Módulo 1 - Historial
+      parameters:
+        - name: rfc
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "ABC700101ABC"
+      responses:
+        '200':
+          description: Comparación con sector
+        '404':
+          description: RFC no encontrado
+
+  /api/valor/analizar:
+    get:
+      summary: Analizar Valor Declarado
+      description: Compara el valor declarado con precios de mercado internacional (Módulo 2)
+      operationId: analizarValor
+      tags:
+        - Módulo 2 - Valor
+      parameters:
+        - name: fraccion
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Fracción arancelaria
+          example: "8542.31"
+        - name: pais_origen
+          in: query
+          required: true
+          schema:
+            type: string
+          description: País de origen
+          example: "China"
+        - name: valor_unitario
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+            minimum: 0.01
+          description: Valor unitario en USD
+          example: 4.20
+        - name: cantidad
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 1
+          example: 1000
+      responses:
+        '200':
+          description: Análisis de valor completado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalisisValor'
+
+  /api/valor/estadisticas/{fraccion}:
+    get:
+      summary: Estadísticas de Precios por Fracción
+      description: Obtiene estadísticas de precios para una fracción arancelaria
+      operationId: estadisticasFraccion
+      tags:
+        - Módulo 2 - Valor
+      parameters:
+        - name: fraccion
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "8471.30"
+      responses:
+        '200':
+          description: Estadísticas de precios
+        '404':
+          description: No hay datos para esta fracción
+
+  /api/alertas/vigentes:
+    get:
+      summary: Obtener Alertas Vigentes
+      description: Lista todas las alertas de inteligencia actualmente vigentes (Módulo 3)
+      operationId: alertasVigentes
+      tags:
+        - Módulo 3 - Alertas
+      parameters:
+        - name: tipo
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [TRI, SUB, FRA, PRO, SAN, NOM, DUM]
+          description: Filtrar por tipo de alerta
+        - name: criticidad
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [BAJO, MEDIO, ALTO, CRITICO]
+          description: Filtrar por nivel de criticidad
+      responses:
+        '200':
+          description: Lista de alertas vigentes
+
+  /api/alertas/buscar:
+    get:
+      summary: Buscar Alertas para Operación
+      description: Busca alertas de inteligencia relevantes para una operación específica (Módulo 3)
+      operationId: buscarAlertas
+      tags:
+        - Módulo 3 - Alertas
+      parameters:
+        - name: fraccion
+          in: query
+          required: true
+          schema:
+            type: string
+          example: "8471.30"
+        - name: pais_origen
+          in: query
+          required: true
+          schema:
+            type: string
+          example: "China"
+        - name: proveedor_id
+          in: query
+          required: false
+          schema:
+            type: string
+          example: "PROV-001"
+      responses:
+        '200':
+          description: Alertas encontradas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AlertasEncontradas'
+
+  /api/alertas/estadisticas:
+    get:
+      summary: Estadísticas de Alertas
+      description: Obtiene estadísticas generales del sistema de alertas
+      operationId: estadisticasAlertas
+      tags:
+        - Módulo 3 - Alertas
+      responses:
+        '200':
+          description: Estadísticas de alertas
+
+  /api/alertas/modus-operandi:
+    get:
+      summary: Modus Operandi Frecuentes
+      description: Obtiene los modus operandi de fraude más frecuentes
+      operationId: modusOperandi
+      tags:
+        - Módulo 3 - Alertas
+      parameters:
+        - name: tipo
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filtrar por tipo de alerta
+      responses:
+        '200':
+          description: Lista de modus operandi
+
+  /api/checklist/generar:
+    get:
+      summary: Generar Checklist Regulatorio
+      description: Genera un checklist personalizado de documentos y regulaciones (Módulo 4)
+      operationId: generarChecklist
+      tags:
+        - Módulo 4 - Checklist
+      parameters:
+        - name: fraccion
+          in: query
+          required: true
+          schema:
+            type: string
+          example: "2106.90"
+        - name: pais_origen
+          in: query
+          required: true
+          schema:
+            type: string
+          example: "Estados Unidos"
+        - name: tipo_importador
+          in: query
+          required: false
+          schema:
+            type: string
+            default: "regular"
+            enum: [nuevo, regular, certificado]
+          description: Tipo de importador
+        - name: primera_importacion
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: ¿Es primera vez que importa esta fracción?
+      responses:
+        '200':
+          description: Checklist generado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChecklistRegulatorio'
+
+  /api/checklist/noms/{fraccion}:
+    get:
+      summary: Verificar NOMs Aplicables
+      description: Verifica las Normas Oficiales Mexicanas aplicables a una fracción
+      operationId: verificarNoms
+      tags:
+        - Módulo 4 - Checklist
+      parameters:
+        - name: fraccion
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "2106.90"
+      responses:
+        '200':
+          description: NOMs aplicables
+        '404':
+          description: No hay información para esta fracción
+
+  /api/checklist/tratados/{pais}:
+    get:
+      summary: Consultar Tratados Comerciales
+      description: Consulta los tratados comerciales aplicables con un país
+      operationId: consultarTratados
+      tags:
+        - Módulo 4 - Checklist
+      parameters:
+        - name: pais
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "Estados Unidos"
+      responses:
+        '200':
+          description: Tratados comerciales disponibles
+
+components:
+  schemas:
+    AnalisisCompleto:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        tiempo_procesamiento_ms:
+          type: number
+        rfc_importador:
+          type: string
+        fraccion_arancelaria:
+          type: string
+        pais_origen:
+          type: string
+        modulo1_historial:
+          $ref: '#/components/schemas/HistorialImportador'
+        modulo2_valor:
+          $ref: '#/components/schemas/AnalisisValor'
+        modulo3_alertas:
+          $ref: '#/components/schemas/AlertasEncontradas'
+        modulo4_checklist:
+          $ref: '#/components/schemas/ChecklistRegulatorio'
+        resumen_ejecutivo:
+          type: object
+          properties:
+            nivel_riesgo_global:
+              type: string
+              enum: [VERDE, AMARILLO, ROJO]
+            canal_recomendado:
+              type: string
+              enum: [VERDE, AMARILLO, ROJO]
+            perfil_importador:
+              type: string
+            riesgo_valor:
+              type: string
+            alertas_criticas:
+              type: integer
+            documentos_faltantes:
+              type: integer
+            acciones_inmediatas:
+              type: array
+              items:
+                type: string
+
+    HistorialImportador:
+      type: object
+      properties:
+        encontrado:
+          type: boolean
+        rfc:
+          type: string
+        razon_social:
+          type: string
+        perfil_riesgo:
+          type: string
+          enum: [VERDE, AMARILLO, ROJO]
+        total_operaciones:
+          type: integer
+        valor_total_usd:
+          type: number
+        tasa_irregularidades:
+          type: number
+        anios_activo:
+          type: number
+        alertas:
+          type: array
+          items:
+            type: string
+
+    AnalisisValor:
+      type: object
+      properties:
+        encontrado:
+          type: boolean
+        fraccion:
+          type: string
+        descripcion:
+          type: string
+        valor_declarado_unitario:
+          type: number
+        precio_mercado_promedio:
+          type: number
+        desviacion_porcentual:
+          type: number
+        percentil_mercado:
+          type: integer
+        nivel_riesgo:
+          type: string
+          enum: [VERDE, AMARILLO, ROJO]
+        alertas:
+          type: array
+          items:
+            type: string
+
+    AlertasEncontradas:
+      type: object
+      properties:
+        total_alertas:
+          type: integer
+        alertas:
+          type: array
+          items:
+            type: object
+        nivel_riesgo_global:
+          type: string
+          enum: [VERDE, AMARILLO, ROJO]
+
+    ChecklistRegulatorio:
+      type: object
+      properties:
+        encontrado:
+          type: boolean
+        fraccion:
+          type: string
+        descripcion:
+          type: string
+        documentos_obligatorios:
+          type: array
+          items:
+            type: object
+        canal_sugerido:
+          type: string
+          enum: [VERDE, AMARILLO, ROJO]
+        cumplimiento_pct:
+          type: number
+
+# Made with Bob
